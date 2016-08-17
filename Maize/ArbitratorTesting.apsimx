@@ -4002,7 +4002,7 @@ namespace Models
 	   ]]></Code>
             </Manager>
             <Report>
-              <Name>Report</Name>
+              <Name>MaizeReport</Name>
               <ExperimentFactorNames />
               <ExperimentFactorValues />
               <VariableNames>
@@ -4133,7 +4133,7 @@ namespace Models
               </EventNames>
             </Report>
             <Report>
-              <Name>HarvestReport</Name>
+              <Name>MaizeHarvestReport</Name>
               <ExperimentFactorNames />
               <ExperimentFactorValues />
               <VariableNames>
@@ -4180,7 +4180,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>    MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.ExpandedCohortNo</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4201,7 +4201,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>    MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.AppearedCohortNo</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4222,7 +4222,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>    MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.DeadCohortNo</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4243,7 +4243,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>    MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.InitialisedCohortNo</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4264,7 +4264,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>    MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Structure.MainStemFinalNodeNo</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4285,7 +4285,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>    MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Structure.LeafTipsAppeared</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4306,7 +4306,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Structure.MainStemPrimordiaNo</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4369,7 +4369,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(1)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4390,7 +4390,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(2)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4411,7 +4411,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(3)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4432,7 +4432,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(4)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4453,7 +4453,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(5)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4474,7 +4474,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(6)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4495,7 +4495,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(7)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4516,7 +4516,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(8)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4537,7 +4537,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(9)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4558,7 +4558,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(10)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4579,7 +4579,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(11)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4600,7 +4600,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(12)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4621,7 +4621,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(13)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4642,7 +4642,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(14)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4663,7 +4663,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(15)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4684,7 +4684,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(16)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4705,7 +4705,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(17)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4726,7 +4726,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(18)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4747,7 +4747,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(19)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4768,7 +4768,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(20)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4789,7 +4789,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(20)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4810,7 +4810,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortArea1:30(21)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4852,7 +4852,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Arbitrator.DMSupply</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4873,7 +4873,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Arbitrator.DMDemand</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4894,7 +4894,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Arbitrator.DMSinkLimitation</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4915,7 +4915,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Arbitrator.DMNutrientLimitation</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4957,7 +4957,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortParameters.GrowthDuration.Value</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4978,7 +4978,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortParameters.LagDuration.Value</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -4999,7 +4999,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CohortParameters.SenescenceDuration.Value</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5020,7 +5020,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Structure.MainStemNodeAppearanceRate.Value</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5062,7 +5062,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Structure.Height</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5104,7 +5104,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Stem.DMDemandFunction.PotentialDMAccumulation.Value</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5125,7 +5125,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Stem.DMDemandFunction.HightLimitedDMAccumulation.Value</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5167,7 +5167,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>ExtraVariables.Script.AccumPlantN</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5188,7 +5188,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>ExtraVariables.Script.AccumMineralisation</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5209,7 +5209,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>ExtraVariables.Script.AccumDenit</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5230,7 +5230,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>ExtraVariables.Script.AccumFert</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5251,7 +5251,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>ExtraVariables.Script.AccumLeach</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5272,7 +5272,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>ExtraVariables.Script.DeltaSoilOMN</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5293,7 +5293,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>ExtraVariables.Script.DeltaSurfaceOMN</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5314,7 +5314,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>ExtraVariables.Script.DeltaSoilMineralN</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5357,7 +5357,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Stem.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5378,7 +5378,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5399,7 +5399,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Grain.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5420,7 +5420,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Total.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5441,7 +5441,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Root.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5462,7 +5462,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Dot</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Husk.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5483,7 +5483,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>DashDot</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Rachis.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5504,7 +5504,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Dash</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Tastle.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5546,7 +5546,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.Live.N</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5567,7 +5567,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Root.Live.N</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5588,7 +5588,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Grain.Live.N</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5609,7 +5609,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Total.N</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5630,7 +5630,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Stem.Live.N</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5651,7 +5651,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Stem.Live.N</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5693,7 +5693,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Maize.Structure.LeafTipsAppeared</XFieldName>
                 <YFieldName>Maize.Structure.MainStemNodeAppearanceRate.Value</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -5737,7 +5737,7 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>Solid</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>MaizeReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
                   <YFieldName>Soil.SoilWater.SW(1)</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
@@ -5800,7 +5800,7 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>Solid</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>MaizeReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
                   <YFieldName>Soil.SoilWater.SW(2)</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
@@ -5863,7 +5863,7 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>Solid</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>MaizeReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
                   <YFieldName>Soil.SoilWater.SW(3)</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
@@ -5926,7 +5926,7 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>Solid</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>MaizeReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
                   <YFieldName>Soil.SoilWater.SW(4)</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
@@ -5989,7 +5989,7 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>Solid</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>MaizeReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
                   <YFieldName>Soil.SoilWater.SW(5)</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
@@ -6052,7 +6052,7 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>Solid</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>MaizeReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
                   <YFieldName>Soil.SoilWater.SW(6)</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
@@ -6115,7 +6115,7 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>Solid</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>MaizeReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
                   <YFieldName>Soil.SoilWater.SW(7)</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
@@ -6178,7 +6178,7 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>Solid</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>MaizeReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
                   <YFieldName>Soil.SoilWater.SW(8)</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
@@ -6242,7 +6242,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.Transpiration</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -6263,7 +6263,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.WaterDemand</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -6305,7 +6305,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.Fw</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -6326,7 +6326,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.WaterDemand</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -6368,7 +6368,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Stem.MaximumNConc.Value</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -6389,7 +6389,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Stem.MinimumNConc.Value</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -6410,7 +6410,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Stem.Live.NConc</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -6460,7 +6460,7 @@ namespace Models
               <MarkerSize>Normal</MarkerSize>
               <Line>Solid</Line>
               <LineThickness>Normal</LineThickness>
-              <TableName>Report</TableName>
+              <TableName>MaizeReport</TableName>
               <XFieldName>Clock.Today</XFieldName>
               <YFieldName>Maize.AboveGroundLive.Wt</YFieldName>
               <ShowInLegend>true</ShowInLegend>
@@ -6525,7 +6525,7 @@ namespace Models
               <MarkerSize>Normal</MarkerSize>
               <Line>Solid</Line>
               <LineThickness>Normal</LineThickness>
-              <TableName>Report</TableName>
+              <TableName>MaizeReport</TableName>
               <XFieldName>Clock.Today</XFieldName>
               <YFieldName>Maize.AboveGroundLive.N</YFieldName>
               <ShowInLegend>true</ShowInLegend>
@@ -6588,7 +6588,7 @@ namespace Models
               <MarkerSize>Normal</MarkerSize>
               <Line>Solid</Line>
               <LineThickness>Normal</LineThickness>
-              <TableName>Report</TableName>
+              <TableName>MaizeReport</TableName>
               <XFieldName>Clock.Today</XFieldName>
               <YFieldName>ProfileWater</YFieldName>
               <ShowInLegend>true</ShowInLegend>
@@ -6651,7 +6651,7 @@ namespace Models
               <MarkerSize>Normal</MarkerSize>
               <Line>Solid</Line>
               <LineThickness>Normal</LineThickness>
-              <TableName>Report</TableName>
+              <TableName>MaizeReport</TableName>
               <XFieldName>Clock.Today</XFieldName>
               <YFieldName>Maize.Grain.Live.Wt</YFieldName>
               <ShowInLegend>true</ShowInLegend>
@@ -6716,7 +6716,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Soil.SoilWater.SW(1)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -6779,7 +6779,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Soil.SoilWater.SW(2)</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -6842,7 +6842,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Soil.SoilWater.SW(3)</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -6905,7 +6905,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Soil.SoilWater.SW(4)</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -6968,7 +6968,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Soil.SoilWater.SW(5)</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -7031,7 +7031,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Soil.SoilWater.SW(6)</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -7094,7 +7094,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Soil.SoilWater.SW(7)</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -7157,7 +7157,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Soil.SoilWater.SW(8)</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -7223,7 +7223,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Stem.Live.NConc</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -7286,7 +7286,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.Live.NConc</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -7349,7 +7349,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Grain.Live.NConc</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -7412,7 +7412,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Rachis.Live.NConc</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -7475,7 +7475,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Husk.Live.NConc</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -7538,7 +7538,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.Dead.NConc</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -7604,7 +7604,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.Live.N</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -7667,7 +7667,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Grain.Live.N</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -7730,7 +7730,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Stem.Live.N</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -7793,7 +7793,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Rachis.Live.N</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -7856,7 +7856,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Husk.Live.N</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -7922,7 +7922,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -7985,7 +7985,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Stem.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -8048,7 +8048,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Grain.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -8111,7 +8111,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Husk.Live.Wt</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -8175,7 +8175,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Rachis.Live.Wt</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -8241,7 +8241,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.Photosynthesis.RueAct</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -8283,7 +8283,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.Fw</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -8327,7 +8327,7 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>Solid</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>MaizeReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
                   <YFieldName>Maize.Arbitrator.DMSupply</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
@@ -8349,7 +8349,7 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>None</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>MaizeReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
                   <YFieldName>Maize.Arbitrator.DMDemand</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
@@ -8392,7 +8392,7 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>Solid</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>MaizeReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
                   <YFieldName>Maize.Arbitrator.NSupply</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
@@ -8414,7 +8414,7 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>None</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>MaizeReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
                   <YFieldName>Maize.Arbitrator.NDemand</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
@@ -8458,7 +8458,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Grain.GrowthRateGrainDevelopment.Value</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -8479,7 +8479,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Phenology.Stage</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -8521,7 +8521,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Root.Depth</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -8566,7 +8566,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.AppearedCohortNo</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -8629,7 +8629,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.ExpandedCohortNo</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -8692,7 +8692,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.SenescingCohortNo</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -8755,7 +8755,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.DeadCohortNo</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -8818,7 +8818,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.LAI</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -8881,7 +8881,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Leaf.CoverTotal</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -8944,7 +8944,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>None</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>ExtraVariables.Script.LeafExpandedPosition</XFieldName>
                 <YFieldName>ExtraVariables.Script.MostRecentlyExpandedLeafSize</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -8986,7 +8986,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>None</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>ExtraVariables.Script.LeafAppearedPosition</XFieldName>
                 <YFieldName>ExtraVariables.Script.MostRecentlyAppearedLeafMaxSize</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -9029,7 +9029,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Structure.Height</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -9074,7 +9074,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>MaizeReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Maize.Grain.NumberFunction.Value</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -9406,12 +9406,12 @@ Testing of APSIM Maize under New Zealand conditions was undertaken using the dat
           <Name>Lincoln2015</Name>
           <Weather>
             <Name>Weather</Name>
-            <FileName>lincoln.met</FileName>
+            <FileName>C:\P2Work\APSIMArbitrator\Maize\lincoln.met</FileName>
           </Weather>
           <Clock>
             <Name>clock</Name>
             <StartDate>2015-09-07T00:00:00</StartDate>
-            <EndDate>2015-02-15T00:00:00</EndDate>
+            <EndDate>2016-02-15T00:00:00</EndDate>
           </Clock>
           <Summary>
             <Name>summaryfile</Name>
@@ -9992,7 +9992,7 @@ namespace Models
 	   ]]></Code>
             </Manager>
             <Report>
-              <Name>Report</Name>
+              <Name>WheatReport</Name>
               <ExperimentFactorNames />
               <ExperimentFactorValues />
               <VariableNames>
@@ -10092,7 +10092,7 @@ namespace Models
               </EventNames>
             </Report>
             <Report>
-              <Name>HarvestReport</Name>
+              <Name>WheatHarvestReport</Name>
               <ExperimentFactorNames />
               <ExperimentFactorValues />
               <VariableNames>
@@ -10139,9 +10139,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.ExpandedCohortNo</YFieldName>
+                <YFieldName>Wheat.Leaf.ExpandedCohortNo</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10160,9 +10160,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.AppearedCohortNo</YFieldName>
+                <YFieldName>Wheat.Leaf.AppearedCohortNo</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10181,9 +10181,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.DeadCohortNo</YFieldName>
+                <YFieldName>Wheat.Leaf.DeadCohortNo</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10202,9 +10202,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.InitialisedCohortNo</YFieldName>
+                <YFieldName>Wheat.Leaf.InitialisedCohortNo</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10223,9 +10223,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Structure.MainStemFinalNodeNo</YFieldName>
+                <YFieldName>Wheat.Structure.MainStemFinalNodeNo</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10244,9 +10244,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Structure.LeafTipsAppeared</YFieldName>
+                <YFieldName>Wheat.Structure.LeafTipsAppeared</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10265,9 +10265,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Structure.MainStemPrimordiaNo</YFieldName>
+                <YFieldName>Wheat.Structure.MainStemPrimordiaNo</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10328,9 +10328,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(1)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(1)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10349,9 +10349,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(2)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(2)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10370,9 +10370,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(3)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(3)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10391,9 +10391,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(4)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(4)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10412,9 +10412,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(5)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(5)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10433,9 +10433,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(6)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(6)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10454,9 +10454,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(7)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(7)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10475,9 +10475,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(8)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(8)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10496,9 +10496,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(9)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(9)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10517,9 +10517,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(10)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(10)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10538,9 +10538,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(11)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(11)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10559,9 +10559,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(12)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(12)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10580,9 +10580,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(13)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(13)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10601,9 +10601,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(14)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(14)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10622,9 +10622,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(15)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(15)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10643,9 +10643,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(16)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(16)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10664,9 +10664,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(17)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(17)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10685,9 +10685,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(18)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(18)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10706,9 +10706,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(19)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(19)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10727,9 +10727,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(20)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(20)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10748,9 +10748,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(20)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(20)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10769,9 +10769,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortArea1:30(21)</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortArea1:30(21)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10811,9 +10811,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Arbitrator.DMSupply</YFieldName>
+                <YFieldName>Wheat.Arbitrator.DMSupply</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10832,9 +10832,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Arbitrator.DMDemand</YFieldName>
+                <YFieldName>Wheat.Arbitrator.DMDemand</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10853,9 +10853,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Arbitrator.DMSinkLimitation</YFieldName>
+                <YFieldName>Wheat.Arbitrator.DMSinkLimitation</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10874,9 +10874,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Arbitrator.DMNutrientLimitation</YFieldName>
+                <YFieldName>Wheat.Arbitrator.DMNutrientLimitation</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10916,9 +10916,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortParameters.GrowthDuration.Value</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortParameters.GrowthDuration.Value</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10937,9 +10937,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortParameters.LagDuration.Value</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortParameters.LagDuration.Value</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10958,9 +10958,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CohortParameters.SenescenceDuration.Value</YFieldName>
+                <YFieldName>Wheat.Leaf.CohortParameters.SenescenceDuration.Value</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -10979,9 +10979,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Structure.MainStemNodeAppearanceRate.Value</YFieldName>
+                <YFieldName>Wheat.Structure.MainStemNodeAppearanceRate.Value</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11021,9 +11021,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Structure.Height</YFieldName>
+                <YFieldName>Wheat.Structure.Height</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11063,9 +11063,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Stem.DMDemandFunction.PotentialDMAccumulation.Value</YFieldName>
+                <YFieldName>Wheat.Stem.DMDemandFunction.PotentialDMAccumulation.Value</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11084,9 +11084,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Stem.DMDemandFunction.HightLimitedDMAccumulation.Value</YFieldName>
+                <YFieldName>Wheat.Stem.DMDemandFunction.HightLimitedDMAccumulation.Value</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11126,7 +11126,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>ExtraVariables.Script.AccumPlantN</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -11147,7 +11147,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>ExtraVariables.Script.AccumMineralisation</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -11168,7 +11168,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>ExtraVariables.Script.AccumDenit</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -11189,7 +11189,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>ExtraVariables.Script.AccumFert</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -11210,7 +11210,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>ExtraVariables.Script.AccumLeach</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -11231,7 +11231,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>ExtraVariables.Script.DeltaSoilOMN</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -11252,7 +11252,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>ExtraVariables.Script.DeltaSurfaceOMN</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -11273,7 +11273,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>ExtraVariables.Script.DeltaSoilMineralN</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -11316,9 +11316,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Stem.Live.Wt</YFieldName>
+                <YFieldName>Wheat.Stem.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11337,9 +11337,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.Live.Wt</YFieldName>
+                <YFieldName>Wheat.Leaf.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11358,9 +11358,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Grain.Live.Wt</YFieldName>
+                <YFieldName>Wheat.Grain.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11379,9 +11379,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Total.Wt</YFieldName>
+                <YFieldName>Wheat.Total.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11400,9 +11400,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Root.Live.Wt</YFieldName>
+                <YFieldName>Wheat.Root.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11421,9 +11421,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Dot</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Husk.Live.Wt</YFieldName>
+                <YFieldName>Wheat.Husk.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11442,9 +11442,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>DashDot</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Rachis.Live.Wt</YFieldName>
+                <YFieldName>Wheat.Rachis.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11463,9 +11463,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Dash</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Tastle.Live.Wt</YFieldName>
+                <YFieldName>Wheat.Tastle.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11505,9 +11505,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.Live.N</YFieldName>
+                <YFieldName>Wheat.Leaf.Live.N</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11526,9 +11526,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Root.Live.N</YFieldName>
+                <YFieldName>Wheat.Root.Live.N</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11547,9 +11547,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Grain.Live.N</YFieldName>
+                <YFieldName>Wheat.Grain.Live.N</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11568,9 +11568,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Total.N</YFieldName>
+                <YFieldName>Wheat.Total.N</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11589,9 +11589,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Stem.Live.N</YFieldName>
+                <YFieldName>Wheat.Stem.Live.N</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11610,9 +11610,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Stem.Live.N</YFieldName>
+                <YFieldName>Wheat.Stem.Live.N</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11652,9 +11652,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
-                <XFieldName>Maize.Structure.LeafTipsAppeared</XFieldName>
-                <YFieldName>Maize.Structure.MainStemNodeAppearanceRate.Value</YFieldName>
+                <TableName>WheatReport</TableName>
+                <XFieldName>Wheat.Structure.LeafTipsAppeared</XFieldName>
+                <YFieldName>Wheat.Structure.MainStemNodeAppearanceRate.Value</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11696,7 +11696,7 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>Solid</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>WheatReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
                   <YFieldName>Soil.SoilWater.SW(1)</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
@@ -11759,7 +11759,7 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>Solid</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>WheatReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
                   <YFieldName>Soil.SoilWater.SW(2)</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
@@ -11822,7 +11822,7 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>Solid</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>WheatReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
                   <YFieldName>Soil.SoilWater.SW(3)</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
@@ -11885,7 +11885,7 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>Solid</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>WheatReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
                   <YFieldName>Soil.SoilWater.SW(4)</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
@@ -11948,7 +11948,7 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>Solid</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>WheatReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
                   <YFieldName>Soil.SoilWater.SW(5)</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
@@ -12011,7 +12011,7 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>Solid</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>WheatReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
                   <YFieldName>Soil.SoilWater.SW(6)</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
@@ -12074,7 +12074,7 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>Solid</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>WheatReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
                   <YFieldName>Soil.SoilWater.SW(7)</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
@@ -12137,7 +12137,7 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>Solid</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>WheatReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
                   <YFieldName>Soil.SoilWater.SW(8)</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
@@ -12201,9 +12201,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.Transpiration</YFieldName>
+                <YFieldName>Wheat.Leaf.Transpiration</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -12222,9 +12222,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.WaterDemand</YFieldName>
+                <YFieldName>Wheat.Leaf.WaterDemand</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -12264,9 +12264,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.Fw</YFieldName>
+                <YFieldName>Wheat.Leaf.Fw</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -12285,9 +12285,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.WaterDemand</YFieldName>
+                <YFieldName>Wheat.Leaf.WaterDemand</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -12327,9 +12327,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Stem.MaximumNConc.Value</YFieldName>
+                <YFieldName>Wheat.Stem.MaximumNConc.Value</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -12348,9 +12348,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Stem.MinimumNConc.Value</YFieldName>
+                <YFieldName>Wheat.Stem.MinimumNConc.Value</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -12369,9 +12369,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Stem.Live.NConc</YFieldName>
+                <YFieldName>Wheat.Stem.Live.NConc</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -12419,9 +12419,9 @@ namespace Models
               <MarkerSize>Normal</MarkerSize>
               <Line>Solid</Line>
               <LineThickness>Normal</LineThickness>
-              <TableName>Report</TableName>
+              <TableName>WheatReport</TableName>
               <XFieldName>Clock.Today</XFieldName>
-              <YFieldName>Maize.AboveGroundLive.Wt</YFieldName>
+              <YFieldName>Wheat.AboveGroundLive.Wt</YFieldName>
               <ShowInLegend>true</ShowInLegend>
               <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
               <Cumulative>false</Cumulative>
@@ -12443,7 +12443,7 @@ namespace Models
               <LineThickness>Normal</LineThickness>
               <TableName>observed</TableName>
               <XFieldName>Clock.Today</XFieldName>
-              <YFieldName>Maize.AboveGround.Wt</YFieldName>
+              <YFieldName>Wheat.AboveGround.Wt</YFieldName>
               <ShowInLegend>true</ShowInLegend>
               <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
               <Cumulative>false</Cumulative>
@@ -12484,9 +12484,9 @@ namespace Models
               <MarkerSize>Normal</MarkerSize>
               <Line>Solid</Line>
               <LineThickness>Normal</LineThickness>
-              <TableName>Report</TableName>
+              <TableName>WheatReport</TableName>
               <XFieldName>Clock.Today</XFieldName>
-              <YFieldName>Maize.AboveGroundLive.N</YFieldName>
+              <YFieldName>Wheat.AboveGroundLive.N</YFieldName>
               <ShowInLegend>true</ShowInLegend>
               <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
               <Cumulative>false</Cumulative>
@@ -12507,7 +12507,7 @@ namespace Models
               <LineThickness>Normal</LineThickness>
               <TableName>RainShelterNitrogen</TableName>
               <XFieldName>Clock.Today</XFieldName>
-              <YFieldName>Maize.AboveGroundLive.N</YFieldName>
+              <YFieldName>Wheat.AboveGroundLive.N</YFieldName>
               <ShowInLegend>true</ShowInLegend>
               <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
               <Cumulative>false</Cumulative>
@@ -12547,7 +12547,7 @@ namespace Models
               <MarkerSize>Normal</MarkerSize>
               <Line>Solid</Line>
               <LineThickness>Normal</LineThickness>
-              <TableName>Report</TableName>
+              <TableName>WheatReport</TableName>
               <XFieldName>Clock.Today</XFieldName>
               <YFieldName>ProfileWater</YFieldName>
               <ShowInLegend>true</ShowInLegend>
@@ -12610,9 +12610,9 @@ namespace Models
               <MarkerSize>Normal</MarkerSize>
               <Line>Solid</Line>
               <LineThickness>Normal</LineThickness>
-              <TableName>Report</TableName>
+              <TableName>WheatReport</TableName>
               <XFieldName>Clock.Today</XFieldName>
-              <YFieldName>Maize.Grain.Live.Wt</YFieldName>
+              <YFieldName>Wheat.Grain.Live.Wt</YFieldName>
               <ShowInLegend>true</ShowInLegend>
               <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
               <Cumulative>false</Cumulative>
@@ -12633,7 +12633,7 @@ namespace Models
               <LineThickness>Normal</LineThickness>
               <TableName>observed</TableName>
               <XFieldName>Clock.Today</XFieldName>
-              <YFieldName>Maize.Grain.Live.Wt</YFieldName>
+              <YFieldName>Wheat.Grain.Live.Wt</YFieldName>
               <ShowInLegend>true</ShowInLegend>
               <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
               <Cumulative>false</Cumulative>
@@ -12675,7 +12675,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Soil.SoilWater.SW(1)</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -12738,7 +12738,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Soil.SoilWater.SW(2)</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -12801,7 +12801,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Soil.SoilWater.SW(3)</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -12864,7 +12864,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Soil.SoilWater.SW(4)</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -12927,7 +12927,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Soil.SoilWater.SW(5)</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -12990,7 +12990,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Soil.SoilWater.SW(6)</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -13053,7 +13053,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Soil.SoilWater.SW(7)</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -13116,7 +13116,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Soil.SoilWater.SW(8)</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -13182,9 +13182,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Stem.Live.NConc</YFieldName>
+                <YFieldName>Wheat.Stem.Live.NConc</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -13245,9 +13245,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.Live.NConc</YFieldName>
+                <YFieldName>Wheat.Leaf.Live.NConc</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -13308,9 +13308,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Grain.Live.NConc</YFieldName>
+                <YFieldName>Wheat.Grain.Live.NConc</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -13371,9 +13371,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Rachis.Live.NConc</YFieldName>
+                <YFieldName>Wheat.Rachis.Live.NConc</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -13434,9 +13434,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Husk.Live.NConc</YFieldName>
+                <YFieldName>Wheat.Husk.Live.NConc</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -13497,9 +13497,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.Dead.NConc</YFieldName>
+                <YFieldName>Wheat.Leaf.Dead.NConc</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -13563,9 +13563,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.Live.N</YFieldName>
+                <YFieldName>Wheat.Leaf.Live.N</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -13586,7 +13586,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>RainShelterNitrogen</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.Live.N</YFieldName>
+                <YFieldName>Wheat.Leaf.Live.N</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -13626,9 +13626,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Grain.Live.N</YFieldName>
+                <YFieldName>Wheat.Grain.Live.N</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -13649,7 +13649,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>RainShelterNitrogen</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Grain.Live.N</YFieldName>
+                <YFieldName>Wheat.Grain.Live.N</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -13689,9 +13689,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Stem.Live.N</YFieldName>
+                <YFieldName>Wheat.Stem.Live.N</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -13712,7 +13712,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>RainShelterNitrogen</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Stem.Live.N</YFieldName>
+                <YFieldName>Wheat.Stem.Live.N</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -13752,9 +13752,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Rachis.Live.N</YFieldName>
+                <YFieldName>Wheat.Rachis.Live.N</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -13775,7 +13775,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>RainShelterNitrogen</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Rachis.Live.N</YFieldName>
+                <YFieldName>Wheat.Rachis.Live.N</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -13815,9 +13815,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Husk.Live.N</YFieldName>
+                <YFieldName>Wheat.Husk.Live.N</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -13838,7 +13838,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>RainShelterNitrogen</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Husk.Live.N</YFieldName>
+                <YFieldName>Wheat.Husk.Live.N</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -13881,9 +13881,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.Live.Wt</YFieldName>
+                <YFieldName>Wheat.Leaf.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -13944,9 +13944,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Stem.Live.Wt</YFieldName>
+                <YFieldName>Wheat.Stem.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14007,9 +14007,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Grain.Live.Wt</YFieldName>
+                <YFieldName>Wheat.Grain.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14030,7 +14030,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>observed</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Grain.Live.Wt</YFieldName>
+                <YFieldName>Wheat.Grain.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14070,9 +14070,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Husk.Live.Wt</YFieldName>
+                <YFieldName>Wheat.Husk.Live.Wt</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14093,7 +14093,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>RachisHusk_RainS</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Husk.Live.Wt</YFieldName>
+                <YFieldName>Wheat.Husk.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14134,9 +14134,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Rachis.Live.Wt</YFieldName>
+                <YFieldName>Wheat.Rachis.Live.Wt</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14157,7 +14157,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>RachisHusk_RainS</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Rachis.Live.Wt</YFieldName>
+                <YFieldName>Wheat.Rachis.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14200,9 +14200,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.Photosynthesis.RueAct</YFieldName>
+                <YFieldName>Wheat.Leaf.Photosynthesis.RueAct</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14242,9 +14242,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.Fw</YFieldName>
+                <YFieldName>Wheat.Leaf.Fw</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14286,9 +14286,9 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>Solid</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>WheatReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
-                  <YFieldName>Maize.Arbitrator.DMSupply</YFieldName>
+                  <YFieldName>Wheat.Arbitrator.DMSupply</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
                   <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                   <Cumulative>false</Cumulative>
@@ -14308,9 +14308,9 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>None</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>WheatReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
-                  <YFieldName>Maize.Arbitrator.DMDemand</YFieldName>
+                  <YFieldName>Wheat.Arbitrator.DMDemand</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
                   <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                   <Cumulative>false</Cumulative>
@@ -14351,9 +14351,9 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>Solid</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>WheatReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
-                  <YFieldName>Maize.Arbitrator.NSupply</YFieldName>
+                  <YFieldName>Wheat.Arbitrator.NSupply</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
                   <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                   <Cumulative>false</Cumulative>
@@ -14373,9 +14373,9 @@ namespace Models
                   <MarkerSize>Normal</MarkerSize>
                   <Line>None</Line>
                   <LineThickness>Normal</LineThickness>
-                  <TableName>Report</TableName>
+                  <TableName>WheatReport</TableName>
                   <XFieldName>Clock.Today</XFieldName>
-                  <YFieldName>Maize.Arbitrator.NDemand</YFieldName>
+                  <YFieldName>Wheat.Arbitrator.NDemand</YFieldName>
                   <ShowInLegend>true</ShowInLegend>
                   <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                   <Cumulative>false</Cumulative>
@@ -14417,9 +14417,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Grain.GrowthRateGrainDevelopment.Value</YFieldName>
+                <YFieldName>Wheat.Grain.GrowthRateGrainDevelopment.Value</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14438,9 +14438,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Phenology.Stage</YFieldName>
+                <YFieldName>Wheat.Phenology.Stage</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14480,9 +14480,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Root.Depth</YFieldName>
+                <YFieldName>Wheat.Root.Depth</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14525,9 +14525,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.AppearedCohortNo</YFieldName>
+                <YFieldName>Wheat.Leaf.AppearedCohortNo</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14588,9 +14588,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.ExpandedCohortNo</YFieldName>
+                <YFieldName>Wheat.Leaf.ExpandedCohortNo</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14651,9 +14651,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.SenescingCohortNo</YFieldName>
+                <YFieldName>Wheat.Leaf.SenescingCohortNo</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14674,7 +14674,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>StartSenes</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.DeadCohortNo</YFieldName>
+                <YFieldName>Wheat.Leaf.DeadCohortNo</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14714,9 +14714,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.DeadCohortNo</YFieldName>
+                <YFieldName>Wheat.Leaf.DeadCohortNo</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14737,7 +14737,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>EndSenes</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.DeadCohortNo</YFieldName>
+                <YFieldName>Wheat.Leaf.DeadCohortNo</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14777,9 +14777,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.LAI</YFieldName>
+                <YFieldName>Wheat.Leaf.LAI</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14800,7 +14800,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>observed</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.LAI</YFieldName>
+                <YFieldName>Wheat.Leaf.LAI</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14840,9 +14840,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Leaf.CoverTotal</YFieldName>
+                <YFieldName>Wheat.Leaf.CoverTotal</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -14903,7 +14903,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>None</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>ExtraVariables.Script.LeafExpandedPosition</XFieldName>
                 <YFieldName>ExtraVariables.Script.MostRecentlyExpandedLeafSize</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -14945,7 +14945,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>None</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>ExtraVariables.Script.LeafAppearedPosition</XFieldName>
                 <YFieldName>ExtraVariables.Script.MostRecentlyAppearedLeafMaxSize</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
@@ -14988,9 +14988,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Structure.Height</YFieldName>
+                <YFieldName>Wheat.Structure.Height</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -15033,9 +15033,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>Report</TableName>
+                <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Maize.Grain.NumberFunction.Value</YFieldName>
+                <YFieldName>Wheat.Grain.NumberFunction.Value</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -15084,54 +15084,6 @@ namespace Models
           </Folder>
         </Folder>
       </Experiment>
-      <Graph>
-        <Name>GrainWt</Name>
-        <Series>
-          <Name>Series1</Name>
-          <Regression>
-            <Name>Regression</Name>
-            <ForEachSeries>false</ForEachSeries>
-          </Regression>
-          <Type>Scatter</Type>
-          <XAxis>Bottom</XAxis>
-          <YAxis>Left</YAxis>
-          <ColourArgb>-16776961</ColourArgb>
-          <FactorIndexToVaryColours>0</FactorIndexToVaryColours>
-          <FactorIndexToVaryMarkers>-1</FactorIndexToVaryMarkers>
-          <FactorIndexToVaryLines>-1</FactorIndexToVaryLines>
-          <Marker>FilledCircle</Marker>
-          <MarkerSize>Normal</MarkerSize>
-          <Line>None</Line>
-          <LineThickness>Normal</LineThickness>
-          <TableName>PredictedObserved</TableName>
-          <XFieldName>Observed.GrainWt</XFieldName>
-          <YFieldName>Predicted.GrainWt</YFieldName>
-          <ShowInLegend>true</ShowInLegend>
-          <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
-          <Cumulative>false</Cumulative>
-          <CumulativeX>false</CumulativeX>
-        </Series>
-        <Caption />
-        <Axis>
-          <Type>Bottom</Type>
-          <Title />
-          <Inverted>false</Inverted>
-          <Minimum>NaN</Minimum>
-          <Maximum>NaN</Maximum>
-          <Interval>NaN</Interval>
-        </Axis>
-        <Axis>
-          <Type>Left</Type>
-          <Title />
-          <Inverted>false</Inverted>
-          <Minimum>NaN</Minimum>
-          <Maximum>NaN</Maximum>
-          <Interval>NaN</Interval>
-        </Axis>
-        <LegendPosition>BottomRight</LegendPosition>
-        <DisabledSeries />
-        <IncludeInDocumentation>false</IncludeInDocumentation>
-      </Graph>
     </Folder>
     <Memo>
       <Name>Combined Results</Name>
