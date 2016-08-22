@@ -2990,6 +2990,11 @@ The Ear composite biomass object includes the Live and dead pools of all organs 
       <TableName>SensibilityReport</TableName>
       <Exceedence>false</Exceedence>
     </Probability>
+    <Input>
+      <Name>Wheat2015RainShelter</Name>
+      <ErrorMessage>The number of headings and units doesn't match in file: C:\P2Work\APSIMArbitrator\Maize\Observations\WheatDataApsimX.txt</ErrorMessage>
+      <FileName>Observations\WheatDataApsimX.txt</FileName>
+    </Input>
     <AutoExport>false</AutoExport>
     <MaximumResultsPerPage>0</MaximumResultsPerPage>
   </DataStore>
@@ -9197,7 +9202,7 @@ Testing of APSIM Maize under New Zealand conditions was undertaken using the dat
           <Factor>
             <Name>Nit</Name>
             <Operations>
-              <Name>Nil</Name>
+              <Name>0</Name>
               <Operation>
                 <Date>2015-10-09</Date>
                 <Action>[Fertiliser].Apply(0, Fertiliser.Types.UreaN, 10);</Action>
@@ -9212,7 +9217,7 @@ Testing of APSIM Maize under New Zealand conditions was undertaken using the dat
               </Operation>
             </Operations>
             <Operations>
-              <Name>Low</Name>
+              <Name>50</Name>
               <Operation>
                 <Date>0001-01-01</Date>
                 <Action>[Fertiliser].Apply(0, Fertiliser.Types.UreaN, 10);</Action>
@@ -9227,7 +9232,7 @@ Testing of APSIM Maize under New Zealand conditions was undertaken using the dat
               </Operation>
             </Operations>
             <Operations>
-              <Name>Med</Name>
+              <Name>250</Name>
               <Operation>
                 <Date>2012-11-15T00:00:00</Date>
                 <Action>[Fertiliser].Apply(50, Fertiliser.Types.UreaN, 10);</Action>
@@ -10358,7 +10363,7 @@ namespace Models
               <MarkerSize>Normal</MarkerSize>
               <Line>None</Line>
               <LineThickness>Normal</LineThickness>
-              <TableName>observed</TableName>
+              <TableName>Wheat2015RainShelter</TableName>
               <XFieldName>Clock.Today</XFieldName>
               <YFieldName>Wheat.Grain.Live.Wt</YFieldName>
               <ShowInLegend>true</ShowInLegend>
@@ -11440,9 +11445,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>None</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>observed</TableName>
+                <TableName>Wheat2015RainShelter</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Leaf.Live.Wt</YFieldName>
+                <YFieldName>Wheat.Leaf.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11503,7 +11508,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>None</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>observed</TableName>
+                <TableName>Wheat2015RainShelter</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Stem.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
@@ -11570,7 +11575,7 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>None</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>observed</TableName>
+                <TableName>Wheat2015RainShelter</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Wheat.Grain.Live.Wt</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
