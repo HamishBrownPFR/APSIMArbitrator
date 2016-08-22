@@ -1,4 +1,5 @@
 Clock.Today Nit Irr Wheat.Dead.Live.Nconc Wheat.Dead.Live.Wt Wheat.Grain.Live.Nconc Wheat.Grain.Live.Wt Wheat.Leaf.Live.Nconc Wheat.Leaf.Live.Wt Wheat.Rachis.Live.Nconc Wheat.Rachis.Live.Wt Wheat.Stem.Live.Nconc Wheat.Stem.Live.Wt SimulationName
+() () () () () () () () () () () () () ()
 2015-10-29 0 Nil * 0 * 0 3.92 36.49625 * 0 2.04 11.7 Lincoln2015Nit0IrrNil
 2015-10-29 0 Full * 0 * 0 4.2575 49.71225 * 0 2.4775 16.13975 Lincoln2015Nit0IrrFull
 2015-10-29 50 Nil * 0 * 0 4.1475 28.53325 * 0 2.2775 9.4615 Lincoln2015Nit50IrrNil
