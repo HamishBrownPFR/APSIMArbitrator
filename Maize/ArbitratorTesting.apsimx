@@ -3071,6 +3071,11 @@ The Ear composite biomass object includes the Live and dead pools of all organs 
       <ObservedTableName>Wheat2015RainShelter</ObservedTableName>
       <FieldNameUsedForMatch>Clock.Today</FieldNameUsedForMatch>
     </PredictedObserved>
+    <Input>
+      <Name>Input</Name>
+      <ErrorMessage>Please select a file to use.</ErrorMessage>
+      <FileName>Observations\WheatLeafDataMeasured.txt</FileName>
+    </Input>
     <AutoExport>false</AutoExport>
     <MaximumResultsPerPage>0</MaximumResultsPerPage>
   </DataStore>
