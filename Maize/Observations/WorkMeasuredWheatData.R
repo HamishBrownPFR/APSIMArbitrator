@@ -78,10 +78,6 @@ df_PerTreat %>%
   geom_line() +
   facet_wrap(~Variable,ncol=3, scales = "free")
 
-
-
-
-
 # give * to NA for APSIM file  
 df <- df_PerTreat
 df[is.na(df)] <- "*"
