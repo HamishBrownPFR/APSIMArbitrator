@@ -3083,7 +3083,7 @@ The Ear composite biomass object includes the Live and dead pools of all organs 
       <Name>RainShelterWheatSW</Name>
       <FileName>Observations\DailyMeans.xlsx</FileName>
       <SheetNames>
-        <string>WheatSoilProfile2</string>
+        <string>WheatSoilProfile</string>
       </SheetNames>
     </ExcelInput>
     <AutoExport>false</AutoExport>
@@ -3634,6 +3634,7 @@ Testing of APSIM Maize under New Zealand conditions was undertaken using the dat
               <State>Canterbury</State>
               <Latitude>999999</Latitude>
               <Longitude>999999</Longitude>
+              <Area>0</Area>
               <DataSource>Profile descriptions provided by Trevor Webb and data for functional horizions based on SWAMP project results</DataSource>
             </Soil>
             <MicroClimate>
@@ -9476,14 +9477,14 @@ Testing of APSIM Maize under New Zealand conditions was undertaken using the dat
                 <SoilCrop>
                   <Name>WheatSoil</Name>
                   <LL>
-                    <double>0.1</double>
-                    <double>0.12</double>
-                    <double>0.1</double>
-                    <double>0.08</double>
-                    <double>0.06</double>
-                    <double>0.08</double>
-                    <double>0.1</double>
-                    <double>0.1</double>
+                    <double>0.2</double>
+                    <double>0.22</double>
+                    <double>0.2</double>
+                    <double>0.15</double>
+                    <double>0.15</double>
+                    <double>0.15</double>
+                    <double>0.15</double>
+                    <double>0.15</double>
                   </LL>
                   <KL>
                     <double>0.06</double>
@@ -9547,24 +9548,24 @@ Testing of APSIM Maize under New Zealand conditions was undertaken using the dat
                   <double>0.15</double>
                 </LL15>
                 <DUL>
+                  <double>0.4</double>
+                  <double>0.4</double>
+                  <double>0.36</double>
+                  <double>0.34</double>
+                  <double>0.34</double>
                   <double>0.3</double>
                   <double>0.3</double>
-                  <double>0.26</double>
-                  <double>0.24</double>
-                  <double>0.24</double>
-                  <double>0.21</double>
-                  <double>0.21</double>
-                  <double>0.21</double>
+                  <double>0.3</double>
                 </DUL>
                 <SAT>
-                  <double>0.37</double>
-                  <double>0.37</double>
-                  <double>0.32</double>
-                  <double>0.3</double>
-                  <double>0.3</double>
-                  <double>0.3</double>
-                  <double>0.3</double>
-                  <double>0.3</double>
+                  <double>0.47</double>
+                  <double>0.47</double>
+                  <double>0.4</double>
+                  <double>0.4</double>
+                  <double>0.4</double>
+                  <double>0.4</double>
+                  <double>0.4</double>
+                  <double>0.4</double>
                 </SAT>
               </Water>
               <SoilWater>
@@ -9747,12 +9748,12 @@ Testing of APSIM Maize under New Zealand conditions was undertaken using the dat
                   <double>0.53999999999999926</double>
                 </NH4>
                 <SW>
-                  <double>0.06</double>
-                  <double>0.25</double>
-                  <double>0.2</double>
-                  <double>0.2</double>
-                  <double>0.2</double>
-                  <double>0.2</double>
+                  <double>0.4</double>
+                  <double>0.3</double>
+                  <double>0.3</double>
+                  <double>0.3</double>
+                  <double>0.3</double>
+                  <double>0.3</double>
                 </SW>
                 <NO3Units>kgha</NO3Units>
                 <NH4Units>kgha</NH4Units>
@@ -9766,6 +9767,7 @@ Testing of APSIM Maize under New Zealand conditions was undertaken using the dat
               <State>Canterbury</State>
               <Latitude>999999</Latitude>
               <Longitude>999999</Longitude>
+              <Area>0</Area>
               <DataSource>Profile descriptions provided by Trevor Webb and data for functional horizions based on SWAMP project results</DataSource>
             </Soil>
             <Plant>
@@ -12908,7 +12910,7 @@ namespace Models
               <MarkerSize>Normal</MarkerSize>
               <Line>None</Line>
               <LineThickness>Normal</LineThickness>
-              <TableName>WheatSoilProfile2</TableName>
+              <TableName>WheatSoilProfile</TableName>
               <XFieldName>Clock.Today</XFieldName>
               <YFieldName>ProfileWater</YFieldName>
               <ShowInLegend>false</ShowInLegend>
