@@ -21,6 +21,7 @@ info$Block <- as.factor(info$Block)
 info$Nit <- as.factor(info$Nit)
 info$DM_kgHa <- info$DM_kgHa/10
 info$N_Perc <- info$N_Perc/100
+
 str(info)
 
 # check data
@@ -53,10 +54,10 @@ df_PerPlot <-  info %>%
   group_by(Clock.Today, Nit, Irr) 
 
 
-
 # averages per treat
 df_PerTreat <- df_PerPlot %>%
   summarise_each(funs(mean)) %>%
+  
   dplyr::select(-Plot, -Block) %>%
   mutate(Irr = ifelse(Irr == "Dryland", "Nil", "Full")) %>%
   mutate(SimulationName = paste0(baseSimName, "Nit", Nit, "Irr", Irr))
