@@ -90,6 +90,12 @@ Clock.Today	Irr	Nit	LightInterception	SimulationName
 2015-12-21	Full	0	0.44	Lincoln2015Nit0IrrFull
 2015-12-21	Full	50	0.57	Lincoln2015Nit50IrrFull
 2015-12-21	Full	250	0.83	Lincoln2015Nit250IrrFull
+2015-12-30	Nil	0	0.45	Lincoln2015Nit0IrrNil
+2015-12-30	Nil	50	0.51	Lincoln2015Nit50IrrNil
+2015-12-30	Nil	250	0.74	Lincoln2015Nit250IrrNil
+2015-12-30	Full	0	0.58	Lincoln2015Nit0IrrFull
+2015-12-30	Full	50	0.70	Lincoln2015Nit50IrrFull
+2015-12-30	Full	250	0.92	Lincoln2015Nit250IrrFull
 2016-01-06	Nil	0	0.41	Lincoln2015Nit0IrrNil
 2016-01-06	Nil	50	0.44	Lincoln2015Nit50IrrNil
 2016-01-06	Nil	250	0.67	Lincoln2015Nit250IrrNil
@@ -135,9 +141,3 @@ Clock.Today	Irr	Nit	LightInterception	SimulationName
 2016-02-09	Full	0	0.48	Lincoln2015Nit0IrrFull
 2016-02-09	Full	50	0.57	Lincoln2015Nit50IrrFull
 2016-02-09	Full	250	0.80	Lincoln2015Nit250IrrFull
-2016-12-30	Nil	0	0.45	Lincoln2015Nit0IrrNil
-2016-12-30	Nil	50	0.51	Lincoln2015Nit50IrrNil
-2016-12-30	Nil	250	0.74	Lincoln2015Nit250IrrNil
-2016-12-30	Full	0	0.58	Lincoln2015Nit0IrrFull
-2016-12-30	Full	50	0.70	Lincoln2015Nit50IrrFull
-2016-12-30	Full	250	0.92	Lincoln2015Nit250IrrFull
