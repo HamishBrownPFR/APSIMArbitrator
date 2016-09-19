@@ -2554,7 +2554,7 @@ The Ear composite biomass object includes the Live and dead pools of all organs 
     <Name>DataStore</Name>
     <ExcelInput>
       <Name>Observed</Name>
-      <FileName>C:\P2Work\APSIMArbitrator\Observations\Maize\obsDataMaize_DB.xlsx</FileName>
+      <FileName>Observations\Maize\obsDataMaize_DB.xlsx</FileName>
       <SheetNames>
         <string>HarvestData</string>
       </SheetNames>
@@ -2686,35 +2686,35 @@ The Ear composite biomass object includes the Live and dead pools of all organs 
     </PredictedObserved>
     <ExcelInput>
       <Name>ObservedTimeSeries</Name>
-      <FileName>C:\P2Work\APSIMArbitrator\Observations\Maize\obsDataMaize_DB.xlsx</FileName>
+      <FileName>Observations\Maize\obsDataMaize_DB.xlsx</FileName>
       <SheetNames>
         <string>TimeSeriesData</string>
       </SheetNames>
     </ExcelInput>
     <ExcelInput>
       <Name>NZObserved</Name>
-      <FileName>Observations\obsDataMaize_DB.xlsx</FileName>
+      <FileName>Observations\Maize\obsDataMaize_DB.xlsx</FileName>
       <SheetNames>
         <string>observed</string>
       </SheetNames>
     </ExcelInput>
     <ExcelInput>
       <Name>RainShelterN</Name>
-      <FileName>Observations\obsDataMaize_DB.xlsx</FileName>
+      <FileName>Observations\Maize\obsDataMaize_DB.xlsx</FileName>
       <SheetNames>
         <string>RainShelterNitrogen</string>
       </SheetNames>
     </ExcelInput>
     <ExcelInput>
       <Name>RainShelterSW</Name>
-      <FileName>Observations\SoilWater.xlsx</FileName>
+      <FileName>Observations\Maize\SoilWater.xlsx</FileName>
       <SheetNames>
         <string>SoilWater</string>
       </SheetNames>
     </ExcelInput>
     <ExcelInput>
       <Name>RainShelterCob</Name>
-      <FileName>Observations\obsDataMaize_DB.xlsx</FileName>
+      <FileName>Observations\Maize\obsDataMaize_DB.xlsx</FileName>
       <SheetNames>
         <string>RachisHusk_RainS</string>
       </SheetNames>
@@ -2725,28 +2725,28 @@ The Ear composite biomass object includes the Live and dead pools of all organs 
     </TimeSeriesStats>
     <ExcelInput>
       <Name>PhenologySimple</Name>
-      <FileName>C:\P2Work\APSIMArbitrator\Observations\Maize\obsDataMaize_DB.xlsx</FileName>
+      <FileName>Observations\Maize\obsDataMaize_DB.xlsx</FileName>
       <SheetNames>
         <string>PhenologySimple</string>
       </SheetNames>
     </ExcelInput>
     <ExcelInput>
       <Name>RainShelterSen</Name>
-      <FileName>Observations\LeafSenesCount.xlsx</FileName>
+      <FileName>Observations\Maize\LeafSenesCount.xlsx</FileName>
       <SheetNames>
         <string>EndSenes</string>
       </SheetNames>
     </ExcelInput>
     <ExcelInput>
       <Name>RainShelterSenStart</Name>
-      <FileName>Observations\LeafSenesCount.xlsx</FileName>
+      <FileName>Observations\Maize\LeafSenesCount.xlsx</FileName>
       <SheetNames>
         <string>StartSenes</string>
       </SheetNames>
     </ExcelInput>
     <ExcelInput>
       <Name>RainShelterLeafSize</Name>
-      <FileName>Observations\IndLeafData_MaizeRainshelter.xlsx</FileName>
+      <FileName>Observations\Maize\IndLeafData_MaizeRainshelter.xlsx</FileName>
       <SheetNames>
         <string>MaxLeafSize</string>
       </SheetNames>
@@ -2759,7 +2759,7 @@ The Ear composite biomass object includes the Live and dead pools of all organs 
     <Input>
       <Name>Wheat2015RainShelter</Name>
       <ErrorMessage>The specified file does not exist.</ErrorMessage>
-      <FileName>C:\P2Work\APSIMArbitrator\Observations\Wheat\WheatDataApsimX.txt</FileName>
+      <FileName>Observations\Wheat\WheatDataApsimX.txt</FileName>
     </Input>
     <PredictedObserved>
       <Name>PredictedObserved1</Name>
@@ -2833,24 +2833,24 @@ The Ear composite biomass object includes the Live and dead pools of all organs 
     <Input>
       <Name>WheatLeafData</Name>
       <ErrorMessage>The specified file does not exist.</ErrorMessage>
-      <FileName>C:\P2Work\APSIMArbitrator\Observations\Wheat\WheatLeafDataMeasured.txt</FileName>
+      <FileName>Observations\Wheat\WheatLeafDataMeasured.txt</FileName>
     </Input>
     <ExcelInput>
       <Name>RainShelterWheatSW</Name>
-      <FileName>Observations\DailyMeans.xlsx</FileName>
+      <FileName>Observations\Wheat\DailyMeans.xlsx</FileName>
       <SheetNames>
-        <string>WheatSoilProfile</string>
+        <string>Sheet1</string>
       </SheetNames>
     </ExcelInput>
     <Input>
       <Name>WheatLAI</Name>
-      <ErrorMessage>Please select a file to use.</ErrorMessage>
-      <FileName>C:\P2Work\APSIMArbitrator\Observations\Wheat\LAI.txt</FileName>
+      <ErrorMessage>The specified file does not exist.</ErrorMessage>
+      <FileName>Observations\Wheat\LAI.txt</FileName>
     </Input>
     <Input>
       <Name>WheatIntercept</Name>
-      <ErrorMessage>Please select a file to use.</ErrorMessage>
-      <FileName>C:\P2Work\APSIMArbitrator\Observations\Wheat\LightInterception.txt</FileName>
+      <ErrorMessage>The specified file does not exist.</ErrorMessage>
+      <FileName>Observations\Wheat\LightInterception.txt</FileName>
     </Input>
     <AutoExport>false</AutoExport>
     <MaximumResultsPerPage>0</MaximumResultsPerPage>
@@ -3088,7 +3088,7 @@ Testing of APSIM Maize under New Zealand conditions was undertaken using the dat
           <Name>Lincoln2012</Name>
           <Weather>
             <Name>Weather</Name>
-            <FileName>C:\P2Work\APSIMArbitrator\Observations\lincoln.met</FileName>
+            <FileName>Observations\lincoln.met</FileName>
             <ExcelWorkSheetName />
           </Weather>
           <Clock>
@@ -9222,7 +9222,7 @@ Testing of APSIM Maize under New Zealand conditions was undertaken using the dat
           <Name>Lincoln2015</Name>
           <Weather>
             <Name>Weather</Name>
-            <FileName>C:\P2Work\APSIMArbitrator\Observations\lincoln.met</FileName>
+            <FileName>Observations\lincoln.met</FileName>
             <ExcelWorkSheetName />
           </Weather>
           <Clock>
@@ -11324,7 +11324,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>Wheat2015RainShelter</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Wheat.Stem.Live.Wt</YFieldName>
+                <YFieldName>Stem_DM</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11391,7 +11391,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>Wheat2015RainShelter</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Wheat.Grain.Live.Wt</YFieldName>
+                <YFieldName>Grain_DM</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11458,7 +11458,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>Wheat2015RainShelter</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Wheat.Rachis.Live.Wt</YFieldName>
+                <YFieldName>Rachis_DM</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
