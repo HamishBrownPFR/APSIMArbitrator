@@ -2540,9 +2540,10 @@ The Ear composite biomass object includes the Live and dead pools of all organs 
             <Command>[Phenology].PpSensitivity.Value = 0</Command>
             <Command>[Phenology].GrainDevelopment.Target.Value = 300</Command>
             <Command>[Structure].MainStemNodeAppearanceRate.BasePhyllochron.Value = 80</Command>
-            <Command>[Leaf].CohortParameters.LagDuration.VegetativeGrowth.LagDuration.Multiplier.Value = 6</Command>
+            <Command>[Leaf].CohortParameters.LagDuration.VegetativeGrowth.LagDuration.Multiplier.Value = 3</Command>
             <Command>[Grain].MaximumPotentialGrainSize.Value = 0.08</Command>
             <Command>[Leaf].CohortParameters.MaxArea.AreaLargestLeaves.Value = 1200</Command>
+            <Command>[Grain].NumberFunction.ValueToHold.GrainsPerGramOfStem.Value = 50</Command>
           </Cultivar>
         </CultivarFolder>
       </CultivarFolder>
@@ -9783,18 +9784,27 @@ namespace Models
                 <string>[MicroClimate].peta</string>
                 <string>[MicroClimate].petr</string>
                 <string>[Wheat].Grain.Live.Wt</string>
+                <string>[Wheat].Grain.Live.Wt*10 as Grain_kgha</string>
                 <string>[Wheat].Stem.Live.Wt</string>
+                <string>[Wheat].Stem.Live.Wt*10 as Stem_kgha</string>
                 <string>[Wheat].Ear.Wt</string>
                 <string>[Wheat].Leaf.Live.Wt</string>
+                <string>[Wheat].Leaf.Live.Wt*10 as Leaf_kgha </string>
                 <string>[Wheat].Root.Live.Wt</string>
                 <string>[Wheat].Husk.Live.Wt</string>
                 <string>[Wheat].Spike.Live.Wt</string>
+                <string>[Wheat].Spike.Live.Wt*10 as Spike_kgha</string>
                 <string>[Wheat].Tastle.Live.Wt</string>
                 <string>[Wheat].EarLive.N</string>
                 <string>[Wheat].Grain.Live.N</string>
                 <string>[Wheat].Stem.Live.N</string>
                 <string>[Wheat].Leaf.Live.N</string>
                 <string>[Wheat].Root.Live.N</string>
+                <string>[Wheat].EarLive.N</string>
+                <string>[Wheat].Grain.Live.N*10 as GrainN_kg </string>
+                <string>[Wheat].Stem.Live.N*10 as StemN_kg</string>
+                <string>[Wheat].Leaf.Live.N*10 as LeafN_kg</string>
+                <string>[Wheat].Root.Live.N*10 as RootN_kg </string>
                 <string>[Wheat].Root.WaterSupply</string>
                 <string>[Wheat].Root.WaterUptake</string>
                 <string>[Wheat].Leaf.Transpiration</string>
@@ -10187,8 +10197,8 @@ namespace Models
                   <double>300</double>
                 </Thickness>
                 <NO3>
-                  <double>7.92</double>
-                  <double>6.73</double>
+                  <double>7.9</double>
+                  <double>6.7</double>
                   <double>0.3</double>
                   <double>1.31</double>
                   <double>2.6</double>
@@ -11049,7 +11059,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>Wheat2015RainShelter</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Wheat.Stem.Live.Nconc</YFieldName>
+                <YFieldName>Stem_N%</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11112,7 +11122,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>Wheat2015RainShelter</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Wheat.Leaf.Live.Nconc</YFieldName>
+                <YFieldName>Leaf_N%</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11175,7 +11185,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>Wheat2015RainShelter</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Wheat.Grain.Live.Nconc</YFieldName>
+                <YFieldName>Grain_N%</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11283,7 +11293,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Wheat.Leaf.Live.N</YFieldName>
+                <YFieldName>LeafN_kg</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11302,9 +11312,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>None</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>RainShelterNitrogen</TableName>
+                <TableName>Wheat2015RainShelter</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Wheat.Leaf.Live.N</YFieldName>
+                <YFieldName>Leaf_Nup</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11346,7 +11356,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Wheat.Grain.Live.N</YFieldName>
+                <YFieldName>GrainN_kg</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11365,9 +11375,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>None</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>RainShelterNitrogen</TableName>
+                <TableName>Wheat2015RainShelter</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Wheat.Grain.Live.N</YFieldName>
+                <YFieldName>Grain_Nup</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11409,7 +11419,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Wheat.Stem.Live.N</YFieldName>
+                <YFieldName>StemN_kg</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11428,9 +11438,9 @@ namespace Models
                 <MarkerSize>Normal</MarkerSize>
                 <Line>None</Line>
                 <LineThickness>Normal</LineThickness>
-                <TableName>RainShelterNitrogen</TableName>
+                <TableName>Wheat2015RainShelter</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Wheat.Stem.Live.N</YFieldName>
+                <YFieldName>Stem_Nup</YFieldName>
                 <ShowInLegend>false</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11601,7 +11611,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Wheat.Leaf.Live.Wt</YFieldName>
+                <YFieldName>Leaf_kgha</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11664,7 +11674,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Wheat.Stem.Live.Wt</YFieldName>
+                <YFieldName>Stem_kgha</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11731,7 +11741,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Wheat.Grain.Live.Wt</YFieldName>
+                <YFieldName>Grain_kgha</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -11798,7 +11808,7 @@ namespace Models
                 <LineThickness>Normal</LineThickness>
                 <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
-                <YFieldName>Wheat.Spike.Live.Wt</YFieldName>
+                <YFieldName>Spike_kgha</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -13118,198 +13128,6 @@ namespace Models
 Simulation results for the combined datasets from the various countries are shown in the following graphs.  The model is able to adequately capture the influence of growing conditions (soil, climate) and management (population, Nitrogen, irrigation, sowing date).
 ]]></MemoText>
     </Memo>
-    <Graph>
-      <Name>GrainWt</Name>
-      <Series>
-        <Name>Series1</Name>
-        <Regression>
-          <Name>Regression</Name>
-          <ForEachSeries>false</ForEachSeries>
-        </Regression>
-        <Type>Scatter</Type>
-        <XAxis>Bottom</XAxis>
-        <YAxis>Left</YAxis>
-        <ColourArgb>-16776961</ColourArgb>
-        <FactorIndexToVaryColours>-1</FactorIndexToVaryColours>
-        <FactorIndexToVaryMarkers>-1</FactorIndexToVaryMarkers>
-        <FactorIndexToVaryLines>-1</FactorIndexToVaryLines>
-        <Marker>FilledCircle</Marker>
-        <MarkerSize>Normal</MarkerSize>
-        <Line>None</Line>
-        <LineThickness>Normal</LineThickness>
-        <TableName>PredictedObserved</TableName>
-        <XFieldName>Observed.GrainWt</XFieldName>
-        <YFieldName>Predicted.GrainWt</YFieldName>
-        <ShowInLegend>true</ShowInLegend>
-        <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
-        <Cumulative>false</Cumulative>
-        <CumulativeX>false</CumulativeX>
-      </Series>
-      <Caption />
-      <Axis>
-        <Type>Bottom</Type>
-        <Title />
-        <Inverted>false</Inverted>
-        <Minimum>NaN</Minimum>
-        <Maximum>NaN</Maximum>
-        <Interval>NaN</Interval>
-      </Axis>
-      <Axis>
-        <Type>Left</Type>
-        <Title />
-        <Inverted>false</Inverted>
-        <Minimum>NaN</Minimum>
-        <Maximum>NaN</Maximum>
-        <Interval>NaN</Interval>
-      </Axis>
-      <LegendPosition>BottomRight</LegendPosition>
-      <DisabledSeries />
-      <IncludeInDocumentation>true</IncludeInDocumentation>
-    </Graph>
-    <Graph>
-      <Name>Biomass</Name>
-      <Series>
-        <Name>Series1</Name>
-        <Regression>
-          <Name>Regression</Name>
-          <ForEachSeries>false</ForEachSeries>
-        </Regression>
-        <Type>Scatter</Type>
-        <XAxis>Bottom</XAxis>
-        <YAxis>Left</YAxis>
-        <ColourArgb>-16776961</ColourArgb>
-        <FactorIndexToVaryColours>-1</FactorIndexToVaryColours>
-        <FactorIndexToVaryMarkers>-1</FactorIndexToVaryMarkers>
-        <FactorIndexToVaryLines>-1</FactorIndexToVaryLines>
-        <Marker>FilledCircle</Marker>
-        <MarkerSize>Normal</MarkerSize>
-        <Line>None</Line>
-        <LineThickness>Normal</LineThickness>
-        <TableName>PredictedObserved</TableName>
-        <XFieldName>Observed.Biomass</XFieldName>
-        <YFieldName>Predicted.Biomass</YFieldName>
-        <ShowInLegend>true</ShowInLegend>
-        <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
-        <Cumulative>false</Cumulative>
-        <CumulativeX>false</CumulativeX>
-      </Series>
-      <Caption />
-      <Axis>
-        <Type>Bottom</Type>
-        <Title />
-        <Inverted>false</Inverted>
-        <Minimum>NaN</Minimum>
-        <Maximum>NaN</Maximum>
-        <Interval>NaN</Interval>
-      </Axis>
-      <Axis>
-        <Type>Left</Type>
-        <Title />
-        <Inverted>false</Inverted>
-        <Minimum>NaN</Minimum>
-        <Maximum>NaN</Maximum>
-        <Interval>NaN</Interval>
-      </Axis>
-      <LegendPosition>BottomRight</LegendPosition>
-      <DisabledSeries />
-      <IncludeInDocumentation>true</IncludeInDocumentation>
-    </Graph>
-    <Graph>
-      <Name>Maximum LAI</Name>
-      <Series>
-        <Name>Series1</Name>
-        <Regression>
-          <Name>Regression</Name>
-          <ForEachSeries>false</ForEachSeries>
-        </Regression>
-        <Type>Scatter</Type>
-        <XAxis>Bottom</XAxis>
-        <YAxis>Left</YAxis>
-        <ColourArgb>-16776961</ColourArgb>
-        <FactorIndexToVaryColours>-1</FactorIndexToVaryColours>
-        <FactorIndexToVaryMarkers>-1</FactorIndexToVaryMarkers>
-        <FactorIndexToVaryLines>-1</FactorIndexToVaryLines>
-        <Marker>FilledCircle</Marker>
-        <MarkerSize>Normal</MarkerSize>
-        <Line>None</Line>
-        <LineThickness>Normal</LineThickness>
-        <TableName>PredictedObserved</TableName>
-        <XFieldName>Observed.LAImax</XFieldName>
-        <YFieldName>Predicted.LAImax</YFieldName>
-        <ShowInLegend>true</ShowInLegend>
-        <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
-        <Cumulative>false</Cumulative>
-        <CumulativeX>false</CumulativeX>
-      </Series>
-      <Caption />
-      <Axis>
-        <Type>Bottom</Type>
-        <Title />
-        <Inverted>false</Inverted>
-        <Minimum>NaN</Minimum>
-        <Maximum>NaN</Maximum>
-        <Interval>NaN</Interval>
-      </Axis>
-      <Axis>
-        <Type>Left</Type>
-        <Title />
-        <Inverted>false</Inverted>
-        <Minimum>NaN</Minimum>
-        <Maximum>NaN</Maximum>
-        <Interval>NaN</Interval>
-      </Axis>
-      <LegendPosition>BottomRight</LegendPosition>
-      <DisabledSeries />
-      <IncludeInDocumentation>true</IncludeInDocumentation>
-    </Graph>
-    <Graph>
-      <Name>Grain Number</Name>
-      <Series>
-        <Name>Series1</Name>
-        <Regression>
-          <Name>Regression</Name>
-          <ForEachSeries>false</ForEachSeries>
-        </Regression>
-        <Type>Scatter</Type>
-        <XAxis>Bottom</XAxis>
-        <YAxis>Left</YAxis>
-        <ColourArgb>-16776961</ColourArgb>
-        <FactorIndexToVaryColours>-1</FactorIndexToVaryColours>
-        <FactorIndexToVaryMarkers>-1</FactorIndexToVaryMarkers>
-        <FactorIndexToVaryLines>-1</FactorIndexToVaryLines>
-        <Marker>FilledCircle</Marker>
-        <MarkerSize>Normal</MarkerSize>
-        <Line>None</Line>
-        <LineThickness>Normal</LineThickness>
-        <TableName>PredictedObserved</TableName>
-        <XFieldName>Observed.GPSM</XFieldName>
-        <YFieldName>Predicted.GPSM</YFieldName>
-        <ShowInLegend>true</ShowInLegend>
-        <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
-        <Cumulative>false</Cumulative>
-        <CumulativeX>false</CumulativeX>
-      </Series>
-      <Caption />
-      <Axis>
-        <Type>Bottom</Type>
-        <Title />
-        <Inverted>false</Inverted>
-        <Minimum>NaN</Minimum>
-        <Maximum>NaN</Maximum>
-        <Interval>NaN</Interval>
-      </Axis>
-      <Axis>
-        <Type>Left</Type>
-        <Title />
-        <Inverted>false</Inverted>
-        <Minimum>NaN</Minimum>
-        <Maximum>NaN</Maximum>
-        <Interval>NaN</Interval>
-      </Axis>
-      <LegendPosition>BottomRight</LegendPosition>
-      <DisabledSeries />
-      <IncludeInDocumentation>true</IncludeInDocumentation>
-    </Graph>
   </Folder>
   <ExplorerWidth>467</ExplorerWidth>
 </Simulations>
