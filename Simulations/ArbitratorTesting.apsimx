@@ -9349,16 +9349,16 @@ Testing of APSIM Maize under New Zealand conditions was undertaken using the dat
                 <SoilCrop>
                   <Name>WheatSoil</Name>
                   <LL>
-                    <double>0.11</double>
-                    <double>0.11</double>
-                    <double>0.11</double>
-                    <double>0.11</double>
-                    <double>0.11</double>
-                    <double>0.11</double>
-                    <double>0.11</double>
-                    <double>0.11</double>
-                    <double>0.11</double>
-                    <double>0.11</double>
+                    <double>0.2</double>
+                    <double>0.2</double>
+                    <double>0.2</double>
+                    <double>0.2</double>
+                    <double>0.2</double>
+                    <double>0.2</double>
+                    <double>0.2</double>
+                    <double>0.2</double>
+                    <double>0.2</double>
+                    <double>0.2</double>
                   </LL>
                   <KL>
                     <double>0.06</double>
