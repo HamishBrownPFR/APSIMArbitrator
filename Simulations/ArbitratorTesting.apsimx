@@ -2542,8 +2542,9 @@ The Ear composite biomass object includes the Live and dead pools of all organs 
             <Command>[Structure].MainStemNodeAppearanceRate.BasePhyllochron.Value = 80</Command>
             <Command>[Leaf].CohortParameters.LagDuration.VegetativeGrowth.LagDuration.Multiplier.Value = 3</Command>
             <Command>[Grain].MaximumPotentialGrainSize.Value = 0.08</Command>
-            <Command>[Leaf].CohortParameters.MaxArea.AreaLargestLeaves.Value = 1200</Command>
+            <Command>[Leaf].CohortParameters.MaxArea.AreaLargestLeaves.Value = 1600</Command>
             <Command>[Grain].NumberFunction.ValueToHold.GrainsPerGramOfStem.Value = 50</Command>
+            <Command>[Grain].MaximumNConc.Value = 0.02</Command>
           </Cultivar>
         </CultivarFolder>
       </CultivarFolder>
@@ -9870,6 +9871,9 @@ namespace Models
                 <string>[Wheat].Stem.Live.StructuralWt</string>
                 <string>[Wheat].Grain.GrowthRateGrainDevelopment.Value</string>
                 <string>[NitFactors].Script.NitFactor</string>
+                <string>[Wheat].WaterSupplyDemandRatio</string>
+                <string>[Wheat].Leaf.Fw</string>
+                <string>[Wheat].Leaf.Fn</string>
               </VariableNames>
               <EventNames>
                 <string>[Clock].DoReport</string>
@@ -11133,7 +11137,7 @@ namespace Models
                 <Title>N concentration (fractional)</Title>
                 <Inverted>false</Inverted>
                 <Minimum>0</Minimum>
-                <Maximum>0.06</Maximum>
+                <Maximum>0.1</Maximum>
                 <Interval>NaN</Interval>
               </Axis>
               <Axis>
@@ -12456,7 +12460,7 @@ namespace Models
                 <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Wheat.Leaf.DeadCohortNo</YFieldName>
-                <ShowInLegend>false</ShowInLegend>
+                <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
                 <CumulativeX>false</CumulativeX>
@@ -13118,6 +13122,132 @@ namespace Models
             <DisabledSeries />
             <IncludeInDocumentation>true</IncludeInDocumentation>
           </Graph>
+          <Folder>
+            <Name>Stress</Name>
+            <Graph>
+              <Name>Fn</Name>
+              <Series>
+                <Name>Series</Name>
+                <Type>Scatter</Type>
+                <XAxis>Bottom</XAxis>
+                <YAxis>Left</YAxis>
+                <ColourArgb>0</ColourArgb>
+                <FactorIndexToVaryColours>0</FactorIndexToVaryColours>
+                <FactorIndexToVaryMarkers>-1</FactorIndexToVaryMarkers>
+                <FactorIndexToVaryLines>-1</FactorIndexToVaryLines>
+                <Marker>None</Marker>
+                <MarkerSize>Normal</MarkerSize>
+                <Line>Solid</Line>
+                <LineThickness>Normal</LineThickness>
+                <TableName>WheatReport</TableName>
+                <XFieldName>Clock.Today</XFieldName>
+                <YFieldName>Wheat.Leaf.Fn</YFieldName>
+                <ShowInLegend>false</ShowInLegend>
+                <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
+                <Cumulative>false</Cumulative>
+                <CumulativeX>false</CumulativeX>
+              </Series>
+              <Axis>
+                <Type>Bottom</Type>
+                <Inverted>false</Inverted>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <Interval>NaN</Interval>
+              </Axis>
+              <Axis>
+                <Type>Left</Type>
+                <Inverted>false</Inverted>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <Interval>NaN</Interval>
+              </Axis>
+              <LegendPosition>TopLeft</LegendPosition>
+              <DisabledSeries />
+              <IncludeInDocumentation>false</IncludeInDocumentation>
+            </Graph>
+            <Graph>
+              <Name>Fw</Name>
+              <Series>
+                <Name>Series</Name>
+                <Type>Scatter</Type>
+                <XAxis>Bottom</XAxis>
+                <YAxis>Left</YAxis>
+                <ColourArgb>0</ColourArgb>
+                <FactorIndexToVaryColours>1</FactorIndexToVaryColours>
+                <FactorIndexToVaryMarkers>-1</FactorIndexToVaryMarkers>
+                <FactorIndexToVaryLines>-1</FactorIndexToVaryLines>
+                <Marker>None</Marker>
+                <MarkerSize>Normal</MarkerSize>
+                <Line>Solid</Line>
+                <LineThickness>Normal</LineThickness>
+                <TableName>WheatReport</TableName>
+                <XFieldName>Clock.Today</XFieldName>
+                <YFieldName>Wheat.Leaf.Fw</YFieldName>
+                <ShowInLegend>false</ShowInLegend>
+                <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
+                <Cumulative>false</Cumulative>
+                <CumulativeX>false</CumulativeX>
+              </Series>
+              <Axis>
+                <Type>Bottom</Type>
+                <Inverted>false</Inverted>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <Interval>NaN</Interval>
+              </Axis>
+              <Axis>
+                <Type>Left</Type>
+                <Inverted>false</Inverted>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <Interval>NaN</Interval>
+              </Axis>
+              <LegendPosition>TopLeft</LegendPosition>
+              <DisabledSeries />
+              <IncludeInDocumentation>false</IncludeInDocumentation>
+            </Graph>
+            <Graph>
+              <Name>WaterDemand</Name>
+              <Series>
+                <Name>Series</Name>
+                <Type>Scatter</Type>
+                <XAxis>Bottom</XAxis>
+                <YAxis>Left</YAxis>
+                <ColourArgb>0</ColourArgb>
+                <FactorIndexToVaryColours>1</FactorIndexToVaryColours>
+                <FactorIndexToVaryMarkers>-1</FactorIndexToVaryMarkers>
+                <FactorIndexToVaryLines>-1</FactorIndexToVaryLines>
+                <Marker>None</Marker>
+                <MarkerSize>Normal</MarkerSize>
+                <Line>Solid</Line>
+                <LineThickness>Normal</LineThickness>
+                <TableName>WheatReport</TableName>
+                <XFieldName>Clock.Today</XFieldName>
+                <YFieldName>Wheat.WaterSupplyDemandRatio</YFieldName>
+                <ShowInLegend>false</ShowInLegend>
+                <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
+                <Cumulative>false</Cumulative>
+                <CumulativeX>false</CumulativeX>
+              </Series>
+              <Axis>
+                <Type>Bottom</Type>
+                <Inverted>false</Inverted>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <Interval>NaN</Interval>
+              </Axis>
+              <Axis>
+                <Type>Left</Type>
+                <Inverted>false</Inverted>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <Interval>NaN</Interval>
+              </Axis>
+              <LegendPosition>TopLeft</LegendPosition>
+              <DisabledSeries />
+              <IncludeInDocumentation>false</IncludeInDocumentation>
+            </Graph>
+          </Folder>
         </Folder>
       </Experiment>
     </Folder>
@@ -13129,5 +13259,5 @@ Simulation results for the combined datasets from the various countries are show
 ]]></MemoText>
     </Memo>
   </Folder>
-  <ExplorerWidth>467</ExplorerWidth>
+  <ExplorerWidth>461</ExplorerWidth>
 </Simulations>
