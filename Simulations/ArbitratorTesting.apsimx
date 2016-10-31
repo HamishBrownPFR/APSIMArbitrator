@@ -1910,11 +1910,9 @@ A function is used to provide maturity date as days after sowing(DAS).]]></MemoT
               <X>
                 <double>0</double>
                 <double>1</double>
-                <double>1.5</double>
               </X>
               <Y>
                 <double>0</double>
-                <double>1</double>
                 <double>1</double>
               </Y>
             </XYPairs>
@@ -1927,11 +1925,9 @@ A function is used to provide maturity date as days after sowing(DAS).]]></MemoT
               <X>
                 <double>0</double>
                 <double>1</double>
-                <double>1</double>
               </X>
               <Y>
                 <double>0</double>
-                <double>1</double>
                 <double>1</double>
               </Y>
             </XYPairs>
@@ -8967,6 +8963,7 @@ Testing of APSIM Maize under New Zealand conditions was undertaken using the dat
               <Specifications>
                 <string>[StateFactors].Script.NitFactor = 0</string>
                 <string>[Water]</string>
+                <string>[Fert]</string>
               </Specifications>
             </Factor>
             <Factor>
@@ -8992,6 +8989,7 @@ Testing of APSIM Maize under New Zealand conditions was undertaken using the dat
               </Operations>
               <Specifications>
                 <string>[StateFactors].Script.NitFactor = 50</string>
+                <string>[Fert]</string>
               </Specifications>
             </Factor>
             <Factor>
@@ -9013,10 +9011,10 @@ Testing of APSIM Maize under New Zealand conditions was undertaken using the dat
               </Operations>
               <Specifications>
                 <string>[StateFactors].Script.NitFactor = 250</string>
+                <string>[Fert]</string>
               </Specifications>
             </Factor>
             <Specifications>
-              <string>[Fert]</string>
               <string>[StateFactors]</string>
             </Specifications>
           </Factor>
@@ -9111,93 +9109,6 @@ Testing of APSIM Maize under New Zealand conditions was undertaken using the dat
                   <Action>[Irrigation].Apply(40);</Action>
                 </Operation>
               </Operations>
-              <Water>
-                <Name>Water</Name>
-                <SoilCrop>
-                  <Name>WheatSoil</Name>
-                  <LL>
-                    <double>0.2</double>
-                    <double>0.2</double>
-                    <double>0.2</double>
-                    <double>0.2</double>
-                    <double>0.2</double>
-                    <double>0.2</double>
-                    <double>0.2</double>
-                  </LL>
-                  <KL>
-                    <double>0.06</double>
-                    <double>0.06</double>
-                    <double>0.1</double>
-                    <double>0.1</double>
-                    <double>0.05</double>
-                    <double>0.03</double>
-                    <double>0.02</double>
-                  </KL>
-                  <XF>
-                    <double>1</double>
-                    <double>1</double>
-                    <double>1</double>
-                    <double>1</double>
-                    <double>1</double>
-                    <double>1</double>
-                    <double>1</double>
-                  </XF>
-                </SoilCrop>
-                <Thickness>
-                  <double>150</double>
-                  <double>150</double>
-                  <double>300</double>
-                  <double>300</double>
-                  <double>300</double>
-                  <double>300</double>
-                  <double>300</double>
-                </Thickness>
-                <BD>
-                  <double>1</double>
-                  <double>1.324</double>
-                  <double>1.35</double>
-                  <double>1.301</double>
-                  <double>1.301</double>
-                  <double>1.301</double>
-                  <double>1.301</double>
-                </BD>
-                <AirDry>
-                  <double>0.05</double>
-                  <double>0.12</double>
-                  <double>0.1</double>
-                  <double>0.08</double>
-                  <double>0.06</double>
-                  <double>0.06</double>
-                  <double>0.1</double>
-                </AirDry>
-                <LL15>
-                  <double>0.08</double>
-                  <double>0.15</double>
-                  <double>0.17</double>
-                  <double>0.17</double>
-                  <double>0.25</double>
-                  <double>0.28</double>
-                  <double>0.26</double>
-                </LL15>
-                <DUL>
-                  <double>0.28</double>
-                  <double>0.28</double>
-                  <double>0.28</double>
-                  <double>0.28</double>
-                  <double>0.28</double>
-                  <double>0.28</double>
-                  <double>0.28</double>
-                </DUL>
-                <SAT>
-                  <double>0.34</double>
-                  <double>0.34</double>
-                  <double>0.34</double>
-                  <double>0.34</double>
-                  <double>0.34</double>
-                  <double>0.34</double>
-                  <double>0.34</double>
-                </SAT>
-              </Water>
               <Specifications>
                 <string>[Irrig]</string>
                 <string>[Water]</string>
@@ -9249,93 +9160,6 @@ Testing of APSIM Maize under New Zealand conditions was undertaken using the dat
                   <Action>[Irrigation].Apply(40);</Action>
                 </Operation>
               </Operations>
-              <Water>
-                <Name>Water</Name>
-                <SoilCrop>
-                  <Name>WheatSoil</Name>
-                  <LL>
-                    <double>0.2</double>
-                    <double>0.2</double>
-                    <double>0.2</double>
-                    <double>0.2</double>
-                    <double>0.2</double>
-                    <double>0.2</double>
-                    <double>0.2</double>
-                  </LL>
-                  <KL>
-                    <double>0.06</double>
-                    <double>0.06</double>
-                    <double>0.1</double>
-                    <double>0.1</double>
-                    <double>0.05</double>
-                    <double>0.03</double>
-                    <double>0.02</double>
-                  </KL>
-                  <XF>
-                    <double>1</double>
-                    <double>1</double>
-                    <double>1</double>
-                    <double>1</double>
-                    <double>1</double>
-                    <double>1</double>
-                    <double>1</double>
-                  </XF>
-                </SoilCrop>
-                <Thickness>
-                  <double>150</double>
-                  <double>150</double>
-                  <double>300</double>
-                  <double>300</double>
-                  <double>300</double>
-                  <double>300</double>
-                  <double>300</double>
-                </Thickness>
-                <BD>
-                  <double>1</double>
-                  <double>1.324</double>
-                  <double>1.35</double>
-                  <double>1.301</double>
-                  <double>1.301</double>
-                  <double>1.301</double>
-                  <double>1.301</double>
-                </BD>
-                <AirDry>
-                  <double>0.05</double>
-                  <double>0.12</double>
-                  <double>0.1</double>
-                  <double>0.08</double>
-                  <double>0.06</double>
-                  <double>0.06</double>
-                  <double>0.1</double>
-                </AirDry>
-                <LL15>
-                  <double>0.08</double>
-                  <double>0.15</double>
-                  <double>0.17</double>
-                  <double>0.17</double>
-                  <double>0.25</double>
-                  <double>0.28</double>
-                  <double>0.26</double>
-                </LL15>
-                <DUL>
-                  <double>0.28</double>
-                  <double>0.28</double>
-                  <double>0.28</double>
-                  <double>0.28</double>
-                  <double>0.28</double>
-                  <double>0.28</double>
-                  <double>0.28</double>
-                </DUL>
-                <SAT>
-                  <double>0.34</double>
-                  <double>0.34</double>
-                  <double>0.34</double>
-                  <double>0.34</double>
-                  <double>0.34</double>
-                  <double>0.34</double>
-                  <double>0.34</double>
-                </SAT>
-              </Water>
               <Specifications>
                 <string>[Irrig]</string>
                 <string>[Water]</string>
@@ -9579,15 +9403,15 @@ namespace Models
               <Name>Fert</Name>
               <Operation>
                 <Date>2015-10-09</Date>
-                <Action>[Fertiliser].Apply(50, Fertiliser.Types.UreaN, 10);</Action>
+                <Action>[Fertiliser].Apply(0, Fertiliser.Types.UreaN, 10);</Action>
               </Operation>
               <Operation>
                 <Date>2015-10-29</Date>
-                <Action>[Fertiliser].Apply(100, Fertiliser.Types.UreaN, 10);</Action>
+                <Action>[Fertiliser].Apply(0, Fertiliser.Types.UreaN, 10);</Action>
               </Operation>
               <Operation>
                 <Date>2015-11-19</Date>
-                <Action>[Fertiliser].Apply(100, Fertiliser.Types.UreaN, 10);</Action>
+                <Action>[Fertiliser].Apply(0, Fertiliser.Types.UreaN, 10);</Action>
               </Operation>
             </Operations>
             <Operations>
@@ -9648,16 +9472,26 @@ namespace Models
               <ExperimentFactorValues />
               <VariableNames>
                 <string>[Clock].Today</string>
-                <string>[[Soil].SoilWater.SW</string>
+                <string>[Soil].SoilWater.SW</string>
+                <string>[Soil].SoilWater.LL15</string>
+                <string>[Soil].SoilWater.DUL</string>
+                <string>[Soil].SoilWater.SAT</string>
+                <string />
                 <string>[Soil].SoilWater.Eo</string>
                 <string>[Soil].SoilWater.Es</string>
                 <string>[Soil].SoilWater.Drainage</string>
                 <string>[Soil].SoilWater.Runoff</string>
                 <string>[Soil].SoilWater.pond</string>
+                <string />
                 <string>sum([Soil].SoilWater.SWmm) as ProfileWater</string>
                 <string>[Soil].NO3N</string>
                 <string>[Soil].SoilWater.SW</string>
                 <string>sum([Soil].NO3N) as ProfileNitrate</string>
+                <string />
+                <string>sum ([Soil].SoilNitrogen.MineralisedN ) as MineralisedN</string>
+                <string />
+                <string>[WheatExtraVariables].Script.AccumMineralisation</string>
+                <string>[WheatExtraVariables].Script.AccumFert</string>
                 <string>[MicroClimate].net_radn</string>
                 <string>[MicroClimate].peta</string>
                 <string>[MicroClimate].petr</string>
@@ -9933,8 +9767,8 @@ namespace Models
                   <double>0.2</double>
                 </OC>
                 <FBiom>
-                  <double>0.0333099300949596</double>
-                  <double>0.0186614266926403</double>
+                  <double>0.03</double>
+                  <double>0.02</double>
                   <double>0.0116634262048469</double>
                   <double>0.0102228802725968</double>
                   <double>0.0100221233748059</double>
@@ -9999,13 +9833,13 @@ namespace Models
                 <SoilCrop>
                   <Name>WheatSoil</Name>
                   <LL>
-                    <double>0.2</double>
-                    <double>0.2</double>
-                    <double>0.2</double>
-                    <double>0.2</double>
-                    <double>0.2</double>
-                    <double>0.2</double>
-                    <double>0.2</double>
+                    <double>0.12</double>
+                    <double>0.12</double>
+                    <double>0.12</double>
+                    <double>0.12</double>
+                    <double>0.12</double>
+                    <double>0.12</double>
+                    <double>0.12</double>
                   </LL>
                   <KL>
                     <double>0.06</double>
@@ -10117,15 +9951,203 @@ namespace Models
 	{
 		[Link] Clock Clock;
 		[Link] Irrigation Irrigation;
+		[Link] Soil ThisSoil;
 		[Description("Amount of Irrgation be applied 0/1")]
 		public bool IrrFactor { get; set; }
 		[Description("Amount of fertiliser to be applied (kg/ha)")]
 		public double NitFactor { get; set; }
 		
-			
+          
+		private void SetSoilLayers()
+		{
+        
+			int i = 0;
+			if ((IrrFactor == false) && (NitFactor == 0))
+			{
+				if (ThisSoil.Thickness.Length != 7)
+				{
+					throw new Exception("Soil layer exception");
+				}
+			 
+				ThisSoil.LL15[0] = 0.08;
+				ThisSoil.LL15[1] = 0.15;
+				ThisSoil.LL15[2] = 0.17;
+				ThisSoil.LL15[3] = 0.14;
+				ThisSoil.LL15[4] = 0.25;
+				ThisSoil.LL15[5] = 0.28;
+				ThisSoil.LL15[6] = 0.27;
+				ThisSoil.DUL[0] = 0.30;
+				ThisSoil.DUL[1] = 0.29;
+				ThisSoil.DUL[2] = 0.26;
+				ThisSoil.DUL[3] = 0.23;
+				ThisSoil.DUL[4] = 0.28;
+				ThisSoil.DUL[5] = 0.30;
+				ThisSoil.DUL[6] = 0.27;
+				ThisSoil.SAT[0] = 0.34;
+				ThisSoil.SAT[1] = 0.34;
+				ThisSoil.SAT[2] = 0.34;
+				ThisSoil.SAT[3] = 0.34;
+				ThisSoil.SAT[4] = 0.34;
+				ThisSoil.SAT[5] = 0.34;
+				ThisSoil.SAT[6] = 0.34;
+				ThisSoil.SoilWater.Reset();
+			}   
+			if ((IrrFactor == false) && (NitFactor == 50))
+			{
+				if (ThisSoil.Thickness.Length != 7)
+				{
+					throw new Exception("Soil layer exception");
+				}
+			 
+				ThisSoil.LL15[0] = 0.07;
+				ThisSoil.LL15[1] = 0.12;
+				ThisSoil.LL15[2] = 0.17;
+				ThisSoil.LL15[3] = 0.20;
+				ThisSoil.LL15[4] = 0.26;
+				ThisSoil.LL15[5] = 0.32;
+				ThisSoil.LL15[6] = 0.30;
+				ThisSoil.DUL[0] = 0.30;
+				ThisSoil.DUL[1] = 0.26;
+				ThisSoil.DUL[2] = 0.29;
+				ThisSoil.DUL[3] = 0.25;
+				ThisSoil.DUL[4] = 0.29;
+				ThisSoil.DUL[5] = 0.34;
+				ThisSoil.DUL[6] = 0.30;
+				ThisSoil.SAT[0] = 0.34;
+				ThisSoil.SAT[1] = 0.34;
+				ThisSoil.SAT[2] = 0.34;
+				ThisSoil.SAT[3] = 0.34;
+				ThisSoil.SAT[4] = 0.34;
+				ThisSoil.SAT[5] = 0.34;
+				ThisSoil.SAT[6] = 0.34;
+				ThisSoil.SoilWater.Reset();
+			}   
+			if ((IrrFactor == false) && (NitFactor == 50))
+			{
+				if (ThisSoil.Thickness.Length != 7)
+				{
+					throw new Exception("Soil layer exception");
+				}
+			 
+				ThisSoil.LL15[0] = 0.06;
+				ThisSoil.LL15[1] = 0.11;
+				ThisSoil.LL15[2] = 0.21;
+				ThisSoil.LL15[3] = 0.18;
+				ThisSoil.LL15[4] = 0.23;
+				ThisSoil.LL15[5] = 0.30;
+				ThisSoil.LL15[6] = 0.26;
+				ThisSoil.DUL[0] = 0.25;
+				ThisSoil.DUL[1] = 0.26;
+				ThisSoil.DUL[2] = 0.30;
+				ThisSoil.DUL[3] = 0.27;
+				ThisSoil.DUL[4] = 0.34;
+				ThisSoil.DUL[5] = 0.27;
+				ThisSoil.DUL[6] = 0.30;
+				ThisSoil.SAT[0] = 0.34;
+				ThisSoil.SAT[1] = 0.34;
+				ThisSoil.SAT[2] = 0.34;
+				ThisSoil.SAT[3] = 0.34;
+				ThisSoil.SAT[4] = 0.34;
+				ThisSoil.SAT[5] = 0.34;
+				ThisSoil.SAT[6] = 0.34;
+				ThisSoil.SoilWater.Reset();
+			}   
+			if ((IrrFactor == true) && (NitFactor == 0))
+			{
+				if (ThisSoil.Thickness.Length != 7)
+				{
+					throw new Exception("Soil layer exception");
+				}
+			 
+				ThisSoil.LL15[0] = 0.13;
+				ThisSoil.LL15[1] = 0.21;
+				ThisSoil.LL15[2] = 0.25;
+				ThisSoil.LL15[3] = 0.19;
+				ThisSoil.LL15[4] = 0.29;
+				ThisSoil.LL15[5] = 0.32;
+				ThisSoil.LL15[6] = 0.34;
+				ThisSoil.DUL[0] = 0.31;
+				ThisSoil.DUL[1] = 0.28;
+				ThisSoil.DUL[2] = 0.30;
+				ThisSoil.DUL[3] = 0.28;
+				ThisSoil.DUL[4] = 0.29;
+				ThisSoil.DUL[5] = 0.34;
+				ThisSoil.DUL[6] = 0.30;
+				ThisSoil.SAT[0] = 0.34;
+				ThisSoil.SAT[1] = 0.34;
+				ThisSoil.SAT[2] = 0.34;
+				ThisSoil.SAT[3] = 0.34;
+				ThisSoil.SAT[4] = 0.34;
+				ThisSoil.SAT[5] = 0.34;
+				ThisSoil.SAT[6] = 0.34;
+				ThisSoil.SoilWater.Reset();
+			}   
+			if ((IrrFactor == true) && (NitFactor == 50))
+			{
+				if (ThisSoil.Thickness.Length != 7)
+				{
+					throw new Exception("Soil layer exception");
+				}
+			 
+				ThisSoil.LL15[0] = 0.14;
+				ThisSoil.LL15[1] = 0.21;
+				ThisSoil.LL15[2] = 0.27;
+				ThisSoil.LL15[3] = 0.27;
+				ThisSoil.LL15[4] = 0.27;
+				ThisSoil.LL15[5] = 0.32;
+				ThisSoil.LL15[6] = 0.30;
+				ThisSoil.DUL[0] = 0.31;
+				ThisSoil.DUL[1] = 0.28;
+				ThisSoil.DUL[2] = 0.30;
+				ThisSoil.DUL[3] = 0.28;
+				ThisSoil.DUL[4] = 0.29;
+				ThisSoil.DUL[5] = 0.34;
+				ThisSoil.DUL[6] = 0.30;
+				ThisSoil.SAT[0] = 0.34;
+				ThisSoil.SAT[1] = 0.34;
+				ThisSoil.SAT[2] = 0.34;
+				ThisSoil.SAT[3] = 0.34;
+				ThisSoil.SAT[4] = 0.34;
+				ThisSoil.SAT[5] = 0.34;
+				ThisSoil.SAT[6] = 0.34;
+				ThisSoil.SoilWater.Reset();
+			}
+			if ((IrrFactor == true) && (NitFactor == 250))
+			{
+				if (ThisSoil.Thickness.Length != 7)
+				{
+					throw new Exception("Soil layer exception");
+				}
+			 
+				ThisSoil.LL15[0] = 0.12;
+				ThisSoil.LL15[1] = 0.18;
+				ThisSoil.LL15[2] = 0.17;
+				ThisSoil.LL15[3] = 0.20;
+				ThisSoil.LL15[4] = 0.27;
+				ThisSoil.LL15[5] = 0.27;
+				ThisSoil.LL15[6] = 0.21;
+				ThisSoil.DUL[0] = 0.31;
+				ThisSoil.DUL[1] = 0.28;
+				ThisSoil.DUL[2] = 0.30;
+				ThisSoil.DUL[3] = 0.28;
+				ThisSoil.DUL[4] = 0.29;
+				ThisSoil.DUL[5] = 0.34;
+				ThisSoil.DUL[6] = 0.30;
+				ThisSoil.SAT[0] = 0.34;
+				ThisSoil.SAT[1] = 0.34;
+				ThisSoil.SAT[2] = 0.34;
+				ThisSoil.SAT[3] = 0.34;
+				ThisSoil.SAT[4] = 0.34;
+				ThisSoil.SAT[5] = 0.34;
+				ThisSoil.SAT[6] = 0.34;
+				ThisSoil.SoilWater.Reset();
+			}
+		}
+
 		[EventSubscribe("Commencing")]
 		private void OnSimulationCommencing(object sender, EventArgs e)
 		{
+			SetSoilLayers();
 		}
 		
 		[EventSubscribe("DoManagement")]
@@ -10167,6 +10189,179 @@ namespace Models
 
 	  
 ]]></Code>
+            </Manager>
+            <Manager>
+              <Name>WheatExtraVariables</Name>
+              <Script />
+              <Code><![CDATA[using System;
+using Models.Core;
+using System.Collections.Generic;
+using System.Text;
+using Models.Soils;
+using Models.PMF;
+using Models;
+using System.Xml.Serialization;
+using APSIM.Shared.Utilities;
+
+namespace Models
+{
+	[Serializable] 
+	public class Script : Model
+	{
+		[Link] Clock Clock;
+		[Link] Soils.Soil Soil;
+		[Link] Models.SurfaceOM.SurfaceOrganicMatter SOM;
+		[Link] Weather Met;
+		[Link] Fertiliser Fert;
+		[Link] Irrigation Irrig;
+		[Link] Plant Wheat;
+		[Link] Zone zone;
+					
+		[XmlIgnore] public bool InitialDay { get; set; }
+		
+		[XmlIgnore] public double AccumPlantN { get; set; }
+		[XmlIgnore] public double AccumMineralisation { get; set; }
+		[XmlIgnore] public double AccumDenit { get; set; }
+		[XmlIgnore] public double AccumFert { get; set; }
+		[XmlIgnore] public double AccumLeach { get; set; }
+		[XmlIgnore] public double AccumDetach { get; set; }
+		[XmlIgnore] public double DeltaSoilOMN { get; set; }
+		[XmlIgnore] public double DeltaSurfaceOMN { get; set; }
+		[XmlIgnore] public double DeltaSoilMineralN { get; set; }
+		[XmlIgnore] public double SoilNitrogenContent { get; set; }
+		
+		[XmlIgnore] public double AccumEO { get; set; }
+		[XmlIgnore] public double AccumEP { get; set; }
+		[XmlIgnore] public double AccumES { get; set; }
+		[XmlIgnore] public double AccumDrainage { get; set; }
+		[XmlIgnore] public double AccumRunoff { get; set; }
+		[XmlIgnore] public double AccumOutflowLat { get; set; }
+		[XmlIgnore] public double AccumIrrigation { get; set; }
+		[XmlIgnore] public double AccumRainfall { get; set; }
+		[XmlIgnore] public double SoilWaterDeficit { get; set; }
+	
+		[XmlIgnore] public double  InitialSoilOMN { get; set; }
+		[XmlIgnore] public double  InitialSurfaceOMN { get; set; }
+		[XmlIgnore] public double  InitialMineralN { get; set; }
+		
+		[XmlIgnore] public double SWC { get; set; }
+		[XmlIgnore] public double DUL { get; set; }
+		[XmlIgnore] public double OutFlowLat { get; set; }
+
+		[XmlIgnore] public double FomN { get; set; }
+		[XmlIgnore] public double BiomN { get; set; }
+		[XmlIgnore] public double HumN { get; set; }
+		[XmlIgnore] public double OrganicN { get; set; }
+		[XmlIgnore] public double NO3N { get; set; }
+		[XmlIgnore] public double NH4N { get; set; }
+		[XmlIgnore] public double UreaN { get; set; }
+		[XmlIgnore] public double MineralN { get; set; }
+		[XmlIgnore] public double DltNMinRes { get; set; }
+		[XmlIgnore] public double DltNMinTot { get; set; }
+		
+		[XmlIgnore] public double LeafExpandedPosition { get; set; }
+		[XmlIgnore] public double LeafAppearedPosition { get; set; }
+		[XmlIgnore] public double ExpandedLeafNoYesterday { get; set; }
+		[XmlIgnore] public double AppearedLeafNoYesterday { get; set; }
+		[XmlIgnore] public double MostRecentlyExpandedLeafSize { get; set; }
+		[XmlIgnore] public double MostRecentlyAppearedLeafMaxSize { get; set; }
+        
+		[EventSubscribe("Commencing")]
+		private void OnSimulationCommencing(object sender, EventArgs e)
+		{
+			InitialDay = true;
+			LeafExpandedPosition = 0;
+			LeafAppearedPosition = 0;
+			ExpandedLeafNoYesterday = 0;
+			AppearedLeafNoYesterday = 0;
+			MostRecentlyExpandedLeafSize = 0;
+			MostRecentlyAppearedLeafMaxSize = 0;
+		}
+		
+		[EventSubscribe("DoManagement")]
+		private void OnDoManagement(object sender, EventArgs e)
+		{
+			//!!!!!! Nitrogen balance components !!!!!!
+			//!!!!!!^^^^^^^^^^^^^^^^^^^^^^^^^^^^^!!!!!!
+			FomN = MathUtilities.Sum(Soil.SoilNitrogen.FOMN);
+			HumN = MathUtilities.Sum(Soil.SoilNitrogen.HumicN);
+			BiomN = MathUtilities.Sum(Soil.SoilNitrogen.MicrobialN);
+			OrganicN = FomN + HumN + BiomN;
+			NO3N = MathUtilities.Sum(Soil.NO3N);
+			NH4N = MathUtilities.Sum(Soil.NH4N);
+			UreaN = MathUtilities.Sum(Soil.SoilNitrogen.urea);
+			MineralN = NO3N + NH4N + UreaN; 
+			DltNMinRes = MathUtilities.Sum(Soil.SoilNitrogen.dlt_n_min_res);
+			DltNMinTot = MathUtilities.Sum(Soil.SoilNitrogen.MineralisedN);
+			int layers = Soil.Thickness.Length;
+			if (InitialDay == true)
+			{
+				InitialSurfaceOMN = SOM.N;
+				InitialSoilOMN = OrganicN;
+				InitialMineralN = MineralN;
+				InitialDay = false;
+			}
+			AccumFert += Fert.NitrogenApplied;
+			DeltaSurfaceOMN = SOM.N - InitialSurfaceOMN;
+			AccumLeach = AccumLeach - Soil.SoilWater.LeachNH4 - Soil.SoilWater.LeachNO3 - Soil.SoilWater.LeachUrea; //Fails
+			AccumMineralisation += MathUtilities.Sum(Soil.SoilNitrogen.MineralisedN);
+			AccumDenit -= MathUtilities.Sum(Soil.SoilNitrogen.Denitrification);
+			AccumPlantN -= (double)zone.Get("Wheat.Root.NUptake");
+			DeltaSoilOMN = OrganicN - InitialSoilOMN;
+			DeltaSoilMineralN = MineralN - InitialMineralN;
+			SoilNitrogenContent = MineralN;
+			
+			//!!!!!! Water balance components !!!!!!
+			//!!!!!!^^^^^^^^^^^^^^^^^^^^^^^^^^!!!!!!
+
+			AccumIrrigation += Irrig.IrrigationApplied;
+			AccumRainfall += Met.Rain;
+			//AccumEP -= (double)zone.Get("[Wheat].Leaf.Transpiration");
+			AccumEP -= (double)zone.Get("Wheat.Root.WaterUptake");
+			SoilWaterDeficit = (SWC - DUL);
+			double OutFlowLat = MathUtilities.Sum(Soil.SoilWater.outflow_lat);
+			AccumOutflowLat -= OutFlowLat;
+			
+			//Leaf number variable
+			ExpandedLeafNoYesterday = (double)zone.Get("Wheat.Leaf.ExpandedCohortNo");
+			AppearedLeafNoYesterday = (double)zone.Get("Wheat.Leaf.AppearedCohortNo");
+		}
+		
+		[EventSubscribe("DoManagementCalculations")]
+		private void OnDoManagementCalculations(object sender, EventArgs e)
+		{
+			FomN = MathUtilities.Sum(Soil.SoilNitrogen.FOMN);
+			HumN = MathUtilities.Sum(Soil.SoilNitrogen.HumicN);
+			BiomN = MathUtilities.Sum(Soil.SoilNitrogen.MicrobialN);
+			
+			
+			AccumEO -= Soil.SoilWater.Eo;
+			AccumES -= Soil.SoilWater.Es; 
+			AccumDrainage -= Soil.SoilWater.Drainage;
+			AccumRunoff -= Soil.SoilWater.Runoff;
+			SWC = MathUtilities.Sum(Soil.SoilWater.SWmm);
+			DUL = MathUtilities.Sum(Soil.SoilWater.DULmm);
+			
+			if ((double)zone.Get("Wheat.Leaf.ExpandedCohortNo") > ExpandedLeafNoYesterday)
+			{
+				LeafExpandedPosition = (double)zone.Get("Wheat.Leaf.ExpandedCohortNo");
+				MostRecentlyExpandedLeafSize = (double)zone.Get("Wheat.Leaf.CohortSize[" + (int)LeafExpandedPosition + "]");
+			}
+			//else
+			//	LeafExpandedPosition = 0;
+			
+			if ((double)zone.Get("Wheat.Leaf.AppearedCohortNo") > AppearedLeafNoYesterday)
+			{
+				LeafAppearedPosition = (double)zone.Get("Wheat.Leaf.AppearedCohortNo");
+				MostRecentlyAppearedLeafMaxSize = (double)zone.Get("Wheat.Leaf.CohortParameters.MaxArea.Value");
+			}
+			//else
+			//LeafAppearedPosition = 0;
+			
+		}
+	}
+}
+	   ]]></Code>
             </Manager>
             <Area>1</Area>
             <Slope>0</Slope>
@@ -13577,11 +13772,11 @@ namespace Models
                 <YAxis>Left</YAxis>
                 <ColourArgb>0</ColourArgb>
                 <FactorIndexToVaryColours>0</FactorIndexToVaryColours>
-                <FactorIndexToVaryMarkers>1</FactorIndexToVaryMarkers>
+                <FactorIndexToVaryMarkers>-1</FactorIndexToVaryMarkers>
                 <FactorIndexToVaryLines>-1</FactorIndexToVaryLines>
                 <Marker>None</Marker>
                 <MarkerSize>Normal</MarkerSize>
-                <Line>None</Line>
+                <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
                 <TableName>DailyLayerPC</TableName>
                 <XFieldName>Clock.today</XFieldName>
@@ -13660,15 +13855,100 @@ namespace Models
                 <YAxis>Left</YAxis>
                 <ColourArgb>-16736653</ColourArgb>
                 <FactorIndexToVaryColours>0</FactorIndexToVaryColours>
-                <FactorIndexToVaryMarkers>1</FactorIndexToVaryMarkers>
+                <FactorIndexToVaryMarkers>-1</FactorIndexToVaryMarkers>
                 <FactorIndexToVaryLines>-1</FactorIndexToVaryLines>
                 <Marker>None</Marker>
                 <MarkerSize>Normal</MarkerSize>
-                <Line>None</Line>
+                <Line>Solid</Line>
                 <LineThickness>Normal</LineThickness>
                 <TableName>WheatReport</TableName>
                 <XFieldName>Clock.Today</XFieldName>
                 <YFieldName>Soil.SoilWater.SW(2)</YFieldName>
+                <ShowInLegend>true</ShowInLegend>
+                <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
+                <Cumulative>false</Cumulative>
+                <CumulativeX>false</CumulativeX>
+              </Series>
+              <Axis>
+                <Type>Bottom</Type>
+                <Inverted>false</Inverted>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <Interval>NaN</Interval>
+              </Axis>
+              <Axis>
+                <Type>Left</Type>
+                <Inverted>false</Inverted>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <Interval>NaN</Interval>
+              </Axis>
+              <LegendPosition>TopLeft</LegendPosition>
+              <DisabledSeries />
+              <IncludeInDocumentation>false</IncludeInDocumentation>
+            </Graph>
+          </Folder>
+          <Graph>
+            <Name>Mineralisation</Name>
+            <Series>
+              <Name>Series</Name>
+              <Type>Scatter</Type>
+              <XAxis>Bottom</XAxis>
+              <YAxis>Left</YAxis>
+              <ColourArgb>0</ColourArgb>
+              <FactorIndexToVaryColours>1</FactorIndexToVaryColours>
+              <FactorIndexToVaryMarkers>-1</FactorIndexToVaryMarkers>
+              <FactorIndexToVaryLines>-1</FactorIndexToVaryLines>
+              <Marker>None</Marker>
+              <MarkerSize>Normal</MarkerSize>
+              <Line>Solid</Line>
+              <LineThickness>Normal</LineThickness>
+              <TableName>WheatReport</TableName>
+              <XFieldName>Clock.Today</XFieldName>
+              <YFieldName>WheatExtraVariables.Script.AccumMineralisation</YFieldName>
+              <ShowInLegend>true</ShowInLegend>
+              <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
+              <Cumulative>false</Cumulative>
+              <CumulativeX>false</CumulativeX>
+            </Series>
+            <Axis>
+              <Type>Bottom</Type>
+              <Inverted>false</Inverted>
+              <Minimum>NaN</Minimum>
+              <Maximum>NaN</Maximum>
+              <Interval>NaN</Interval>
+            </Axis>
+            <Axis>
+              <Type>Left</Type>
+              <Inverted>false</Inverted>
+              <Minimum>NaN</Minimum>
+              <Maximum>NaN</Maximum>
+              <Interval>NaN</Interval>
+            </Axis>
+            <LegendPosition>TopLeft</LegendPosition>
+            <DisabledSeries />
+            <IncludeInDocumentation>false</IncludeInDocumentation>
+          </Graph>
+          <Folder>
+            <Name>Management</Name>
+            <Graph>
+              <Name>Fert</Name>
+              <Series>
+                <Name>Series</Name>
+                <Type>Scatter</Type>
+                <XAxis>Bottom</XAxis>
+                <YAxis>Left</YAxis>
+                <ColourArgb>0</ColourArgb>
+                <FactorIndexToVaryColours>0</FactorIndexToVaryColours>
+                <FactorIndexToVaryMarkers>-1</FactorIndexToVaryMarkers>
+                <FactorIndexToVaryLines>-1</FactorIndexToVaryLines>
+                <Marker>None</Marker>
+                <MarkerSize>Normal</MarkerSize>
+                <Line>Solid</Line>
+                <LineThickness>Normal</LineThickness>
+                <TableName>WheatReport</TableName>
+                <XFieldName>Clock.Today</XFieldName>
+                <YFieldName>WheatExtraVariables.Script.AccumFert</YFieldName>
                 <ShowInLegend>true</ShowInLegend>
                 <IncludeSeriesNameInLegend>false</IncludeSeriesNameInLegend>
                 <Cumulative>false</Cumulative>
@@ -13704,5 +13984,5 @@ Simulation results for the combined datasets from the various countries are show
 ]]></MemoText>
     </Memo>
   </Folder>
-  <ExplorerWidth>457</ExplorerWidth>
+  <ExplorerWidth>467</ExplorerWidth>
 </Simulations>
