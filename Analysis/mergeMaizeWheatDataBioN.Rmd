@@ -1,0 +1,245 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# load libs
+```{r, echo=FALSE, include=FALSE}
+library(tidyr)
+library (dplyr)
+library (ggplot2)
+library(agricolae)
+library(knitr)
+library(lubridate)
+library(GGally)
+```
+
+
+
+# Merge biomass and N% data of maize and wheat experiments
+
+## Read and check maize biomass
+```{r}
+maize_bio_raw <- 
+  read.table("K:\\Rainshelter\\Maize 2012-13\\Analysis\\WorkedData\\Biomass\\BiomassForR.txt", header=TRUE)
+
+str(maize_bio_raw)
+
+# define N treat categories
+# n_cat_maize <- data.frame(NitroTreat = c("000N","075N","250N"), 
+#                           NitroCat = c("Low","Median","High"))
+
+# clean up and massage
+maize_bio_work <- maize_bio_raw %>%
+  mutate(HarvestDate = dmy(Date)) %>%
+  mutate(Block = as.factor(Block),
+         Trt = as.factor(Trt),
+         Plot = as.factor(Plot)
+         ) %>%
+  dplyr::select(Date, Plot, WaterTreat, NitroTreat, Grain, Leaf, Stem, Rachis, Dead) %>%
+  mutate(HarvestDate = dmy(Date), 
+       #  Total = (Leaf + Stem + Dead + Grain + Rachis),
+         Nitrogen =  as.numeric(as.character(gsub("N","",NitroTreat))),
+         NitroTreat = factor(NitroTreat,levels = c("000N","075N","250N"), 
+                             labels= c("Low N","Median N","High N")),
+         WaterTreat = ifelse(WaterTreat=="Irrig", "Irrigated","Dryland"), # same as wheat
+         WaterTreat = as.factor(WaterTreat) ,
+         Irrigation = as.factor(WaterTreat)) %>%
+         tidyr::gather("Organ","BiomassWeight",Grain:Dead) %>%
+         mutate(Organ = ifelse(Organ == "Dead", "Senesced", as.character(Organ))) %>%
+         mutate(Organ = as.factor(Organ))
+
+
+# function to do percentages
+# ppf <- function(organ,total) {
+#   
+#   round(organ/total*100,1)
+#   
+# }
+# mutate(
+#     Total = (Leaf + Stem + Dead + Grain + Rachis),
+#        #  TestTotal = round(Total/Total*100,0),
+#          LeafPerc = ppf(Leaf,Total),
+#          StemPerc = ppf(Stem,Total),
+#          DeadPerc = ppf(Dead,Total),
+#          GrainPerc = ppf(Grain,Total),
+#          RachisPerc = ppf(Rachis,Total)
+#                              ) 
+
+
+# FIXME: gather organ names in a "Organ" column
+
+
+#head(maize_bio_work)
+summary (maize_bio_work)
+#str(maize_bio_work)
+```
+
+## Read and check maize nitrogen
+```{r}
+maize_N_raw <- read.table("K:\\Rainshelter\\Maize 2012-13\\Analysis\\WorkedData\\Nitrogen\\plantN.txt", header = TRUE)
+#duplicated(maize_N_raw)
+
+str(maize_N_raw)
+
+# clean up and massage
+maize_N_work <- maize_N_raw %>%
+  mutate(HarvestDate = dmy(Date)) %>%
+  mutate(Block = as.factor(Block),
+         Plot = as.factor(Plot),
+         HarvestDate = dmy(Date), 
+         Organ = Component,
+         Nitrogen =  as.numeric(as.character(gsub("N","",NitroTreat))),
+         Irrigation = as.factor(WaterTreat),
+         Organ = ifelse(Organ == "Dead", "Senesced", as.character(Organ)), # make names align with N data
+         Organ = ifelse(Organ == "Chaff", "Rachis", as.character(Organ)),
+         Organ = as.factor(Organ)
+         )
+
+str(maize_N_work)
+head(maize_N_work)
+summary (maize_N_work)
+```
+
+# merge biomass and N in maize
+
+```{r}
+
+# revove duplicated fields before merge
+maize_N_work$WaterTreat <- NULL
+maize_N_work$NitroTreat <- NULL
+maize_N_work$Nitrogen <- NULL
+maize_N_work$Irrigation <- NULL
+maize_N_work$Block <- NULL
+maize_N_work$Component <- NULL
+maize_N_work$Date <- NULL
+
+# check fields
+colnames(maize_bio_work)
+colnames(maize_N_work)
+
+# merge the baby
+maize_bio_N_work <- merge(maize_bio_work, maize_N_work, by=c("HarvestDate","Plot","Organ"))
+
+# check
+maize_bio_N_work$NitrogenWeight <- 
+  maize_bio_N_work$BiomassWeight * maize_bio_N_work$Nitrogen_Perc/100
+
+summary(maize_bio_N_work)
+
+
+```
+
+# overall check
+```{r}
+maize_bio_N_work %>%
+dplyr::select(Organ,BiomassWeight:NitrogenWeight) %>%
+ggpairs(aes(colour=Organ))
+  
+```
+
+
+
+```{r}
+# graph N amounts from raw data and from R calculations
+maize_bio_N_work %>%
+  ggplot(aes(x=NitrogenWeight, y=N_amount, colour=NitroTreat, shape=Irrigation)) +
+  geom_point() +
+  geom_abline(intercept=0,slope=1)
+
+# FIXME: identify points that diverge from x=y
+
+```
+
+## Read and check wheat biomass
+```{r}
+
+wheat_bio_raw <- 
+  read.table("K:\\Rainshelter\\Wheat 2015-16\\Analysis\\Biomass\\BiomassLAIData.txt", header=TRUE)
+
+#str(wheat_bio_raw)
+
+head(wheat_bio_raw)
+
+```
+
+```{r}
+# clean up and massage
+wheat_bio_work <- wheat_bio_raw %>%
+  dplyr::select(HarvestDate,Plot,
+                Block, Nitrogen,Irrigation,
+                LeafYield_kgPerHa:ChaffYield_kgPerHa) %>%
+  mutate(HarvestDate = dmy(HarvestDate)) %>%
+  mutate(Block = as.factor(Block),
+      #   Trt = as.factor(TreatNo),
+         Plot = as.factor(Plot-100),
+         WaterTreat = Irrigation,
+         NitroTreat = factor(Nitrogen,levels = c(0,50,250), labels= c("Low N","Median N","High N"))) %>% # Nil,Mid,High
+  dplyr::select(HarvestDate, Plot,Block, WaterTreat, NitroTreat,LeafYield_kgPerHa:ChaffYield_kgPerHa) %>%
+   tidyr::gather("Organ","BiomassWeight",LeafYield_kgPerHa:ChaffYield_kgPerHa) %>%
+    mutate(Organ = factor(Organ, levels=c("LeafYield_kgPerHa",	
+                                          "StemYield_kgPerHa",	
+                                          "DeadYield_kgPerHa",	
+                                          "EarYield_kgPerHa",	
+                                          "GrainYield_kgPerHa",	
+                                          "ChaffYield_kgPerHa"), 
+                          labels = c("Leaf",	"Stem",	"Senesced",	"Ear",	"Grain",	"Rachis"))) 
+
+summary(wheat_bio_work)
+```
+
+## Read wheat nitrogen
+
+```{r}
+wheat_N_raw <- 
+  read.table("K:\\Rainshelter\\Wheat 2015-16\\Analysis\\N_Plant\\NitrogenRawWheat.txt", header = TRUE)
+#duplicated(maize_N_raw)
+
+str(wheat_N_raw)
+
+# clean up and massage
+wheat_N_work <- wheat_N_raw %>%
+  mutate(HarvestDate = dmy(Date)) %>%
+  mutate(Block = as.factor(Block),
+         Plot = as.factor(as.numeric(Plot-100)),
+         HarvestDate = dmy(Date), 
+         Nitrogen =  as.numeric(Nitrogen),
+         Irrigation = as.factor(Irrigation)
+         )
+
+str(wheat_N_work)
+head(wheat_N_work)
+summary (wheat_N_work)
+```
+
+## merge wheat biomass and N
+
+```{r}
+# revove duplicated fields before merge
+wheat_N_work$Block <- NULL
+
+# check fields
+summary(wheat_bio_work)
+summary(wheat_N_work)
+
+
+```
+
+```{r}
+# merge the baby
+wheat_bio_N_work <- merge(wheat_bio_work, wheat_N_work, by=c("HarvestDate","Plot","Organ"))
+
+summary(wheat_bio_N_work)
+```
+
+
+## Merge both wheat and maize
+```{r}
+
+```
+
+## Plot data
+```{r}
+
+```
+
