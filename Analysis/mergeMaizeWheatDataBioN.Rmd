@@ -14,11 +14,9 @@ library(lubridate)
 library(GGally)
 ```
 
+## 1. Maize
 
-
-# Merge biomass and N% data of maize and wheat experiments
-
-## Read and check maize biomass
+# Read and check maize biomass
 ```{r}
 maize_bio_raw <- 
   read.table("K:\\Rainshelter\\Maize 2012-13\\Analysis\\WorkedData\\Biomass\\BiomassForR.txt", header=TRUE)
@@ -75,7 +73,7 @@ summary (maize_bio_work)
 #str(maize_bio_work)
 ```
 
-## Read and check maize nitrogen
+# Read and check maize nitrogen
 ```{r}
 maize_N_raw <- read.table("K:\\Rainshelter\\Maize 2012-13\\Analysis\\WorkedData\\Nitrogen\\plantN.txt", header = TRUE)
 #duplicated(maize_N_raw)
@@ -138,8 +136,7 @@ ggpairs(aes(colour=Organ))
   
 ```
 
-
-
+# find odd points
 ```{r}
 # graph N amounts from raw data and from R calculations
 maize_bio_N_work %>%
@@ -151,7 +148,9 @@ maize_bio_N_work %>%
 
 ```
 
-## Read and check wheat biomass
+## 2) Wheat
+
+# Read and check wheat biomass
 ```{r}
 
 wheat_bio_raw <- 
@@ -168,27 +167,22 @@ head(wheat_bio_raw)
 wheat_bio_work <- wheat_bio_raw %>%
   dplyr::select(HarvestDate,Plot,
                 Block, Nitrogen,Irrigation,
-                LeafYield_kgPerHa:ChaffYield_kgPerHa) %>%
+                Leaf:Chaff) %>%
   mutate(HarvestDate = dmy(HarvestDate)) %>%
   mutate(Block = as.factor(Block),
       #   Trt = as.factor(TreatNo),
          Plot = as.factor(Plot-100),
          WaterTreat = Irrigation,
          NitroTreat = factor(Nitrogen,levels = c(0,50,250), labels= c("Low N","Median N","High N"))) %>% # Nil,Mid,High
-  dplyr::select(HarvestDate, Plot,Block, WaterTreat, NitroTreat,LeafYield_kgPerHa:ChaffYield_kgPerHa) %>%
-   tidyr::gather("Organ","BiomassWeight",LeafYield_kgPerHa:ChaffYield_kgPerHa) %>%
-    mutate(Organ = factor(Organ, levels=c("LeafYield_kgPerHa",	
-                                          "StemYield_kgPerHa",	
-                                          "DeadYield_kgPerHa",	
-                                          "EarYield_kgPerHa",	
-                                          "GrainYield_kgPerHa",	
-                                          "ChaffYield_kgPerHa"), 
+  dplyr::select(HarvestDate, Plot,Block, WaterTreat, NitroTreat,Leaf:Chaff) %>%
+   tidyr::gather("Organ","BiomassWeight",Leaf:Chaff) %>%
+    mutate(Organ = factor(Organ, levels=c("Leaf",	"Stem",	"Dead",	"Ear",	"Grain",	"Chaff"), 
                           labels = c("Leaf",	"Stem",	"Senesced",	"Ear",	"Grain",	"Rachis"))) 
 
 summary(wheat_bio_work)
 ```
 
-## Read wheat nitrogen
+# Read wheat nitrogen
 
 ```{r}
 wheat_N_raw <- 
@@ -205,14 +199,16 @@ wheat_N_work <- wheat_N_raw %>%
          HarvestDate = dmy(Date), 
          Nitrogen =  as.numeric(Nitrogen),
          Irrigation = as.factor(Irrigation)
-         )
+         ) %>%
+      mutate(Organ = factor(Organ, levels=c("Leaf",	"Stem",	"Dead",	"Ear",	"Grain",	"Rachis"), 
+                          labels = c("Leaf",	"Stem",	"Senesced",	"Ear",	"Grain",	"Rachis"))) 
 
 str(wheat_N_work)
 head(wheat_N_work)
 summary (wheat_N_work)
 ```
 
-## merge wheat biomass and N
+# merge wheat biomass and N
 
 ```{r}
 # revove duplicated fields before merge
@@ -221,7 +217,6 @@ wheat_N_work$Block <- NULL
 # check fields
 summary(wheat_bio_work)
 summary(wheat_N_work)
-
 
 ```
 
