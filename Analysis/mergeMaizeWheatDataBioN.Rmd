@@ -109,7 +109,7 @@ maize_N_work$WaterTreat <- NULL
 maize_N_work$NitroTreat <- NULL
 maize_N_work$Nitrogen <- NULL
 maize_N_work$Irrigation <- NULL
-maize_N_work$Block <- NULL
+#maize_N_work$Block <- NULL
 maize_N_work$Component <- NULL
 maize_N_work$Date <- NULL
 
@@ -180,7 +180,10 @@ wheat_bio_work <- wheat_bio_raw %>%
   dplyr::select(HarvestDate, Plot,Block, WaterTreat, NitroTreat,Leaf:Chaff) %>%
    tidyr::gather("Organ","BiomassWeight",Leaf:Chaff) %>%
     mutate(Organ = factor(Organ, levels=c("Leaf",	"Stem",	"Dead",	"Ear",	"Grain",	"Chaff"), 
-                          labels = c("Leaf",	"Stem",	"Senesced",	"Ear",	"Grain",	"Rachis"))) 
+                          labels = c("Leaf",	"Stem",	"Senesced",	"Ear",	"Grain",	"Rachis"))) %>%
+   filter(Organ != "Ear") # in raw data now loaded into "Chaff" or now "Rachis"
+
+# FIXME: PLot ear and Chaff or Rachis to be sure all ok
 
 summary(wheat_bio_work)
 ```
@@ -227,24 +230,43 @@ summary(wheat_N_work)
 # merge the baby
 wheat_bio_N_work <- merge(wheat_bio_work, wheat_N_work, by=c("HarvestDate","Plot","Organ"))
 
+# add N amount field
+wheat_bio_N_work$NitrogenWeight <- wheat_bio_N_work$BiomassWeight * wheat_bio_N_work$NitrogenPerc/100
+  
+  
 summary(wheat_bio_N_work)
 ```
 
+## 3. Merge maize and wheat
 
-## Merge both wheat and maize
+# Check and clean both wheat and maize
 ```{r}
 print("====================================================")
 print("========        MAIZE                   ============")
 print("====================================================")
+
+maize_bio_N_work$Date <- maize_bio_N_work$Nitrogen_Perc <- maize_bio_N_work$N_amount <-NULL
+maize_bio_N_work$Crop <- "Maize"
 summary(maize_bio_N_work)
+
+
 print("====================================================")
 print("========        WHEAT                   ============")
 print("====================================================")
+
+wheat_bio_N_work$Date <- wheat_bio_N_work$Partition <- 
+wheat_bio_N_work$TrtNo <- wheat_bio_N_work$CarbonPerc <-NULL
+wheat_bio_N_work$Crop <- "Wheat"
 summary(wheat_bio_N_work)
 ```
 
-## Plot data
+# Bind wheat and maize
 ```{r}
+maize_wheat_bio_N_work <- rbind(maize_bio_N_work, wheat_bio_N_work)
+
+maize_wheat_bio_N_work$Crop <- as.factor(maize_wheat_bio_N_work$Crop)
+
+summary(maize_wheat_bio_N_work)
 
 ```
 
