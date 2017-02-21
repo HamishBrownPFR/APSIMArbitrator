@@ -1,0 +1,54 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+## 1. Biomass analysis
+
+```{r}
+library(tidyr)
+library (dplyr)
+library (ggplot2)
+library(agricolae)
+library(knitr)
+library(lubridate)
+library(GGally)
+```
+
+
+# read and check
+```{r}
+info <- read.csv("C:\\GitHubRepos\\Arbitrator\\Analysis\\Biomass_N_merged_WheatMaize.csv")
+info$X <- NULL
+
+summary(info)
+
+```
+
+# plot biomass and N
+
+```{r}
+
+df_mean <- info %>%
+  dplyr::select(-Irrigation,-Plot, -Block)%>%
+  group_by(HarvestDate, Crop, Organ, WaterTreat, NitroTreat) %>%
+  summarise_each(funs(mean, sd))
+
+summary(df_mean)
+
+df_mean %>%
+  filter(is.na(Nitrogen_sd))
+
+```
+
+```{r}
+df_mean %>%
+  ungroup()  %>% 
+  filter(Crop == "Wheat") %>%
+  mutate(HarvestDate = ymd(HarvestDate)) %>%
+  ggplot(aes(x=HarvestDate, y=BiomassWeight_mean, colour=Organ)) +
+  geom_line() +
+  geom_point() +
+  facet_grid(Crop~WaterTreat+NitroTreat)
+```
+
