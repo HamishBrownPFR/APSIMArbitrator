@@ -91,6 +91,7 @@ maize_N_work <- maize_N_raw %>%
          Irrigation = as.factor(WaterTreat),
          Organ = ifelse(Organ == "Dead", "Senesced", as.character(Organ)), # make names align with N data
          Organ = ifelse(Organ == "Chaff", "Rachis", as.character(Organ)),
+         NitrogenPerc = Nitrogen_Perc , # to match wheat
          Organ = as.factor(Organ)
          )
 
@@ -151,6 +152,8 @@ maize_bio_N_work %>%
 ## 2) Wheat
 
 # Read and check wheat biomass
+
+Data from exel sheet at  K:\Rainshelter\Wheat 2015-16\Analysis\ArbitratorTestData
 ```{r}
 
 wheat_bio_raw <- 
@@ -230,7 +233,14 @@ summary(wheat_bio_N_work)
 
 ## Merge both wheat and maize
 ```{r}
-
+print("====================================================")
+print("========        MAIZE                   ============")
+print("====================================================")
+summary(maize_bio_N_work)
+print("====================================================")
+print("========        WHEAT                   ============")
+print("====================================================")
+summary(wheat_bio_N_work)
 ```
 
 ## Plot data
