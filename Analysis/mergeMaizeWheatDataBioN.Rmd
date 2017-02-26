@@ -269,4 +269,36 @@ maize_wheat_bio_N_work$Crop <- as.factor(maize_wheat_bio_N_work$Crop)
 summary(maize_wheat_bio_N_work)
 
 ```
+# check data
+```{r, fig.width=12, fig.height=7}
+maize_wheat_bio_N_work %>%
+  dplyr::select(-Nitrogen, -Plot, -Nitrogen, -Irrigation, -Block) %>%
+  ggplot(aes(x=Organ,y=BiomassWeight, colour=WaterTreat)) +
+  geom_boxplot(width=0.2) +
+  geom_jitter() +
+  facet_grid(NitroTreat~Crop)
+
+write.csv(maize_wheat_bio_N_work,"C:\\GitHubRepos\\Arbitrator\\Analysis\\Biomass_N_merged_WheatMaize.csv")
+```
+# save dataset for Denis Curtin
+```{r}
+
+df <- maize_wheat_bio_N_work %>% 
+  filter(Crop == "Wheat") %>%
+  dplyr::select(HarvestDate, Crop, Organ, NitroTreat, WaterTreat, Block,NitrogenWeight) %>%
+  tidyr::spread(Organ,NitrogenWeight) %>%
+  rowwise() %>%
+  mutate(N_uptake = sum(Grain,Leaf,Rachis,Senesced,Stem, na.rm=TRUE))
+
+
+# plot to check
+df %>%
+  ggplot(aes(x=HarvestDate, y=N_uptake, colour = WaterTreat, linetype=WaterTreat)) +
+  geom_point() +
+  geom_smooth() +
+  facet_grid(NitroTreat~Crop, scales="free") +
+  ylab("N uptake (kg N/ha)")
+
+write.csv(df, "K:\\Rainshelter\\Wheat 2015-16\\Analysis\\SoilN_Balance\\Wheat_Bio_N_merge.csv")
+```
 
