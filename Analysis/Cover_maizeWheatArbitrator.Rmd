@@ -3,6 +3,16 @@ title: "R Notebook"
 output: html_notebook
 ---
 
+# load libs
+```{r, echo=FALSE, include=FALSE}
+library(tidyr)
+library (dplyr)
+library (ggplot2)
+library(agricolae)
+library(knitr)
+library(lubridate)
+library(GGally)
+```
 
 
 ## Maize data
@@ -123,16 +133,15 @@ UNFINISHED
 
 ```{r}
 
-m_n <- min(cover_maize_wheat_merge$HarvestDate[cover_maize_wheat_merge$Crop=="Maize"])
-m_x <- max(cover_maize_wheat_merge$HarvestDate[cover_maize_wheat_merge$Crop=="Maize"])
-w_n <- min(cover_maize_wheat_merge$HarvestDate[cover_maize_wheat_merge$Crop=="Wheat"])
-w_x <- max(cover_maize_wheat_merge$HarvestDate[cover_maize_wheat_merge$Crop=="Wheat"])
+# m_n <- min(cover_maize_wheat_merge$HarvestDate[cover_maize_wheat_merge$Crop=="Maize"])
+# m_x <- max(cover_maize_wheat_merge$HarvestDate[cover_maize_wheat_merge$Crop=="Maize"])
+# w_n <- min(cover_maize_wheat_merge$HarvestDate[cover_maize_wheat_merge$Crop=="Wheat"])
+# w_x <- max(cover_maize_wheat_merge$HarvestDate[cover_maize_wheat_merge$Crop=="Wheat"])
+# 
+# print(paste0("maize dates: ",m_n," ",m_x))
+# print(paste0("wheat dates: ",w_n," ",w_x))
 
-print(paste0("maize dates: ",m_n," ",m_x))
-print(paste0("wheat dates: ",w_n," ",w_x))
 
-maize_date_seq <- seq(m_n,m_x,1)
-wheat_date_seq <- seq(w_n,w_x,1)
 
 # Loop crops, treatments and blocks (i.e. per plot analysis)
 
@@ -145,11 +154,22 @@ for(cp in 1:length(codePlotValues)) {
     df <- cover_maize_wheat_merge %>% 
       filter(codePlot == codePlotValues[cp])
     
-    if (unique(df$Crop) == "Maize") {
-      thisSeq <- maize_date_seq
-    } else {
-      thisSeq <- wheat_date_seq
-    }
+    # find boundaries
+    # m_n <- min(df$HarvestDate[df$Crop=="Maize"])
+    # m_x <- max(df$HarvestDate[df$Crop=="Maize"])
+    # w_n <- min(df$HarvestDate[df$Crop=="Wheat"])
+    # w_x <- max(df$HarvestDate[df$Crop=="Wheat"])
+    # maize_date_seq <- seq(m_n,m_x,1)
+    # wheat_date_seq <- seq(w_n,w_x,1)
+    # 
+    # 
+    # if (unique(df$Crop) == "Maize") {
+    #   thisSeq <- maize_date_seq
+    # } else {
+    #   thisSeq <- wheat_date_seq
+    # }
+    
+    thisSeq <- seq(min(df$HarvestDate),max(df$HarvestDate),1)
     
     out <- approx(df$HarvestDate, 
        df$Cover, 
@@ -173,11 +193,15 @@ for(cp in 1:length(codePlotValues)) {
 }
 
 ```
+
+
+
 ```{r}
 summary(finalOutDf)
    # FIXME: check what's about NAs
 
 # Found refer to the crops that where harvest before the final date of harvest. Change to calculate max date by plot?
+
 x <- finalOutDf %>%
   filter(is.na(Cover))
 
