@@ -138,6 +138,8 @@ wheat_date_seq <- seq(w_n,w_x,1)
 
 codePlotValues <- unique(cover_maize_wheat_merge$codePlot)
 
+finalOutDf <- thisOutDf <- data.frame()
+
 for(cp in 1:length(codePlotValues)) {
   
     df <- cover_maize_wheat_merge %>% 
@@ -149,19 +151,38 @@ for(cp in 1:length(codePlotValues)) {
       thisSeq <- wheat_date_seq
     }
     
-    x <- approx(df$HarvestDate, 
+    out <- approx(df$HarvestDate, 
        df$Cover, 
        xout = thisSeq)
     
-    print(summary(df))
+    thisOutDf <- data.frame(HarvestDate = out$x, Cover = out$y)
     
+    thisOutDf <- thisOutDf %>%
+      mutate(Crop = unique(df$Crop), 
+                   WaterTreat = unique(df$WaterTreat), 
+                   NitroTreat = unique(df$NitroTreat),  
+                   Block = unique(df$Block))
+ 
+    
+    # create and append results
+    if(cp==1) {finalOutDf <- thisOutDf} else
+      {finalOutDf <- rbind(finalOutDf,thisOutDf)}
+    
+    
+ 
 }
 
+```
+```{r}
+summary(finalOutDf)
+   # FIXME: check what's about NAs
 
- approx(cover_maize_wheat_merge$HarvestDate[cover_maize_wheat_merge$Crop=="Maize"], 
-       cover_maize_wheat_merge$Cover[cover_maize_wheat_merge$Crop=="Maize"], 
-       xout = maize_date_seq) 
-  
+# Found refer to the crops that where harvest before the final date of harvest. Change to calculate max date by plot?
+x <- finalOutDf %>%
+  filter(is.na(Cover))
+
+summary(x)
+
 ```
 
 
