@@ -122,14 +122,6 @@ av_sd %>%
 UNFINISHED
 
 ```{r}
-library(zoo)
-x <- cover_maize_wheat_merge %>%
-  mutate(HarvestDate= ymd(HarvestDate)) %>%
-  filter(Crop == "Maize") %>%
-  group_by(Crop, NitroTreat, WaterTreat, Block) %>%
-  arrange(Crop, NitroTreat, WaterTreat, Block, HarvestDate) %>%
-  do(approx(HarvestDate, Cover, xout = maize_date_seq))
-
 
 m_n <- min(cover_maize_wheat_merge$HarvestDate[cover_maize_wheat_merge$Crop=="Maize"])
 m_x <- max(cover_maize_wheat_merge$HarvestDate[cover_maize_wheat_merge$Crop=="Maize"])
@@ -142,20 +134,23 @@ print(paste0("wheat dates: ",w_n," ",w_x))
 maize_date_seq <- seq(m_n,m_x,1)
 wheat_date_seq <- seq(w_n,w_x,1)
 
-# Loop crops and blocks
-
-
+# Loop crops, treatments and blocks (i.e. per plot analysis)
 
 codePlotValues <- unique(cover_maize_wheat_merge$codePlot)
 
-
 for(cp in 1:length(codePlotValues)) {
-
+  
     df <- cover_maize_wheat_merge %>% 
       filter(codePlot == codePlotValues[cp])
     
+    if (unique(df$Crop) == "Maize") {
+      thisSeq <- maize_date_seq
+    } else {
+      thisSeq <- wheat_date_seq
+    }
+    
     x <- approx(df$HarvestDate, 
-       df$Crop, 
+       df$Cover, 
        xout = thisSeq)
     
     print(summary(df))
