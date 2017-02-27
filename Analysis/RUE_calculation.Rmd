@@ -1,0 +1,77 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# load libs
+```{r, echo=FALSE, include=FALSE}
+library(tidyr)
+library (dplyr)
+library (ggplot2)
+library(agricolae)
+library(knitr)
+library(lubridate)
+library(GGally)
+```
+
+# Read interpolated cover values
+
+```{r}
+cover_raw <- 
+  read.csv("C:\\GitHubRepos\\Arbitrator\\Analysis\\CoverInterpolatedByDay.csv", header=TRUE)
+
+summary(cover_raw)
+```
+
+# sort out formats
+```{r}
+cover_work <- cover_raw %>%
+  mutate(Block = as.factor(Block)) %>%
+  mutate(HarvestDate = ymd(HarvestDate),
+         WaterTreat = as.factor(WaterTreat) ,
+         NitroTreat = as.factor(NitroTreat))
+
+str(cover_work)
+```
+
+# Check data
+```{r,fig.width=12, fig.height=8}
+cover_work %>%
+  ggplot(aes(x=HarvestDate, y=Cover, colour=WaterTreat, shape=NitroTreat)) +
+  geom_point() +
+  facet_wrap(Crop~Block, scales="free", ncol=4)
+```
+
+## Read weather file
+
+```{r}
+
+metFolder <- "C:\\Apsim_dev\\Data\\MetFiles\\"
+
+weather_raw <- read.table(paste0(metFolder,"lincoln.met"), skip = 6, header = TRUE, comment.char = "(", blank.lines.skip = TRUE)
+
+summary(weather_raw)
+
+```
+
+# Add date field and tidy up
+
+```{r}
+weather_work <- weather_raw %>%
+  mutate(thisDate = as.Date(day, origin = paste0(year,"-01-01"))) %>%
+  mutate(thisDate = ymd(thisDate)) %>%
+  filter(thisDate %in% cover_work$HarvestDate)
+
+str(weather_work)
+```
+# check
+```{r}
+summary(weather_work)
+```
+
+# Subset for datasets
+
+```{r}
+
+```
+
