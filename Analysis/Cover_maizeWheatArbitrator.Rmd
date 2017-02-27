@@ -118,7 +118,8 @@ length(unique(cover_maize_wheat_merge$HarvestDate))
 cover_maize_wheat_merge %>%
   ggplot(aes(x=HarvestDate, y=Cover, colour=WaterTreat, shape=NitroTreat)) +
  # geom_point() +
-  geom_line() +
+  geom_line(aes(linetype=NitroTreat)) +
+  scale_linetype_manual(values = c("dotted", "dashed", "solid","dotted", "dashed", "solid")) +
   facet_wrap(Crop~Block, scales="free", ncol=4)
 ```
 
@@ -206,7 +207,8 @@ write.csv(finalOutDf, "C:\\GitHubRepos\\Arbitrator\\Analysis\\CoverInterpolatedB
 
 finalOutDf %>%
   ggplot(aes(x=HarvestDate, y=Cover, colour=WaterTreat, shape=NitroTreat)) +
-  geom_point() +
+  geom_line(aes(linetype=NitroTreat)) +
+  scale_linetype_manual(values = c("dotted", "dashed", "solid","dotted", "dashed", "solid")) +
   facet_wrap(Crop~Block, scales="free", ncol=4)
   
 ```

@@ -79,9 +79,9 @@ b <- df_n %>%
   mutate(SdValue = nUp_sd) %>%
   dplyr::select(-nUp_mean,-nUp_sd)
 
-c <- rbind(a,b)
+bio_N_df <- rbind(a,b)
 
-c %>%
+bio_N_df %>%
   mutate(Variable = factor(Variable, levels=c("Total biomass", "Nitrogen uptake"))) %>%
   ggplot(aes(x=HarvestDate, y=MeanValue, colour = WaterTreat, 
              linetype = NitroTreat,
@@ -99,5 +99,9 @@ c %>%
   xlab("Sampling date") + 
   theme(legend.position="none")
 
+```
+# save
+```{r}
+write.csv(bio_N_df, "C:\\GitHubRepos\\Arbitrator\\Analysis\\Biomass_N_maizeWheat.csv")
 ```
 

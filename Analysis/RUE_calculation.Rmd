@@ -29,7 +29,12 @@ cover_work <- cover_raw %>%
   mutate(Block = as.factor(Block)) %>%
   mutate(HarvestDate = ymd(HarvestDate),
          WaterTreat = as.factor(WaterTreat) ,
-         NitroTreat = as.factor(NitroTreat))
+         WaterTreat = factor(WaterTreat, 
+                             levels= c("Dryland","Irrigated")),
+         NitroTreat = as.factor(NitroTreat),
+         NitroTreat = factor(NitroTreat, 
+                             levels= c("Low N","Median N","High N"))) %>%
+  dplyr::select(-X)
 
 str(cover_work)
 ```
@@ -38,7 +43,8 @@ str(cover_work)
 ```{r,fig.width=12, fig.height=8}
 cover_work %>%
   ggplot(aes(x=HarvestDate, y=Cover, colour=WaterTreat, shape=NitroTreat)) +
-  geom_point() +
+  geom_line(aes(linetype=NitroTreat)) +
+  scale_linetype_manual(values = c("dotted", "dashed", "solid","dotted", "dashed", "solid")) +
   facet_wrap(Crop~Block, scales="free", ncol=4)
 ```
 
@@ -69,9 +75,68 @@ str(weather_work)
 summary(weather_work)
 ```
 
-# Subset for datasets
+# Estimate daily light interception
 
 ```{r}
 
+ww <- weather_work %>% dplyr::select(thisDate,radn)
+
+rad_sum_df <- merge(cover_work,ww, by.x = "HarvestDate", by.y="thisDate") %>%
+  mutate(RadInt = radn*Cover) %>%
+  group_by(Crop,WaterTreat,NitroTreat,Block) %>%
+  mutate(RadIntSum = cumsum(RadInt))
+
+summary(rad_sum_df)
+```
+
+# graph
+
+```{r,fig.width=12, fig.height=8}
+rad_sum_df %>%
+  ungroup() %>%
+  mutate(NitroTreat = factor(NitroTreat, 
+                             labels= c("Low N","Median N","High N"))) %>%
+  ggplot(aes(x=HarvestDate, y=RadIntSum, colour=WaterTreat, linetype=NitroTreat)) +
+  geom_line() +
+  scale_linetype_manual(values = c("dotted", "dashed", "solid","dotted", "dashed", "solid"))+
+  facet_wrap(Crop~Block, scales="free", ncol=4)
+```
+
+#  RUE calculation
+
+## Merge Biomass and Interception
+
+```{r}
+
+bio_raw <- read.csv("C:\\GitHubRepos\\Arbitrator\\Analysis\\Biomass_N_merged_WheatMaize.csv")
+
+summary(bio_raw)
+
+```
+
+```{r}
+# clean data
+bio_work <- bio_raw %>%
+  dplyr::select(-X,-NitrogenPerc,-NitrogenWeight) %>%
+  mutate(Block = as.factor(Block),
+         HarvestDate = ymd(HarvestDate),
+         WaterTreat = as.factor(WaterTreat) ,
+         WaterTreat = factor(WaterTreat, 
+                             levels= c("Dryland","Irrigated")),
+         NitroTreat = as.factor(NitroTreat),
+         NitroTreat = factor(NitroTreat, 
+                             levels= c("Low N","Median N","High N"))) %>%
+  dplyr::select(HarvestDate, Crop, Organ, NitroTreat, WaterTreat, Block,BiomassWeight) %>%
+  tidyr::spread(Organ,BiomassWeight) %>%
+  rowwise() %>%
+  mutate(TotalBiomass = sum(Grain,Leaf,Rachis,Senesced,Stem, na.rm=TRUE)) %>%
+  dplyr::select(-(Grain:Stem))
+
+summary(bio_work)
+```
+
+
+```{r}
+rue_df <- merge(rad_sum_df)
 ```
 
