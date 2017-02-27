@@ -76,6 +76,9 @@ wheat_cover_work %>%
 cover_maize_wheat_merge <- rbind(maize_cover_work,wheat_cover_work)
 
 
+cover_maize_wheat_merge <- cover_maize_wheat_merge %>% 
+  mutate(codePlot = paste0(Crop,"_",WaterTreat,"_", NitroTreat,"_",Block))
+
 summary(cover_maize_wheat_merge)
 
 ```
@@ -115,6 +118,57 @@ av_sd %>%
 
 
 # Interpolate by day
+
+UNFINISHED
+
+```{r}
+library(zoo)
+x <- cover_maize_wheat_merge %>%
+  mutate(HarvestDate= ymd(HarvestDate)) %>%
+  filter(Crop == "Maize") %>%
+  group_by(Crop, NitroTreat, WaterTreat, Block) %>%
+  arrange(Crop, NitroTreat, WaterTreat, Block, HarvestDate) %>%
+  do(approx(HarvestDate, Cover, xout = maize_date_seq))
+
+
+m_n <- min(cover_maize_wheat_merge$HarvestDate[cover_maize_wheat_merge$Crop=="Maize"])
+m_x <- max(cover_maize_wheat_merge$HarvestDate[cover_maize_wheat_merge$Crop=="Maize"])
+w_n <- min(cover_maize_wheat_merge$HarvestDate[cover_maize_wheat_merge$Crop=="Wheat"])
+w_x <- max(cover_maize_wheat_merge$HarvestDate[cover_maize_wheat_merge$Crop=="Wheat"])
+
+print(paste0("maize dates: ",m_n," ",m_x))
+print(paste0("wheat dates: ",w_n," ",w_x))
+
+maize_date_seq <- seq(m_n,m_x,1)
+wheat_date_seq <- seq(w_n,w_x,1)
+
+# Loop crops and blocks
+
+
+
+codePlotValues <- unique(cover_maize_wheat_merge$codePlot)
+
+
+for(cp in 1:length(codePlotValues)) {
+
+    df <- cover_maize_wheat_merge %>% 
+      filter(codePlot == codePlotValues[cp])
+    
+    x <- approx(df$HarvestDate, 
+       df$Crop, 
+       xout = thisSeq)
+    
+    print(summary(df))
+    
+}
+
+
+ approx(cover_maize_wheat_merge$HarvestDate[cover_maize_wheat_merge$Crop=="Maize"], 
+       cover_maize_wheat_merge$Cover[cover_maize_wheat_merge$Crop=="Maize"], 
+       xout = maize_date_seq) 
+  
+```
+
 
 # Calculate intercepted light
 
