@@ -25,22 +25,30 @@ summary(info_raw)
 
 ```
 
-# check formays
+# check formats
 ```{r}
 info_work <- info_raw %>%
   mutate(HarvestDate = ymd(HarvestDate)) %>%
   mutate(Plot = factor(Plot)) %>%
   mutate(Block = factor(Block)) %>%
-  mutate(NitroTreat = factor(NitroTreat, levels = c("Low N","Median N","High N"))) %>%
-  mutate(WaterTreat = factor(WaterTreat, levels = c("Dryland","Irrigated")))
+  mutate(NitroTreat = factor(NitroTreat, 
+                             levels = c("Low N","Median N","High N"))) %>%
+  mutate(WaterTreat = factor(WaterTreat, 
+                             levels = c("Dryland","Irrigated")))
 
 str(info_work)
 ```
 
+```{r}
+summary(info_work)
+```
 
+# Calculate Total biomass
 
+- FIXME: sure can do it simpler
 ```{r, fig.width=12, fig.height=8}
 df_bio <- info_work %>% 
+  na.omit() %>%
   dplyr::select(HarvestDate, Crop, Organ, NitroTreat, WaterTreat, Block,BiomassWeight) %>%
   tidyr::spread(Organ,BiomassWeight) %>%
   rowwise() %>%
@@ -51,10 +59,13 @@ df_bio <- info_work %>%
 
 ```
 
-## Nitrogen uptake
+# Calculate Total N uptake
+
+- FIXME: sure can do it simpler
 
 ```{r, fig.width=12, fig.height=8}
 df_n <- info_work %>% 
+  na.omit() %>%
   dplyr::select(HarvestDate, Crop, Organ, NitroTreat, WaterTreat, Block,NitrogenWeight) %>%
   tidyr::spread(Organ,NitrogenWeight) %>%
   rowwise() %>%
@@ -99,9 +110,5 @@ bio_N_df %>%
   xlab("Sampling date") + 
   theme(legend.position="none")
 
-```
-# save
-```{r}
-write.csv(bio_N_df, "C:\\GitHubRepos\\Arbitrator\\Analysis\\Biomass_N_maizeWheat.csv")
 ```
 
