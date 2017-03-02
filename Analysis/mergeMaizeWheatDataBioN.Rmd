@@ -23,15 +23,15 @@ maize_bio_raw <-
 
 str(maize_bio_raw)
 
-# define N treat categories
-# n_cat_maize <- data.frame(NitroTreat = c("000N","075N","250N"), 
-#                           NitroCat = c("Low","Median","High"))
+```
+
+```{r}
 
 # clean up and massage
 maize_bio_work <- maize_bio_raw %>%
   mutate(HarvestDate = dmy(Date)) %>%
   mutate(Block = as.factor(Block),
-         Trt = as.factor(Trt),
+        # Trt = as.factor(Trt),
          Plot = as.factor(Plot)
          ) %>%
   dplyr::select(Date, Plot, WaterTreat, NitroTreat, Grain, Leaf, Stem, Rachis, Dead) %>%
@@ -46,64 +46,40 @@ maize_bio_work <- maize_bio_raw %>%
          tidyr::gather("Organ","BiomassWeight",Grain:Dead) %>%
          mutate(Organ = ifelse(Organ == "Dead", "Senesced", as.character(Organ))) %>%
          mutate(Organ = as.factor(Organ))
-
-
-# function to do percentages
-# ppf <- function(organ,total) {
-#   
-#   round(organ/total*100,1)
-#   
-# }
-# mutate(
-#     Total = (Leaf + Stem + Dead + Grain + Rachis),
-#        #  TestTotal = round(Total/Total*100,0),
-#          LeafPerc = ppf(Leaf,Total),
-#          StemPerc = ppf(Stem,Total),
-#          DeadPerc = ppf(Dead,Total),
-#          GrainPerc = ppf(Grain,Total),
-#          RachisPerc = ppf(Rachis,Total)
-#                              ) 
-
-
-# FIXME: gather organ names in a "Organ" column
-
-
-#head(maize_bio_work)
 summary (maize_bio_work)
-#str(maize_bio_work)
+```
+
+```{r}
+print("Sampling dates")
+unique(maize_bio_work$HarvestDate)
 ```
 
 # Read and check maize nitrogen
 ```{r}
 maize_N_raw <- read.table("K:\\Rainshelter\\Maize 2012-13\\Analysis\\WorkedData\\Nitrogen\\plantN.txt", header = TRUE)
-#duplicated(maize_N_raw)
-
 str(maize_N_raw)
+```
 
+```{r,fig.width=12, fig.height=10}
 # clean up and massage
 maize_N_work <- maize_N_raw %>%
   mutate(HarvestDate = dmy(Date)) %>%
   mutate(Block = as.factor(Block),
          Plot = as.factor(Plot),
          HarvestDate = dmy(Date), 
-         Organ = Component,
          Nitrogen =  as.numeric(as.character(gsub("N","",NitroTreat))),
-         Irrigation = as.factor(WaterTreat),
-         Organ = ifelse(Organ == "Dead", "Senesced", as.character(Organ)), # make names align with N data
-         Organ = ifelse(Organ == "Chaff", "Rachis", as.character(Organ)),
-         NitrogenPerc = Nitrogen_Perc , # to match wheat
-         Organ = as.factor(Organ)
-         )
+         Irrigation = as.factor(WaterTreat)
+         ) %>%
+  tidyr::gather("Organ","NitrogenPerc",Grain:Dead) %>%
+  mutate(Organ = as.factor(Organ))
 
-str(maize_N_work)
-head(maize_N_work)
 summary (maize_N_work)
 ```
 
 # merge biomass and N in maize
 
+clean duplicated fields
 ```{r}
-
 # revove duplicated fields before merge
 maize_N_work$WaterTreat <- NULL
 maize_N_work$NitroTreat <- NULL
@@ -116,40 +92,83 @@ maize_N_work$Date <- NULL
 # check fields
 colnames(maize_bio_work)
 colnames(maize_N_work)
-
+```
 # merge the baby
-maize_bio_N_work <- merge(maize_bio_work, maize_N_work, by=c("HarvestDate","Plot","Organ"))
+```{r}
 
-# check
-maize_bio_N_work$NitrogenWeight <- 
-  maize_bio_N_work$BiomassWeight * maize_bio_N_work$Nitrogen_Perc/100
+tempDf <- merge(maize_bio_work, maize_N_work, by=c("HarvestDate","Plot","Organ"))
+
+# # check
+# maize_bio_N_work$NitrogenWeight <- 
+#   maize_bio_N_work$BiomassWeight * maize_bio_N_work$Nitrogen_Perc/100
+
+maize_bio_N_work <- tempDf %>%
+  mutate(NitrogenWeight = BiomassWeight*NitrogenPerc/100)
 
 summary(maize_bio_N_work)
 
 
 ```
+check NAs
+```{r}
+x<-maize_bio_N_work %>%
+  filter(is.na(NitrogenPerc))
+
+summary(x)
+```
 
 # overall check
-```{r}
+
+# Biomass
+```{r,fig.width=12, fig.height=10}
+
 maize_bio_N_work %>%
-dplyr::select(Organ,BiomassWeight:NitrogenWeight) %>%
-ggpairs(aes(colour=Organ))
+  tidyr::gather("VarName","Value",BiomassWeight,NitrogenWeight:NitrogenPerc) %>%
+  filter (VarName == "BiomassWeight") %>%
+   ggplot(aes(x=HarvestDate, y=Value, 
+              colour=WaterTreat, linetype=NitroTreat)) +
+   geom_point() +
+   geom_line() +
+   facet_wrap(Organ~Block, scales="free")
   
 ```
+# Nitrogen amounts (kg/ha)
+```{r,fig.width=12, fig.height=10}
+maize_bio_N_work %>%
+  tidyr::gather("VarName","Value",BiomassWeight,NitrogenWeight:NitrogenPerc) %>%
+  filter (VarName == "NitrogenWeight") %>%
+   ggplot(aes(x=HarvestDate, y=Value, 
+              colour=WaterTreat, linetype=NitroTreat)) +
+   geom_point() +
+   geom_line() +
+   facet_wrap(Organ~Block, scales="free")
+```
+# N%
+```{r,fig.width=12, fig.height=10}
+maize_bio_N_work %>%
+  tidyr::gather("VarName","Value",BiomassWeight,NitrogenWeight:NitrogenPerc) %>%
+  filter (VarName == "NitrogenPerc") %>%
+   ggplot(aes(x=HarvestDate, y=Value, 
+              colour=WaterTreat, linetype=NitroTreat)) +
+   geom_point() +
+   geom_line() +
+   facet_wrap(Organ~Block, scales="free")
+```
+
 
 # find odd points
 ```{r}
 # graph N amounts from raw data and from R calculations
-maize_bio_N_work %>%
-  ggplot(aes(x=NitrogenWeight, y=N_amount, colour=NitroTreat, shape=Irrigation)) +
-  geom_point() +
-  geom_abline(intercept=0,slope=1)
+# maize_bio_N_work %>%
+#   ggplot(aes(x=NitrogenWeight, y=N_amount, colour=NitroTreat, shape=Irrigation)) +
+#   geom_point() +
+#   geom_abline(intercept=0,slope=1)
 
 # FIXME: identify points that diverge from x=y
 
 ```
 
-## 2) Wheat
+## 2) Wheat 
 
 # Read and check wheat biomass
 
@@ -195,8 +214,12 @@ wheat_N_raw <-
   read.table("K:\\Rainshelter\\Wheat 2015-16\\Analysis\\N_Plant\\NitrogenRawWheat.txt", header = TRUE)
 #duplicated(maize_N_raw)
 
+summary(wheat_N_raw)
 str(wheat_N_raw)
 
+```
+
+```{r}
 # clean up and massage
 wheat_N_work <- wheat_N_raw %>%
   mutate(HarvestDate = dmy(Date)) %>%
@@ -209,8 +232,8 @@ wheat_N_work <- wheat_N_raw %>%
       mutate(Organ = factor(Organ, levels=c("Leaf",	"Stem",	"Dead",	"Ear",	"Grain",	"Rachis"), 
                           labels = c("Leaf",	"Stem",	"Senesced",	"Ear",	"Grain",	"Rachis"))) 
 
-str(wheat_N_work)
-head(wheat_N_work)
+# str(wheat_N_work)
+# head(wheat_N_work)
 summary (wheat_N_work)
 ```
 
@@ -245,7 +268,7 @@ print("====================================================")
 print("========        MAIZE                   ============")
 print("====================================================")
 
-maize_bio_N_work$Date <- maize_bio_N_work$Nitrogen_Perc <- maize_bio_N_work$N_amount <-NULL
+maize_bio_N_work$Date <- maize_bio_N_work$Nitrogen_Perc <- maize_bio_N_work$N_amount <- NULL
 maize_bio_N_work$Crop <- "Maize"
 summary(maize_bio_N_work)
 
@@ -278,9 +301,22 @@ maize_wheat_bio_N_work %>%
   geom_jitter() +
   facet_grid(NitroTreat~Crop)
 
+```
+
+# check sampling dates
+```{r}
+unique(maize_wheat_bio_N_work$HarvestDate)
+```
+
+
+# save data
+
+```{r}
 write.csv(maize_wheat_bio_N_work,"C:\\GitHubRepos\\Arbitrator\\Analysis\\Biomass_N_merged_WheatMaize.csv")
 ```
-# save dataset for Denis Curtin
+
+
+# save wheat dataset only  for Denis Curtin
 ```{r}
 
 df <- maize_wheat_bio_N_work %>% 
