@@ -18,7 +18,8 @@ library(GGally)
 
 # read and check
 ```{r}
-info_raw <- read.csv("C:\\GitHubRepos\\Arbitrator\\Analysis\\Biomass_N_merged_WheatMaize.csv")
+info_raw <- 
+  read.csv("C:\\GitHubRepos\\Arbitrator\\Analysis\\Biomass_N_merged_WheatMaize.csv")
 info_raw$X <- NULL
 
 summary(info_raw)
@@ -47,12 +48,20 @@ summary(info_work)
 
 - FIXME: sure can do it simpler
 ```{r, fig.width=12, fig.height=8}
+
+# FIXME: Not working 
+df <- info_work %>%
+  group_by(HarvestDate, Crop, Organ, NitroTreat, WaterTreat, Block) %>%
+  arrange(HarvestDate) %>%
+  mutate(SumBio = cumsum(BiomassWeight), SumN = cumsum(NitrogenWeight))
+
+
 df_bio <- info_work %>% 
   na.omit() %>%
   dplyr::select(HarvestDate, Crop, Organ, NitroTreat, WaterTreat, Block,BiomassWeight) %>%
   tidyr::spread(Organ,BiomassWeight) %>%
   rowwise() %>%
-  mutate(TotalBiomass = sum(Grain,Leaf,Rachis,Senesced,Stem, na.rm=TRUE)) %>%
+  mutate(TotalBiomass = sum(Grain,Leaf,Rachis,Senesced, Stem, na.rm=TRUE)) %>%
   dplyr::select(-(Grain:Stem)) %>%  
   group_by(HarvestDate, Crop, NitroTreat, WaterTreat) %>%
   summarise(bio_mean = mean(TotalBiomass/1000),bio_sd = sd(TotalBiomass/1000))
@@ -67,12 +76,12 @@ df_bio <- info_work %>%
 df_n <- info_work %>% 
   na.omit() %>%
   dplyr::select(HarvestDate, Crop, Organ, NitroTreat, WaterTreat, Block,NitrogenWeight) %>%
-  tidyr::spread(Organ,NitrogenWeight) %>%
+  tidyr::spread(Organ, NitrogenWeight) %>%
   rowwise() %>%
-  mutate(N_uptake = sum(Grain,Leaf,Rachis,Senesced,Stem, na.rm=TRUE)) %>%
+  mutate(N_uptake = sum(Grain,Leaf,Rachis,Senesced, Stem, na.rm=TRUE)) %>%
   dplyr::select(-(Grain:Stem)) %>%  
   group_by(HarvestDate, Crop, NitroTreat, WaterTreat) %>%
-  summarise(nUp_mean = mean(N_uptake),nUp_sd = sd(N_uptake))
+  summarise(nUp_mean = mean(N_uptake), nUp_sd = sd(N_uptake))
 
 ```
 ## Graph it
@@ -85,15 +94,19 @@ a <- df_bio %>%
   dplyr::select(-bio_mean,-bio_sd)
 
 b <- df_n %>%
-  mutate(Variable = "Nitrogen uptake") %>%
+  mutate(Variable = "Nitrogen in biomass") %>%
   mutate(MeanValue = nUp_mean) %>%
   mutate(SdValue = nUp_sd) %>%
   dplyr::select(-nUp_mean,-nUp_sd)
 
+# bind N and biomass again
+maize_bio_N_work <- as.data.frame(a, stringAsFactors=FALSE)
+wheat_bio_N_work <- as.data.frame(b, stringAsFactors=FALSE)
+
 bio_N_df <- rbind(a,b)
 
 bio_N_df %>%
-  mutate(Variable = factor(Variable, levels=c("Total biomass", "Nitrogen uptake"))) %>%
+  mutate(Variable = factor(Variable, levels=c("Total biomass", "Nitrogen in biomass"))) %>%
   ggplot(aes(x=HarvestDate, y=MeanValue, colour = WaterTreat, 
              linetype = NitroTreat,
              shape = NitroTreat)) +
@@ -104,11 +117,18 @@ bio_N_df %>%
   geom_errorbar(aes(ymin=MeanValue-SdValue/2,
                     ymax=MeanValue+SdValue/2), width = 2) +
   facet_grid(Variable~Crop, scales="free") +
-  ylab("Total N uptake (kg DM/ha)                 Total N biomass (t N/ha)") +
+  ylab("Total N in biomass (kg DM/ha)                 Total biomass (t N/ha)") +
   theme(text = element_text(size=20))+
   theme(legend.title=element_blank()) +
   xlab("Sampling date") + 
   theme(legend.position="none")
 
+```
+
+# check
+```{r}
+bio_N_df %>%
+  filter(Crop == "Wheat") %>%
+  filter(HarvestDate == max(HarvestDate))
 ```
 
