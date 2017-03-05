@@ -44,74 +44,50 @@ str(info_work)
 summary(info_work)
 ```
 
-# Calculate Total biomass
+# calculate Totals (bio and N)
 
-- FIXME: sure can do it simpler
 ```{r, fig.width=12, fig.height=8}
 
-# FIXME: Not working 
-df <- info_work %>%
-  group_by(HarvestDate, Crop, Organ, NitroTreat, WaterTreat, Block) %>%
-  arrange(HarvestDate) %>%
-  mutate(SumBio = cumsum(BiomassWeight), SumN = cumsum(NitrogenWeight))
-
-
-df_bio <- info_work %>% 
-  na.omit() %>%
+df_bio_sum <- info_work %>% 
+#  na.omit() %>%
   dplyr::select(HarvestDate, Crop, Organ, NitroTreat, WaterTreat, Block,BiomassWeight) %>%
-  tidyr::spread(Organ,BiomassWeight) %>%
+  tidyr::spread(Organ, BiomassWeight)  %>%
   rowwise() %>%
-  mutate(TotalBiomass = sum(Grain,Leaf,Rachis,Senesced, Stem, na.rm=TRUE)) %>%
-  dplyr::select(-(Grain:Stem)) %>%  
-  group_by(HarvestDate, Crop, NitroTreat, WaterTreat) %>%
-  summarise(bio_mean = mean(TotalBiomass/1000),bio_sd = sd(TotalBiomass/1000))
+  mutate(Total = sum(Grain,Leaf,Rachis,Husk,Senesced, Stem, na.rm=TRUE)) %>% 
+  mutate(Variable = "Biomass") %>%
+  dplyr::select(Variable, HarvestDate, Crop, NitroTreat, WaterTreat, Block, Total) %>%
+  mutate(Variable = as.factor(Variable))
 
-```
-
-# Calculate Total N uptake
-
-- FIXME: sure can do it simpler
-
-```{r, fig.width=12, fig.height=8}
-df_n <- info_work %>% 
-  na.omit() %>%
+df_N_sum <- info_work %>% 
+#  na.omit() %>%
   dplyr::select(HarvestDate, Crop, Organ, NitroTreat, WaterTreat, Block,NitrogenWeight) %>%
   tidyr::spread(Organ, NitrogenWeight) %>%
   rowwise() %>%
-  mutate(N_uptake = sum(Grain,Leaf,Rachis,Senesced, Stem, na.rm=TRUE)) %>%
-  dplyr::select(-(Grain:Stem)) %>%  
-  group_by(HarvestDate, Crop, NitroTreat, WaterTreat) %>%
-  summarise(nUp_mean = mean(N_uptake), nUp_sd = sd(N_uptake))
+  mutate(Total = sum(Grain,Leaf,Rachis,Husk,Senesced, Stem, na.rm=TRUE)) %>% 
+  mutate(Variable = "Nitrogen") %>%
+  dplyr::select(Variable, HarvestDate, Crop, NitroTreat, WaterTreat, Block, Total)
+
+df_sum <- rbind(df_bio_sum, df_N_sum)
+
+
+summary(df_sum)
 
 ```
-## Graph it
-```{r,fig.width=12, fig.height=10}
 
-a <- df_bio %>%
-  mutate(Variable = "Total biomass") %>%
-  mutate(MeanValue = bio_mean) %>%
-  mutate(SdValue = bio_sd) %>%
-  dplyr::select(-bio_mean,-bio_sd)
+## Do averages
 
-b <- df_n %>%
-  mutate(Variable = "Nitrogen in biomass") %>%
-  mutate(MeanValue = nUp_mean) %>%
-  mutate(SdValue = nUp_sd) %>%
-  dplyr::select(-nUp_mean,-nUp_sd)
+```{r,fig.width=12, fig.height=10, warning=FALSE}
+df_av <- df_sum %>%
+  group_by(Variable, HarvestDate, Crop, NitroTreat, WaterTreat) %>%
+  summarise(MeanValue = mean(Total), SdValue = sd(Total))
 
-# bind N and biomass again
-maize_bio_N_work <- as.data.frame(a, stringAsFactors=FALSE)
-wheat_bio_N_work <- as.data.frame(b, stringAsFactors=FALSE)
 
-bio_N_df <- rbind(a,b)
-
-bio_N_df %>%
-  mutate(Variable = factor(Variable, levels=c("Total biomass", "Nitrogen in biomass"))) %>%
-  ggplot(aes(x=HarvestDate, y=MeanValue, colour = WaterTreat, 
+df_av %>%
+  ggplot(aes(x=HarvestDate, y=MeanValue, colour = WaterTreat,
              linetype = NitroTreat,
              shape = NitroTreat)) +
   geom_point(size=3) +
-  geom_line(size=1.1) +  
+  geom_line(size=1.1) +
   scale_shape(solid = FALSE)+
 #  geom_smooth(aes(linetype=NitroTreat)) +
   geom_errorbar(aes(ymin=MeanValue-SdValue/2,
@@ -120,15 +96,10 @@ bio_N_df %>%
   ylab("Total N in biomass (kg DM/ha)                 Total biomass (t N/ha)") +
   theme(text = element_text(size=20))+
   theme(legend.title=element_blank()) +
-  xlab("Sampling date") + 
-  theme(legend.position="none")
+  xlab("Sampling date") +
+  theme(legend.position="none")+
+  scale_linetype_manual(values = c("dotted", "dashed", "solid","dotted", "dashed", "solid")) 
 
-```
 
-# check
-```{r}
-bio_N_df %>%
-  filter(Crop == "Wheat") %>%
-  filter(HarvestDate == max(HarvestDate))
 ```
 
