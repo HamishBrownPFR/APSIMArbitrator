@@ -122,7 +122,7 @@ summary(x)
 # overall check
 
 # Biomass
-```{r,fig.width=12, fig.height=10}
+```{r,fig.width=12, fig.height=15}
 
 maize_bio_N_work %>%
   tidyr::gather("VarName","Value",BiomassWeight,NitrogenWeight:NitrogenPerc) %>%
@@ -131,7 +131,7 @@ maize_bio_N_work %>%
               colour=WaterTreat, linetype=NitroTreat)) +
    geom_point() +
    geom_line() +
-   facet_wrap(Organ~Block, scales="free")
+   facet_wrap(Organ~Block, scales="free", ncol=4)
   
 ```
 # Nitrogen amounts (kg/ha)
@@ -143,7 +143,7 @@ maize_bio_N_work %>%
               colour=WaterTreat, linetype=NitroTreat)) +
    geom_point() +
    geom_line() +
-   facet_wrap(Organ~Block, scales="free")
+   facet_wrap(Organ~Block, scales="free", ncol=4)
 ```
 # N%
 ```{r,fig.width=12, fig.height=10}
@@ -154,7 +154,7 @@ maize_bio_N_work %>%
               colour=WaterTreat, linetype=NitroTreat)) +
    geom_point() +
    geom_line() +
-   facet_wrap(Organ~Block, scales="free")
+   facet_wrap(Organ~Block, scales="free", ncol = 4)
 ```
 
 
@@ -170,7 +170,7 @@ maize_bio_N_work %>%
 
 ```
 
-## 2) Wheat 
+## 2) Wheat data 
 
 # Read and check wheat biomass
 
@@ -222,7 +222,9 @@ mutate(Block = as.factor(Block),
                              labels= c("Dryland","Irrigated")), # Nil,Mid,High,
          NitroTreat = factor(Nit,levels = c(0,50,250),
                              labels= c("Low N","Median N","High N"))) %>% # Nil,Mid,High
-  dplyr::select(-Irr,	-Nit,-DM_kgHa,-N_Perc)
+  dplyr::select(-Irr,	-Nit,-DM_kgHa,-N_Perc) %>%
+  mutate(Organ = ifelse(Organ == "Dead", "Senesced", as.character(Organ))) %>%
+  mutate(Organ = as.factor(Organ))
 
 summary(wheat_bio_N_work)
 ```
@@ -333,7 +335,8 @@ maize_wheat_bio_N_work %>%
   ggplot(aes(x=Organ,y=Value, colour=WaterTreat)) +
   geom_boxplot(width=0.2) +
   geom_jitter() +
-  facet_wrap(Crop~Variable+NitroTreat, ncol=4, scales="free")
+  facet_wrap(Crop~Variable+NitroTreat, ncol=4, scales="free") + 
+    theme(axis.text.x=element_text(size=15, angle=90))
 
 ```
 
