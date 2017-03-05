@@ -31,21 +31,19 @@ str(maize_bio_raw)
 maize_bio_work <- maize_bio_raw %>%
   mutate(HarvestDate = dmy(Date)) %>%
   mutate(Block = as.factor(Block),
-        # Trt = as.factor(Trt),
          Plot = as.factor(Plot)
          ) %>%
-  dplyr::select(Date, Plot, WaterTreat, NitroTreat, Grain, Leaf, Stem, Rachis, Dead) %>%
+#  dplyr::select(Date, Plot, Block, WaterTreat, NitroTreat, Grain, Leaf, Stem, Rachis, Dead) %>%
   mutate(HarvestDate = dmy(Date), 
-       #  Total = (Leaf + Stem + Dead + Grain + Rachis),
          Nitrogen =  as.numeric(as.character(gsub("N","",NitroTreat))),
          NitroTreat = factor(NitroTreat,levels = c("000N","075N","250N"), 
                              labels= c("Low N","Median N","High N")),
-         WaterTreat = ifelse(WaterTreat=="Irrig", "Irrigated","Dryland"), # same as wheat
+         WaterTreat = ifelse(WaterTreat=="Irrig", "Irrigated","Dryland"), # same 
          WaterTreat = as.factor(WaterTreat) ,
          Irrigation = as.factor(WaterTreat)) %>%
          tidyr::gather("Organ","BiomassWeight",Grain:Dead) %>%
-         mutate(Organ = ifelse(Organ == "Dead", "Senesced", as.character(Organ))) %>%
-         mutate(Organ = as.factor(Organ))
+         dplyr::select(-Date, -Irrigation, -Nitrogen)
+
 summary (maize_bio_work)
 ```
 
@@ -85,9 +83,8 @@ maize_N_work$WaterTreat <- NULL
 maize_N_work$NitroTreat <- NULL
 maize_N_work$Nitrogen <- NULL
 maize_N_work$Irrigation <- NULL
-#maize_N_work$Block <- NULL
-maize_N_work$Component <- NULL
 maize_N_work$Date <- NULL
+maize_N_work$Block <- NULL
 
 # check fields
 colnames(maize_bio_work)
@@ -96,14 +93,19 @@ colnames(maize_N_work)
 # merge the baby
 ```{r}
 
-tempDf <- merge(maize_bio_work, maize_N_work, by=c("HarvestDate","Plot","Organ"))
+tempDf <- merge(maize_bio_work, maize_N_work, by=c("HarvestDate","Plot","Organ"), all = TRUE)
 
 # # check
 # maize_bio_N_work$NitrogenWeight <- 
 #   maize_bio_N_work$BiomassWeight * maize_bio_N_work$Nitrogen_Perc/100
 
 maize_bio_N_work <- tempDf %>%
-  mutate(NitrogenWeight = BiomassWeight*NitrogenPerc/100)
+ # na.omit() %>%
+  mutate(NitrogenWeight = BiomassWeight*NitrogenPerc/100) %>%
+  mutate(Organ = ifelse(Organ == "Dead", "Senesced", as.character(Organ))) %>%
+  mutate(Organ = as.factor(Organ))%>%
+#  mutate(ToDelete = is.na(Block)) %>%
+  filter(!is.na(Block)) # removes dates when organ was not actually measured
 
 summary(maize_bio_N_work)
 
@@ -176,7 +178,9 @@ Data from exel sheet at  K:\Rainshelter\Wheat 2015-16\Analysis\ArbitratorTestDat
 ```{r}
 
 wheat_bio_raw <- 
-  read.table("K:\\Rainshelter\\Wheat 2015-16\\Analysis\\Biomass\\BiomassLAIData.txt", header=TRUE)
+#  read.table("K:\\Rainshelter\\Wheat 2015-16\\Analysis\\Biomass\\BiomassLAIData.txt", header=TRUE)
+  read.table("K:\\Rainshelter\\Wheat 2015-16\\Analysis\\ArbitratorTestData\\BiomassNitrogen.txt", header=TRUE)
+
 
 #str(wheat_bio_raw)
 
@@ -186,78 +190,94 @@ head(wheat_bio_raw)
 
 ```{r}
 # clean up and massage
-wheat_bio_work <- wheat_bio_raw %>%
-  dplyr::select(HarvestDate,Plot,
-                Block, Nitrogen,Irrigation,
-                Leaf:Chaff) %>%
-  mutate(HarvestDate = dmy(HarvestDate)) %>%
-  mutate(Block = as.factor(Block),
-      #   Trt = as.factor(TreatNo),
-         Plot = as.factor(Plot-100),
-         WaterTreat = Irrigation,
-         NitroTreat = factor(Nitrogen,levels = c(0,50,250), labels= c("Low N","Median N","High N"))) %>% # Nil,Mid,High
-  dplyr::select(HarvestDate, Plot,Block, WaterTreat, NitroTreat,Leaf:Chaff) %>%
-   tidyr::gather("Organ","BiomassWeight",Leaf:Chaff) %>%
-    mutate(Organ = factor(Organ, levels=c("Leaf",	"Stem",	"Dead",	"Ear",	"Grain",	"Chaff"), 
-                          labels = c("Leaf",	"Stem",	"Senesced",	"Ear",	"Grain",	"Rachis"))) %>%
-   filter(Organ != "Ear") # in raw data now loaded into "Chaff" or now "Rachis"
+# wheat_bio_work <- wheat_bio_raw %>%
+#   dplyr::select(HarvestDate,Plot,
+#                 Block, Nitrogen,Irrigation,
+#                 Leaf:Chaff) %>%
+#   mutate(HarvestDate = dmy(HarvestDate)) %>%
+#   mutate(Block = as.factor(Block),
+#       #   Trt = as.factor(TreatNo),
+#          Plot = as.factor(Plot-100),
+#          WaterTreat = Irrigation,
+#          NitroTreat = factor(Nitrogen,levels = c(0,50,250), 
+#                              labels= c("Low N","Median N","High N"))) %>% # Nil,Mid,High
+#   dplyr::select(HarvestDate, Plot,Block, WaterTreat, NitroTreat,Leaf:Chaff) %>%
+#   tidyr::gather("Organ","BiomassWeight",Leaf:Chaff) %>%
+#     mutate(Organ = factor(Organ, levels=c("Leaf",	"Stem",	"Dead",	"Ear",	"Grain",	"Chaff"), 
+#                           labels = c("Leaf",	"Stem",	"Senesced",	"Ear",	"Grain",	"Rachis"))) %>% filter(Organ != "Ear") # in raw data now loaded into "Chaff" or now "Rachis"
 
 # FIXME: PLot ear and Chaff or Rachis to be sure all ok
 
-summary(wheat_bio_work)
+wheat_bio_N_work <- wheat_bio_raw %>%
+na.omit() %>%
+dplyr::select(-HarvestNo,	-Growth_Stage, -TreatNo) %>%
+mutate(HarvestDate = dmy(Clock.Today)) %>%
+dplyr::select(-Clock.Today) %>%
+mutate(Block = as.factor(Block),
+         Plot = as.factor(Plot-100),
+         BiomassWeight = DM_kgHa,
+         NitrogenWeight = N_Perc/100*DM_kgHa,
+         NitrogenPerc = N_Perc,
+         WaterTreat = factor(Irr,levels = c("Nil","Full"),
+                             labels= c("Dryland","Irrigated")), # Nil,Mid,High,
+         NitroTreat = factor(Nit,levels = c(0,50,250),
+                             labels= c("Low N","Median N","High N"))) %>% # Nil,Mid,High
+  dplyr::select(-Irr,	-Nit,-DM_kgHa,-N_Perc)
+
+summary(wheat_bio_N_work)
 ```
 
 # Read wheat nitrogen
 
 ```{r}
-wheat_N_raw <- 
-  read.table("K:\\Rainshelter\\Wheat 2015-16\\Analysis\\N_Plant\\NitrogenRawWheat.txt", header = TRUE)
-#duplicated(maize_N_raw)
-
-summary(wheat_N_raw)
-str(wheat_N_raw)
+# wheat_N_raw <- 
+#   read.table("K:\\Rainshelter\\Wheat 2015-16\\Analysis\\N_Plant\\NitrogenRawWheat.txt", header = TRUE)
+# #duplicated(maize_N_raw)
+# 
+# summary(wheat_N_raw)
+# str(wheat_N_raw)
 
 ```
 
 ```{r}
-# clean up and massage
-wheat_N_work <- wheat_N_raw %>%
-  mutate(HarvestDate = dmy(Date)) %>%
-  mutate(Block = as.factor(Block),
-         Plot = as.factor(as.numeric(Plot-100)),
-         HarvestDate = dmy(Date), 
-         Nitrogen =  as.numeric(Nitrogen),
-         Irrigation = as.factor(Irrigation)
-         ) %>%
-      mutate(Organ = factor(Organ, levels=c("Leaf",	"Stem",	"Dead",	"Ear",	"Grain",	"Rachis"), 
-                          labels = c("Leaf",	"Stem",	"Senesced",	"Ear",	"Grain",	"Rachis"))) 
-
-# str(wheat_N_work)
-# head(wheat_N_work)
-summary (wheat_N_work)
+# # clean up and massage
+# wheat_N_work <- wheat_N_raw %>%
+#   mutate(HarvestDate = dmy(Date)) %>%
+#   mutate(Block = as.factor(Block),
+#          Plot = as.factor(as.numeric(Plot-100)),
+#          HarvestDate = dmy(Date), 
+#          Nitrogen =  as.numeric(Nitrogen),
+#          Irrigation = as.factor(Irrigation)
+#          ) %>%
+#       mutate(Organ = factor(Organ, levels=c("Leaf",	"Stem",	"Dead",	"Ear",	"Grain",	"Rachis"), 
+#                           labels = c("Leaf",	"Stem",	"Senesced",	"Ear",	"Grain",	"Rachis"))) 
+# 
+# # str(wheat_N_work)
+# # head(wheat_N_work)
+# summary (wheat_N_work)
 ```
 
 # merge wheat biomass and N
 
 ```{r}
-# revove duplicated fields before merge
-wheat_N_work$Block <- NULL
-
-# check fields
-summary(wheat_bio_work)
-summary(wheat_N_work)
+# # revove duplicated fields before merge
+# wheat_N_work$Block <- NULL
+# 
+# # check fields
+# summary(wheat_bio_work)
+# summary(wheat_N_work)
 
 ```
 
 ```{r}
-# merge the baby
-wheat_bio_N_work <- merge(wheat_bio_work, wheat_N_work, by=c("HarvestDate","Plot","Organ"))
-
-# add N amount field
-wheat_bio_N_work$NitrogenWeight <- wheat_bio_N_work$BiomassWeight * wheat_bio_N_work$NitrogenPerc/100
-  
-  
-summary(wheat_bio_N_work)
+# # merge the baby
+# wheat_bio_N_work <- merge(wheat_bio_work, wheat_N_work, by=c("HarvestDate","Plot","Organ"), all = TRUE)
+# 
+# # add N amount field
+# wheat_bio_N_work$NitrogenWeight <- wheat_bio_N_work$BiomassWeight * wheat_bio_N_work$NitrogenPerc/100
+#   
+#   
+# summary(wheat_bio_N_work)
 ```
 
 ## 3. Merge maize and wheat
@@ -277,14 +297,22 @@ print("====================================================")
 print("========        WHEAT                   ============")
 print("====================================================")
 
-wheat_bio_N_work$Date <- wheat_bio_N_work$Partition <- 
-wheat_bio_N_work$TrtNo <- wheat_bio_N_work$CarbonPerc <-NULL
+# wheat_bio_N_work$Date <- wheat_bio_N_work$Partition <- 
+# wheat_bio_N_work$TrtNo <- wheat_bio_N_work$CarbonPerc <-NULL
 wheat_bio_N_work$Crop <- "Wheat"
 summary(wheat_bio_N_work)
 ```
 
 # Bind wheat and maize
 ```{r}
+
+maize_bio_N_work$Irrigation <- wheat_bio_N_work$Irrigation <- NULL
+maize_bio_N_work$Nitrogen <- wheat_bio_N_work$Nitrogen <- NULL
+
+# avoid issue with rbind
+maize_bio_N_work <- as.data.frame(maize_bio_N_work, stringAsFactors=FALSE)
+wheat_bio_N_work <- as.data.frame(wheat_bio_N_work, stringAsFactors=FALSE)
+
 maize_wheat_bio_N_work <- rbind(maize_bio_N_work, wheat_bio_N_work)
 
 maize_wheat_bio_N_work$Crop <- as.factor(maize_wheat_bio_N_work$Crop)
@@ -293,13 +321,19 @@ summary(maize_wheat_bio_N_work)
 
 ```
 # check data
-```{r, fig.width=12, fig.height=7}
+
+- Need to have all 5 "organs" with biomass and N data
+- Leaf,Stem, Rachis,Grain and Senesced
+- No NA's allowed here
+
+```{r, fig.width=12, fig.height=20}
 maize_wheat_bio_N_work %>%
-  dplyr::select(-Nitrogen, -Plot, -Nitrogen, -Irrigation, -Block) %>%
-  ggplot(aes(x=Organ,y=BiomassWeight, colour=WaterTreat)) +
+  dplyr::select(-Plot, -Block) %>%
+  tidyr::gather("Variable", "Value",BiomassWeight,NitrogenWeight:NitrogenPerc)%>%
+  ggplot(aes(x=Organ,y=Value, colour=WaterTreat)) +
   geom_boxplot(width=0.2) +
   geom_jitter() +
-  facet_grid(NitroTreat~Crop)
+  facet_wrap(Crop~Variable+NitroTreat, ncol=4, scales="free")
 
 ```
 
@@ -318,8 +352,8 @@ write.csv(maize_wheat_bio_N_work,"C:\\GitHubRepos\\Arbitrator\\Analysis\\Biomass
 
 # save wheat dataset only  for Denis Curtin
 ```{r}
-
 df <- maize_wheat_bio_N_work %>% 
+  na.omit() %>%
   filter(Crop == "Wheat") %>%
   dplyr::select(HarvestDate, Crop, Organ, NitroTreat, WaterTreat, Block,NitrogenWeight) %>%
   tidyr::spread(Organ,NitrogenWeight) %>%
