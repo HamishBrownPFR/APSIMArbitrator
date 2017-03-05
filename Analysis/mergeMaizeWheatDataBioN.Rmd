@@ -209,7 +209,7 @@ head(wheat_bio_raw)
 # FIXME: PLot ear and Chaff or Rachis to be sure all ok
 
 wheat_bio_N_work <- wheat_bio_raw %>%
-na.omit() %>%
+# na.omit() %>%
 dplyr::select(-HarvestNo,	-Growth_Stage, -TreatNo) %>%
 mutate(HarvestDate = dmy(Clock.Today)) %>%
 dplyr::select(-Clock.Today) %>%
@@ -228,6 +228,11 @@ mutate(Block = as.factor(Block),
 
 summary(wheat_bio_N_work)
 ```
+
+```{r}
+unique(wheat_bio_N_work$HarvestDate)
+```
+
 
 # Read wheat nitrogen
 
@@ -311,6 +316,8 @@ summary(wheat_bio_N_work)
 maize_bio_N_work$Irrigation <- wheat_bio_N_work$Irrigation <- NULL
 maize_bio_N_work$Nitrogen <- wheat_bio_N_work$Nitrogen <- NULL
 
+# FIXME: some data with NAs is desapearing at this step
+
 # avoid issue with rbind
 maize_bio_N_work <- as.data.frame(maize_bio_N_work, stringAsFactors=FALSE)
 wheat_bio_N_work <- as.data.frame(wheat_bio_N_work, stringAsFactors=FALSE)
@@ -318,6 +325,8 @@ wheat_bio_N_work <- as.data.frame(wheat_bio_N_work, stringAsFactors=FALSE)
 maize_wheat_bio_N_work <- rbind(maize_bio_N_work, wheat_bio_N_work)
 
 maize_wheat_bio_N_work$Crop <- as.factor(maize_wheat_bio_N_work$Crop)
+
+maize_wheat_bio_N_work$HarvestDate <- as.Date(maize_wheat_bio_N_work$HarvestDate)
 
 summary(maize_wheat_bio_N_work)
 
@@ -349,7 +358,8 @@ unique(maize_wheat_bio_N_work$HarvestDate)
 # save data
 
 ```{r}
-write.csv(maize_wheat_bio_N_work,"C:\\GitHubRepos\\Arbitrator\\Analysis\\Biomass_N_merged_WheatMaize.csv")
+write.csv(maize_wheat_bio_N_work,
+          "C:\\GitHubRepos\\Arbitrator\\Analysis\\Biomass_N_merged_WheatMaize.csv")
 ```
 
 
