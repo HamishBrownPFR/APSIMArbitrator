@@ -1,6 +1,8 @@
 ---
 title: "R Notebook"
-output: html_notebook
+output:
+  html_document: default
+  html_notebook: default
 ---
 
 # load libs
@@ -92,15 +94,76 @@ summary(rad_sum_df)
 # graph
 
 ```{r,fig.width=12, fig.height=8}
+
+# sort out dates when we have actual measurements of light interception
+tempDf <- read.csv("C:\\GitHubRepos\\Arbitrator\\Analysis\\DatesCoverSample.csv", header=TRUE)
+coverSampleDates <- tempDf %>% mutate(HarvestDate=ymd(HarvestDate)) %>% dplyr::select(-X)
+sampleDataCover <- rad_sum_df %>% filter(HarvestDate %in% coverSampleDates$HarvestDate)
+
 rad_sum_df %>%
   ungroup() %>%
   mutate(NitroTreat = factor(NitroTreat, 
                              labels= c("Low N","Median N","High N"))) %>%
   ggplot(aes(x=HarvestDate, y=RadIntSum, colour=WaterTreat, linetype=NitroTreat)) +
   geom_line() +
+  geom_point(data=sampleDataCover,aes(x=HarvestDate,y=RadIntSum, shape=NitroTreat), size=2)+
   scale_linetype_manual(values = c("dotted", "dashed", "solid","dotted", "dashed", "solid"))+
   facet_wrap(Crop~Block, scales="free", ncol=4)
 ```
+
+
+# Average of interception
+
+```{r}
+# not used
+x_mean <- sampleDataCover %>%
+  group_by(HarvestDate,Crop, NitroTreat, WaterTreat) %>%
+  dplyr::select(RadIntSum)  %>%
+  summarise(R_mean=mean(RadIntSum), R_sd = sd(RadIntSum))
+
+# using smooth to get averages directly
+rad_sum_df %>%
+  ungroup() %>%
+  mutate(NitroTreat = factor(NitroTreat, 
+                             levels= c("Low N","Median N","High N"))) %>%
+  ggplot(aes(x=HarvestDate, y=RadIntSum, colour=WaterTreat)) +
+ # geom_point(size=2) +
+  geom_smooth(aes(linetype=NitroTreat)) +
+ # geom_point(data=x_mean,aes(x=HarvestDate,y=R_mean, shape=NitroTreat), size=2) +
+#  geom_line(aes(linetype=WaterTreat))+
+  facet_grid(.~Crop) +
+  ylab("Accumulated intercepted \nradiation (MJ/m2)") +
+  xlab("Sampling date") +
+  facet_grid(.~Crop, scales="free") +
+  scale_linetype_manual(values = c("dotted", "dashed", "solid","dotted", "dashed", "solid"))
+
+```
+# simple average
+```{r}
+
+rad_sum_df %>%
+  ungroup() %>%
+  mutate(NitroTreat = factor(NitroTreat, 
+                             levels= c("Low N","Median N","High N"))) %>%
+  group_by(HarvestDate,Crop, NitroTreat, WaterTreat) %>%
+  dplyr::select(RadIntSum)  %>%
+  summarise(R_mean=mean(RadIntSum), R_sd = sd(RadIntSum)) %>%
+  ggplot(aes(x=HarvestDate, y=R_mean, colour=WaterTreat)) +
+ # geom_point(size=2) +
+  geom_smooth(aes(linetype=NitroTreat)) +
+  geom_point(data=x_mean,aes(x=HarvestDate,y=R_mean, shape=NitroTreat), size=2) +
+  scale_shape_discrete(solid=F) +
+#  geom_line(aes(linetype=WaterTreat))+
+  facet_grid(.~Crop) +
+  ylab("Accumulated intercepted \nradiation (MJ/m2)") +
+  xlab("Sampling date") +  
+  geom_errorbar(data=x_mean,aes(ymin=R_mean-R_sd/2,
+                    ymax=R_mean+R_sd/2), width = 2) +
+  facet_grid(.~Crop, scales="free") +
+  scale_linetype_manual(values = c("dotted", "dashed", "solid","dotted", "dashed", "solid"))
+
+```
+
 
 #  RUE calculation
 
@@ -117,6 +180,7 @@ summary(bio_raw)
 ```{r}
 # clean data
 bio_work <- bio_raw %>%
+  na.omit() %>%
   dplyr::select(-X,-NitrogenPerc,-NitrogenWeight) %>%
   mutate(Block = as.factor(Block),
          HarvestDate = ymd(HarvestDate),
@@ -134,9 +198,182 @@ bio_work <- bio_raw %>%
 
 summary(bio_work)
 ```
+# check
+```{r}
 
+# how many onservations in each?
+bio_work %>%
+  group_by(Crop,NitroTreat,WaterTreat,Block) %>%
+ summarise(n = n())
+
+
+```
+
+
+# Merge biomass and Sum intercepted radiation
 
 ```{r}
-rue_df <- merge(rad_sum_df)
+
+rr <- rad_sum_df %>% dplyr::select(-radn,-RadInt)
+
+rue_df <- merge(bio_work, rr, by = c("HarvestDate","Crop","NitroTreat","WaterTreat","Block"))
+
+summary(rue_df)
+```
+
+# plot and check it
+
+```{r,fig.width=12, fig.height=8}
+rue_df %>%
+  mutate(NitroTreat = factor(NitroTreat, 
+                             levels= c("Low N","Median N","High N"))) %>%
+  ggplot(aes(x=RadIntSum, y=TotalBiomass, colour=WaterTreat, shape=NitroTreat)) +
+  geom_point() +
+  geom_line(aes(linetype=NitroTreat)) +
+# geom_smooth(method="lm", aes(linetype=NitroTreat,fill=WaterTreat), alpha=0.2) +
+ scale_linetype_manual(values = c("dotted", "dashed", "solid","dotted", "dashed", "solid"))+
+  facet_wrap(Crop~WaterTreat+Block, scales="free", ncol=4)
+```
+
+# Define data points suitable for RUE calculation
+
+- Remove points when net increase in shoot biomass was not linear
+- e.g. sowing date and last harvest when senescence was high
+
+```{r,fig.width=12, fig.height=8}
+
+rue_filtered <- rue_df %>%
+mutate(plotCode = paste0(Crop,"_", 
+                         NitroTreat,"_" ,
+                         WaterTreat,"_", 
+                         Block)) %>%
+  mutate(plotCode = factor(plotCode)) %>%
+  group_by(Crop, NitroTreat, WaterTreat, Block) %>%
+ # mutate(HarvestDate = ifelse(Crop == "Wheat"))
+  filter(HarvestDate != max(HarvestDate))%>%
+  ungroup()
+
+# graph
+rue_filtered %>%
+  mutate(NitroTreat = factor(NitroTreat, 
+                             levels= c("Low N","Median N","High N"))) %>%
+  ggplot(aes(x=RadIntSum, y=TotalBiomass, colour=WaterTreat, shape=NitroTreat)) +
+  geom_point() +
+  geom_line(aes(linetype=NitroTreat)) +
+# geom_smooth(method="lm", aes(linetype=NitroTreat,fill=WaterTreat), alpha=0.2) +
+ scale_linetype_manual(values = c("dotted", "dashed", "solid","dotted", "dashed", "solid"))+
+  facet_wrap(Crop~WaterTreat+Block, scales="free", ncol=4)
+
+```
+
+```{r}
+summary(rue_filtered)
+```
+
+```{r,fig.width=12, fig.height=8}
+# graph filtered data
+rue_filtered %>%
+  mutate(NitroTreat = factor(NitroTreat, 
+                             levels= c("Low N","Median N","High N"))) %>%
+  ggplot(aes(x=RadIntSum, y=TotalBiomass, colour=WaterTreat, shape=NitroTreat)) +
+  geom_point() +
+  geom_line(aes(linetype=NitroTreat)) +
+# geom_smooth(method="lm", aes(linetype=NitroTreat,fill=WaterTreat), alpha=0.2) +
+ scale_linetype_manual(values = c("dotted", "dashed", "solid","dotted", "dashed", "solid"))+
+  facet_wrap(Crop~Block, scales="free", ncol=4)
+```
+
+
+
+# calculate RUE at plot level
+
+```{r}
+
+ 
+rounds <- unique(rue_filtered$plotCode)
+
+# loop through all the individual periods/treats/experiments
+resTable <- data.frame(NULL)
+
+for(i in 1:length(rounds)) {
+  
+ thisStat <- NULL
+  
+ buf <- rue_filtered[rue_filtered$plotCode == rounds[i],]
+ 
+ bio <- buf$TotalBiomass/10 
+ interc  <- buf$RadIntSum
+  
+  n_s <- length(bio)
+  n_m <- length(interc)
+  model <- lm(bio~interc)
+  bio_sq <- sum((bio - mean(bio))^2)
+  int_sq <- sum((interc - mean(interc))^2)
+  r2 <- summary(model)$r.squared
+  slope <- model$coefficients[[2]]
+  slope_sig <- summary(model)$coefficients[8]
+  int <- model$coefficients[[1]]
+  int_sig <- summary(model)$coefficients[7]
+  bio_max <- max(bio)
+  light_max <- max(interc)  
+  
+ thisStat <- data.frame(Crop = buf$Crop[1], 
+                        N_treat = buf$NitroTreat[1], 
+                        W_treat = buf$WaterTreat[1],
+                        Block = buf$Block[1],
+                        n = n_s,
+                        RUE = slope, 
+                        slope_dif_zero = round(slope_sig,digits=3),
+                        intercept=int,
+                        int_dif_zero = int_sig,
+                        bio_max = bio_max,
+                        light_max = light_max,
+                        R2=r2)
+ 
+ if(i==1) {
+   resTable <- thisStat
+ } else {
+   resTable <- rbind(resTable,thisStat)
+ }
+}
+
+resTable$Block <- as.factor(resTable$Block)
+summary(resTable)
+
+
+```
+
+# check poor R2 fits
+```{r}
+g1 <- resTable %>%
+  filter(R2<0.85)
+```
+
+# calculate RUE averages
+
+```{r}
+
+n_lev_m <- c(0,75,250)
+n_lev_w <- c(0,50,250)
+
+resTable %>%
+  mutate(N_treat_v = ifelse(Crop == "Maize", 
+                           as.character(factor(N_treat, labels=n_lev_m)),
+                            as.character(factor(N_treat, labels=n_lev_w)))) %>%
+  mutate(N_treat_v=as.numeric(as.character(N_treat_v))) %>%
+  group_by(Crop, W_treat,N_treat_v) %>%
+  summarise(RUE_mean = mean(RUE), RUE_sd=sd(RUE)) %>%
+  ggplot(aes(x=N_treat_v, y=RUE_mean, colour=W_treat)) +
+  geom_point(size=2) +
+  geom_line(aes(linetype=W_treat))+
+  facet_grid(.~Crop) +
+  ylab("Radiation use efficiency (g/m2)") +
+  xlab("Nitrogen fertiliser rate (kg N/m2)") +
+  geom_errorbar(aes(ymin=RUE_mean-RUE_sd/2,
+                    ymax=RUE_mean+RUE_sd/2), width = 0.5) +
+  facet_grid(.~Crop, scales="free")
+  
+# FIXME: Has to decide which points get in RUE calculation!
+
 ```
 
