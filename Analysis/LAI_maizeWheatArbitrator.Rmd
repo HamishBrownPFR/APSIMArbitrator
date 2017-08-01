@@ -36,7 +36,8 @@ maize_lai_work <- maize_lai_raw %>%
                              labels= c("Low N","Median N","High N")),
          WaterTreat = ifelse(WaterTreat=="Irrig", "Irrigated","Dryland"), # same as wheat
          WaterTreat = as.factor(WaterTreat) ,
-         Irrigation = as.factor(WaterTreat))
+         Irrigation = as.factor(WaterTreat)) %>%
+  dplyr::select(HarvestDate,Plot,Block,Nitrogen, Irrigation,LAI,Crop,WaterTreat,NitroTreat)
 
 # graph
 maize_lai_work %>%
@@ -79,6 +80,36 @@ wheat_lai_work %>%
 # CHECK: Very high LAI numbers for Block 2
 
 ```
+
+# Bind wheat & maize
+```{r}
+lai_maize_wheat <- rbind(maize_lai_work,wheat_lai_work)
+
+str(lai_maize_wheat)
+
+lai_maize_wheat$Crop <- factor(lai_maize_wheat$Crop)
+
+
+```
+
+```{r}
+summary(lai_maize_wheat)
+```
+
+Qualkity check by plot
+```{r, fig.width=12}
+lai_maize_wheat %>%
+  ggplot(aes(x=HarvestDate,y=LAI, colour=NitroTreat, shape=WaterTreat)) +
+  geom_point() +
+  geom_line() +
+  facet_grid(Block~Crop, scales='free')
+```
+
+save
+```{r}
+write.csv(lai_maize_wheat, "C:/GitHubRepos/Arbitrator/Analysis/lai_maize_wheat.csv")
+```
+
 
 # Calculate averages and sds
 ```{r}
@@ -124,5 +155,8 @@ lai_av_maize_wheat %>%
   theme(legend.title=element_blank()) +
   xlab(" ") + 
   theme(legend.position=c(0.9, 0.8),legend.background = element_rect(fill=alpha('white', 0.1)))
+```
+```{r}
+
 ```
 

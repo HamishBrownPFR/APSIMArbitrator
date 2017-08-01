@@ -191,7 +191,8 @@ for(cp in 1:length(codePlotValues)) {
       mutate(Crop = unique(df$Crop), 
                    WaterTreat = unique(df$WaterTreat), 
                    NitroTreat = unique(df$NitroTreat),  
-                   Block = unique(df$Block))
+                   Block = unique(df$Block)
+             )
  
     # create and append results
     if(cp==1) {finalOutDf <- thisOutDf} else
@@ -203,7 +204,7 @@ for(cp in 1:length(codePlotValues)) {
 
 summary(finalOutDf)
 
-write.csv(finalOutDf, "C:\\GitHubRepos\\Arbitrator\\Analysis\\CoverInterpolatedByDay.csv")
+ write.csv(finalOutDf, "C:\\GitHubRepos\\Arbitrator\\Analysis\\CoverInterpolatedByDay.csv")
 
 ```
 
@@ -217,6 +218,5 @@ finalOutDf %>%
   facet_wrap(Crop~Block, scales="free", ncol=4)
   
 ```
-
 
 
