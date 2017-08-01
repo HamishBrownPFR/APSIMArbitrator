@@ -1,0 +1,28 @@
+Clock.Today
+Latitude =
+Nit
+Latitude =
+Irr
+Latitude =
+Wheat.Dead.Live.Nconc
+Latitude =
+Wheat.Dead.Live.Wt
+Latitude =
+Wheat.Grain.Live.Nconc
+Latitude =
+Wheat.Grain.Live.Wt
+Latitude =
+Wheat.Leaf.Live.Nconc
+Latitude =
+Wheat.Leaf.Live.Wt
+Latitude =
+Wheat.Rachis.Live.Nconc
+Latitude =
+Wheat.Rachis.Live.Wt
+Latitude =
+Wheat.Stem.Live.Nconc
+Latitude =
+Wheat.Stem.Live.Wt
+Latitude =
+SimulationName
+Latitude =

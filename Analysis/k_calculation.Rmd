@@ -1,0 +1,35 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+* Read LAI data
+* Read daily interpolated interception data
+* lookup interception per LAI
+* calculate k
+
+```{r}
+
+rootFolder <- "C:\\GitHubRepos\\Arbitrator\\Analysis\\"
+
+```
+
+LAI data
+```{r}
+lai_raw <- read.csv(paste0(rootFolder,"lai_maize_wheat.csv"), header = TRUE)
+summary(lai_raw)
+```
+
+Interception data
+
+```{r}
+int_raw <- read.csv(paste0(rootFolder,"CoverInterpolatedByDay.csv"), header = TRUE)  
+summary(int_raw)
+```
+
+# merge
+
+```{r}
+
+```
+
