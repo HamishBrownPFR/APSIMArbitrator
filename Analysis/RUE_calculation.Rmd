@@ -273,14 +273,16 @@ resTable %>%
 ```
  
  
-## get RUE reduction fators for water and N
+## Reduction in RUE by water stress
+
+- How much water stress reduced RUE within each N level?
 
 
-```{r}
+```{r,fig.width=12, fig.height=8}
 resTable %>%
   dplyr::select(Crop,Block,N_treat,W_treat,RUE) %>%
   tidyr::spread(W_treat,RUE) %>%
-  mutate(fw = round(1-(Dryland/Irrigated),2)) %>%
+  mutate(fw = round((Dryland/Irrigated),2)) %>%
   mutate(N_treat_v = ifelse(Crop == "Maize", 
                            as.character(factor(N_treat, labels=n_lev_m)),
                             as.character(factor(N_treat, labels=n_lev_w)))) %>%
@@ -290,13 +292,53 @@ resTable %>%
   ggplot(aes(x=N_treat_v, y=fw_mean, colour=Crop)) +
   geom_point(size=3) +
   geom_line()+
-  ylab("Reduction in RUE by to water stress (fw, %)") +
+  ylab("Relative RUE in response to water stress (fw, 0-1)") +
   xlab("Nitrogen fertiliser rate (kg N/m2)") +
   geom_errorbar(aes(ymin=fw_mean-fw_sd/2,
                     ymax=fw_mean+fw_sd/2), width = 0.5) +
   scale_colour_discrete(name="Water regime")
 
 ```
+
+## Reduction in RUE by N stress
+
+- How much N stress reduced RUE within each water level?
+- FIXME: Unfinished - quite big variation in wheat responses - check
+
+```{r,fig.width=12, fig.height=8}
+
+n_lev_m2 <- c(0,75)
+n_lev_w2 <- c(0,50)
+
+resTable %>%
+  mutate(N_treat_v = factor(N_treat, 
+                            levels=c("Low N","Median N","High N"), labels=c("LowN","MedN","HighN"))) %>%
+  mutate(N_treat_v=as.factor(N_treat_v)) %>%
+    dplyr::select(Crop,Block,N_treat_v,W_treat,RUE) %>%
+  tidyr::spread(N_treat_v,RUE) %>%
+  mutate(fn_l = round((LowN/HighN),2)) %>%
+  mutate(fn_m = round((MedN/HighN),2)) %>%
+  gather("VarName","VarValue",fn_l:fn_m) %>%
+  mutate(VarName=factor(VarName)) %>%
+  dplyr::select(Crop,Block,W_treat,VarName,VarValue) %>%
+  group_by(Crop, W_treat, VarName) %>%
+  summarise(fn_mean = mean(VarValue), fn_sd=sd(VarValue)) %>%
+  mutate(N_treat_v = ifelse(Crop == "Maize", 
+                           as.character(factor(VarName, labels=n_lev_m2)),
+                            as.character(factor(VarName, labels=n_lev_w2)))) %>%
+  mutate(N_treat_v=as.numeric(as.character(N_treat_v))) %>%
+  ggplot(aes(x=N_treat_v, y=fn_mean, colour=W_treat, shape=Crop, linetype=W_treat)) +
+  geom_point(size=3) +
+  geom_line()+
+  facet_grid(.~Crop, scales='free')+
+  ylab("Reduction in RUE by nitrogen stress (fw, %)") +
+  xlab("Nitrogen fertiliser rate (kg N/m2)") +
+  geom_errorbar(aes(ymin=fn_mean-fn_sd/2,
+                    ymax=fn_mean+fn_sd/2), width = 0.5) +
+  scale_colour_discrete(name="Water regime")
+```
+
+
 
 
 ```{r}
