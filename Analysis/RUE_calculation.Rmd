@@ -259,22 +259,45 @@ resTable %>%
   group_by(Crop, W_treat,N_treat_v) %>%
   summarise(RUE_mean = mean(RUE), RUE_sd=sd(RUE)) %>%
   ggplot(aes(x=N_treat_v, y=RUE_mean, colour=W_treat)) +
-  geom_point(size=2) +
-  geom_line(aes(linetype=W_treat))+
+  geom_point(size=3) +
+  geom_line()+
   facet_grid(.~Crop) +
   ylab("Radiation use efficiency (g/m2)") +
   xlab("Nitrogen fertiliser rate (kg N/m2)") +
   geom_errorbar(aes(ymin=RUE_mean-RUE_sd/2,
                     ymax=RUE_mean+RUE_sd/2), width = 0.5) +
-  facet_grid(.~Crop, scales="free")
+  facet_grid(.~Crop, scales="free" )+ 
+  scale_colour_discrete(name="Water regime")
   
-# FIXME: Has to decide which points get in RUE calculation!
-# At which level this should be defined (automated or by eye?)
 
 ```
  
  
 ## get RUE reduction fators for water and N
+
+
+```{r}
+resTable %>%
+  dplyr::select(Crop,Block,N_treat,W_treat,RUE) %>%
+  tidyr::spread(W_treat,RUE) %>%
+  mutate(fw = round(1-(Dryland/Irrigated),2)) %>%
+  mutate(N_treat_v = ifelse(Crop == "Maize", 
+                           as.character(factor(N_treat, labels=n_lev_m)),
+                            as.character(factor(N_treat, labels=n_lev_w)))) %>%
+  mutate(N_treat_v=as.numeric(as.character(N_treat_v))) %>%
+  group_by(Crop, N_treat_v) %>%
+  summarise(fw_mean = mean(fw), fw_sd=sd(fw)) %>%
+  ggplot(aes(x=N_treat_v, y=fw_mean, colour=Crop)) +
+  geom_point(size=3) +
+  geom_line()+
+  ylab("Reduction in RUE by to water stress (fw, %)") +
+  xlab("Nitrogen fertiliser rate (kg N/m2)") +
+  geom_errorbar(aes(ymin=fw_mean-fw_sd/2,
+                    ymax=fw_mean+fw_sd/2), width = 0.5) +
+  scale_colour_discrete(name="Water regime")
+
+```
+
 
 ```{r}
 
