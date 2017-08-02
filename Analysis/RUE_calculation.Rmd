@@ -126,13 +126,14 @@ summary(bio_X)
 # buffer to hold value of maxium at plot level
 buf2 <-merge(bio_rad,bio_X,by=c("Crop", "NitroTreat", "WaterTreat", "Block"))
 
-
+# filter points viable for RUE
 bio_rad_filtered <- buf2 %>%
 mutate(plotCode = paste0(Crop,"_",
                          NitroTreat,"_" ,
                          WaterTreat,"_",
                          Block)) %>%
- mutate(plotCode = factor(plotCode)) %>%
+  # filter(plotCode!= "Maize_High N_Dryland_2" & HarvestDate == "2013-02-20")%>%
+  mutate(plotCode = factor(plotCode)) %>%
   group_by(Crop, NitroTreat, WaterTreat, Block) %>%
   rowwise() %>%
   ungroup() %>%
