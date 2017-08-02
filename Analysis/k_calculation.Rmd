@@ -34,6 +34,16 @@ lai_raw <- read.csv(paste0(rootFolder,"lai_maize_wheat.csv"), header = TRUE) %>%
 summary(lai_raw)
 ```
 
+```{r, fig.width=12, fig.height=10}
+lai_raw %>%
+  ggplot(aes(x=HarvestDate,y=LAI, colour=WaterTreat, linetype=Block)) +
+  geom_point() +
+  geom_line()+
+  facet_grid(NitroTreat~Crop, scales='free')
+```
+
+
+
 Interception data (daily interpolated)
 
 - FIXME: use a smooth interpolation method to remove bias from ind readings
@@ -52,7 +62,8 @@ summary(int_raw)
 
 ```{r}
 
-lai_int <- merge(lai_raw,int_raw,by=c("HarvestDate","Crop", "WaterTreat","NitroTreat","Block")) 
+lai_int <- merge(lai_raw,int_raw,
+                 by=c("Crop","HarvestDate","WaterTreat","NitroTreat","Block")) 
 
 summary(lai_int)
 
@@ -60,11 +71,11 @@ summary(lai_int)
 
 # inspect
 
-```{r, fig.width=12, fig.height=6}
+```{r, fig.width=12, fig.height=15}
 lai_int %>%
-  ggplot(aes(x=LAI,y=Cover, colour=WaterTreat, linetype=Block)) +
+  ggplot(aes(x=LAI,y=Cover, colour=WaterTreat, shape=Block, linetype=WaterTreat)) +
   geom_point() +
   geom_line() +
-  facet_grid(NitroTreat~Crop)
+  facet_grid(NitroTreat+Block~Crop)
 ```
 
