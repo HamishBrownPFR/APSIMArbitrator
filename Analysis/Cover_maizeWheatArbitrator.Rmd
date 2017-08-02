@@ -174,19 +174,44 @@ finalOutDf <- thisOutDf <- data.frame()
 for(cp in 1:length(codePlotValues)) {
   
     df <- cover_maize_wheat_merge %>% 
-      filter(codePlot == codePlotValues[cp])
+      filter(codePlot == codePlotValues[cp]) %>% 
+      ungroup() %>%
+      na.omit()
     
     # find boundaries
     thisSeq <- seq(min(df$HarvestDate),max(df$HarvestDate),1)
     
    # out <- approx(df$HarvestDate, df$Cover, xout = thisSeq)
     
-    outFun <- approxfun(df$HarvestDate, df$Cover, method = "linear")
+  # create a smoothed set of data
+  dat <- df %>%
+  mutate(doy=HarvestDate-min(HarvestDate)+1) %>%
+  mutate(x=doy,y=Cover) %>%
+  dplyr::select(x,y, HarvestDate)  %>%
+  arrange(x)
+  
+  dat$x <- as.numeric(dat$x)
+  dat$y <- as.numeric(dat$y)
+
+  n=nrow(dat)
+
+  loessData <- data.frame(
+    x = 1:n,
+    y = predict(loess(y~x, dat, span = 1)),
+    HarvestDate = dat$HarvestDate
+  )
+
+  loessData <- loessData %>% dplyr::select(-x)
     
+  # create the interpolation fundction  
+  # outFun <- approxfun(df$HarvestDate, df$Cover, method = "linear")
+   outFun <- approxfun(loessData$HarvestDate, loessData$y, method = "linear")
+
   #  thisOutDf <- data.frame(HarvestDate = out$x, Cover = out$y)
     
-    thisOutDf <- data.frame(HarvestDate = thisSeq, Cover = outFun(thisSeq))
+   thisOutDf <- data.frame(HarvestDate = thisSeq, Cover = outFun(thisSeq))
     
+
     thisOutDf <- thisOutDf %>%
       mutate(Crop = unique(df$Crop), 
                    WaterTreat = unique(df$WaterTreat), 
