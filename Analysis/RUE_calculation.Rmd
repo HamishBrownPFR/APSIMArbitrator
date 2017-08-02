@@ -118,7 +118,7 @@ rad_sum_df %>%
 # not used
 x_mean <- sampleDataCover %>%
   group_by(HarvestDate,Crop, NitroTreat, WaterTreat) %>%
-  dplyr::select(RadIntSum)  %>%
+  dplyr::select(HarvestDate,Crop, NitroTreat, WaterTreat, RadIntSum)  %>%
   summarise(R_mean=mean(RadIntSum), R_sd = sd(RadIntSum))
 
 # using smooth to get averages directly
@@ -147,7 +147,7 @@ rad_sum_df %>%
   mutate(NitroTreat = factor(NitroTreat, 
                              levels= c("Low N","Median N","High N"))) %>%
   group_by(HarvestDate,Crop, NitroTreat, WaterTreat) %>%
-  dplyr::select(RadIntSum)  %>%
+  dplyr::select(HarvestDate,Crop, NitroTreat, WaterTreat, RadIntSum)  %>%
   summarise(R_mean=mean(RadIntSum), R_sd = sd(RadIntSum)) %>%
   ggplot(aes(x=HarvestDate, y=R_mean, colour=WaterTreat)) +
  # geom_point(size=2) +
@@ -204,7 +204,7 @@ summary(bio_work)
 
 # how many onservations in each?
 bio_work %>%
-  group_by(Crop,NitroTreat,WaterTreat,Block) %>%
+group_by(Crop,NitroTreat,WaterTreat,Block) %>%
  summarise(n = n())
 
 

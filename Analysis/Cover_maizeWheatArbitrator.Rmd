@@ -229,11 +229,27 @@ for(cp in 1:length(codePlotValues)) {
 
 
 ```
+
+# check
+
+```{r}
+summary(finalOutDf)
+```
+
+# Check magnitude of out of range estimations
+```{r}
+finalOutDf %>%
+  filter(Cover < 0 | Cover > 1) %>%
+  summary()
+```
+
 ## Clean and save
 
 ```{r}
-# Make negative interception as zero
+# Constrain cover values between 0 and 1
+
 finalOutDf$Cover <- ifelse(finalOutDf$Cover<0,0,as.numeric(finalOutDf$Cover))
+finalOutDf$Cover <- ifelse(finalOutDf$Cover>1,1,as.numeric(finalOutDf$Cover))
 
 summary(finalOutDf)
 
