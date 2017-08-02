@@ -246,6 +246,7 @@ summary(finalOutDf)
 finalOutDf %>%
   ggplot(aes(x=HarvestDate, y=Cover, colour=WaterTreat, shape=NitroTreat)) +
   geom_line(aes(linetype=NitroTreat)) +
+  geom_point(data=cover_maize_wheat_merge,aes(x=HarvestDate, y=Cover)) +
   scale_linetype_manual(values = c("dotted", "dashed", "solid","dotted", "dashed", "solid")) +
   facet_wrap(Crop~Block, scales="free", ncol=4)
   
