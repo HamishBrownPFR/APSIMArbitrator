@@ -189,6 +189,11 @@ head(wheat_bio_raw)
 ```
 
 ```{r}
+summary(wheat_bio_raw)
+```
+
+
+```{r}
 # clean up and massage
 # wheat_bio_work <- wheat_bio_raw %>%
 #   dplyr::select(HarvestDate,Plot,
@@ -315,8 +320,6 @@ summary(wheat_bio_N_work)
 
 maize_bio_N_work$Irrigation <- wheat_bio_N_work$Irrigation <- NULL
 maize_bio_N_work$Nitrogen <- wheat_bio_N_work$Nitrogen <- NULL
-
-# FIXME: some data with NAs is desapearing at this step -- solved! 
 
 # avoid issue with rbind
 maize_bio_N_work <- as.data.frame(maize_bio_N_work, stringAsFactors=FALSE)
